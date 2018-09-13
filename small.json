@@ -1,0 +1,15 @@
+{
+    "path": "mestrado-dev-phyml-input://small.aP6.phy",
+    "-d": "nt",
+    "-n": "1",
+    "-b": "0",
+    "-m": "012345",
+    "-c": "4",
+    "-a": "e",
+    "-o": "tlr",
+    "-s": "BEST",
+    "-f": "m",
+    "-v": "e",
+    "--run_id": "GTR+I+G",
+    "--no_memory_check": null
+}
