@@ -13,14 +13,17 @@ with open('cmdlines.log','r',True,'UTF-8') as cmds:
     for line in cmds:
         path, *args = line.rstrip('\n').split(' -',maxsplit=2)[1:]
         message = { "path": "{}:/{}".format(s3bucket, path[2:]), "cmd": '-'+args[0] }
-        snsmessage = json.dumps({'default': message})
+        msg_obj = {'default': json.dumps(message)}
+        snsmessage = json.dumps(msg_obj)
 
-        print(snsmessage)
+        # print(snsmessage)
 
+        response = cli.publish(
+            TopicArn=topicarn,
+            Subject='run1',
+            Message=snsmessage,
+            MessageStructure='json'
+        )
+        # print(response)
 
-# response = cli.publish(
-#     TopicArn=topicarn, 
-#     Message=snsmessage,
-#     MessageStructure='json'
-# )
-# print(response)
+print('-- DONE --')
