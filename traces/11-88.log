@@ -1,0 +1,88 @@
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id F81+I+G --no_memory_check -m 000000 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id HKY+I+G --no_memory_check -m 010010 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TrN+I+G --no_memory_check -m 010020 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TPM1uf+I+G --no_memory_check -m 012210 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TPM2uf+I+G --no_memory_check -m 010212 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TPM3uf+I+G --no_memory_check -m 012012 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM1+I+G --no_memory_check -m 012230 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM2+I+G --no_memory_check -m 010232 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM3+I+G --no_memory_check -m 012032 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TVM+I+G --no_memory_check -m 012314 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id GTR+I+G --no_memory_check -m 012345 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id JC+I+G --no_memory_check -m 000000 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id K80+I+G --no_memory_check -m 010010 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TrNef+I+G --no_memory_check -m 010020 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TPM1+I+G --no_memory_check -m 012210 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TPM2+I+G --no_memory_check -m 010212 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TPM3+I+G --no_memory_check -m 012012 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM1ef+I+G --no_memory_check -m 012230 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM2ef+I+G --no_memory_check -m 010232 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM3ef+I+G --no_memory_check -m 012032 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TVMef+I+G --no_memory_check -m 012314 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id SYM+I+G --no_memory_check -m 012345 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id F81+G --no_memory_check -m 000000 -f m -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id HKY+G --no_memory_check -m 010010 -f m -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TrN+G --no_memory_check -m 010020 -f m -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TPM1uf+G --no_memory_check -m 012210 -f m -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TPM2uf+G --no_memory_check -m 010212 -f m -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TPM3uf+G --no_memory_check -m 012012 -f m -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM1+G --no_memory_check -m 012230 -f m -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM2+G --no_memory_check -m 010232 -f m -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM3+G --no_memory_check -m 012032 -f m -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TVM+G --no_memory_check -m 012314 -f m -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id GTR+G --no_memory_check -m 012345 -f m -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id JC+G --no_memory_check -m 000000 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id K80+G --no_memory_check -m 010010 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TrNef+G --no_memory_check -m 010020 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TPM1+G --no_memory_check -m 012210 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TPM2+G --no_memory_check -m 010212 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TPM3+G --no_memory_check -m 012012 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM1ef+G --no_memory_check -m 012230 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM2ef+G --no_memory_check -m 010232 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM3ef+G --no_memory_check -m 012032 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TVMef+G --no_memory_check -m 012314 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id SYM+G --no_memory_check -m 012345 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id F81+I --no_memory_check -m 000000 -f m -v e -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id HKY+I --no_memory_check -m 010010 -f m -v e -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TrN+I --no_memory_check -m 010020 -f m -v e -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TPM1uf+I --no_memory_check -m 012210 -f m -v e -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TPM2uf+I --no_memory_check -m 010212 -f m -v e -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TPM3uf+I --no_memory_check -m 012012 -f m -v e -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM1+I --no_memory_check -m 012230 -f m -v e -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM2+I --no_memory_check -m 010232 -f m -v e -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM3+I --no_memory_check -m 012032 -f m -v e -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TVM+I --no_memory_check -m 012314 -f m -v e -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id GTR+I --no_memory_check -m 012345 -f m -v e -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id JC+I --no_memory_check -m 000000 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id K80+I --no_memory_check -m 010010 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TrNef+I --no_memory_check -m 010020 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TPM1+I --no_memory_check -m 012210 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TPM2+I --no_memory_check -m 010212 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TPM3+I --no_memory_check -m 012012 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM1ef+I --no_memory_check -m 012230 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM2ef+I --no_memory_check -m 010232 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM3ef+I --no_memory_check -m 012032 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TVMef+I --no_memory_check -m 012314 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id SYM+I --no_memory_check -m 012345 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id F81 --no_memory_check -m 000000 -f m -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id HKY --no_memory_check -m 010010 -f m -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TrN --no_memory_check -m 010020 -f m -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TPM1uf --no_memory_check -m 012210 -f m -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TPM2uf --no_memory_check -m 010212 -f m -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TPM3uf --no_memory_check -m 012012 -f m -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM1 --no_memory_check -m 012230 -f m -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM2 --no_memory_check -m 010232 -f m -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM3 --no_memory_check -m 012032 -f m -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TVM --no_memory_check -m 012314 -f m -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id GTR --no_memory_check -m 012345 -f m -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id JC --no_memory_check -m 000000 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id K80 --no_memory_check -m 010010 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TrNef --no_memory_check -m 010020 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TPM1 --no_memory_check -m 012210 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TPM2 --no_memory_check -m 010212 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TPM3 --no_memory_check -m 012012 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM1ef --no_memory_check -m 012230 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM2ef --no_memory_check -m 010232 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM3ef --no_memory_check -m 012032 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TVMef --no_memory_check -m 012314 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /tmp/jmodeltest4919587528794958852.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id SYM --no_memory_check -m 012345 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
