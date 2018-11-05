@@ -1,4 +1,5 @@
 import io
+import sys
 import boto3
 import json
 import string
@@ -20,22 +21,11 @@ logging.getLogger('botocore').setLevel(OTHERS_LEVEL)
 logging.getLogger('s3transfer').setLevel(OTHERS_LEVEL)
 logging.getLogger('asyncio').setLevel(OTHERS_LEVEL)
 
-logging.warn("BORA FICAR MONSTRO!")
-
-s3bucket = 'mestrado-dev-phyml-input'
-runid = "LOCALTEST_" + (datetime.now().isoformat()[0:19].replace(' ', '').replace(':', '-'))
-#runid = "VMware-aP6"
-
-sns_cli = boto3.client('sns')
-dynamo_res = boto3.resource('dynamodb')
-topics = sns_cli.list_topics()
-topicarn = topics['Topics'][0]['TopicArn']
-dynamo_table = None
 
 def dynamo_create():
     global dynamo_table
     dynamo_table = dynamo_res.create_table(
-        TableName=runid,
+        TableName=MSG_SUBJECT,
         AttributeDefinitions=[
             {
                 'AttributeName': 'Model',
@@ -88,7 +78,7 @@ def collect():
 
 def sendmessages(i):
 
-    with io.open('cmdlines.log',mode='r',buffering=1048576,encoding='UTF-8',newline=None) as cmds:
+    with io.open('traces/{}_cmds.log'.format(TRACE_FILE),mode='r',buffering=1048576,encoding='UTF-8',newline=None) as cmds:
         dynamo_writer = dynamo_table.batch_writer()
         dynamo_writer.__enter__()
         for line in cmds:
@@ -108,7 +98,7 @@ def sendmessages(i):
                 continue
 
             path, *args = line.rstrip('\n').split(' -',maxsplit=2)[1:]
-            message = { "path": "{}:/{}".format(s3bucket, path[2:]), "cmd": '-' + args[0] }
+            message = { "path": "{}:/{}".format(S3_BUCKET_INPUT, path[2:]), "cmd": '-' + args[0] }
             msg_obj = {'default': json.dumps(message)}
             snsmessage = json.dumps(msg_obj)
 
@@ -119,13 +109,13 @@ def sendmessages(i):
                 'Model': modelname
             })
 
-            # response = sns_cli.publish(
-            #     TopicArn=topicarn,
-            #     Subject=runid,
-            #     Message=snsmessage,
-            #     MessageStructure='json'
-            # )
-            # assert(response['ResponseMetadata']['HTTPStatusCode'] == 200)
+            response = sns_cli.publish(
+                TopicArn=SNS_TOPIC_INPUT,
+                Subject=MSG_SUBJECT,
+                Message=snsmessage,
+                MessageStructure='json'
+            )
+            assert(response['ResponseMetadata']['HTTPStatusCode'] == 200)
             # print(response)
     pass
 
@@ -144,7 +134,7 @@ def test_dynamo():
     
     for model in data:
         del_response = dynamo_cli.delete_item(
-            TableName=runid,
+            TableName=MSG_SUBJECT,
             Key={
                 'Model': {
                     'S': model
@@ -157,7 +147,21 @@ def test_dynamo():
 #with concurrent.futures.ThreadPoolExecutor() as executor:
 #    for i in range(0, 5):
 #        executor.submit(sendmessages, i)
-#    print('submitted = ' + runid)
+#    print('submitted = ' + MSG_SUBJECT)
+
+
+logging.warn("BORA FICAR MONSTRO!")
+
+TRACE_FILE = sys.argv[1] or "aP6"
+
+S3_BUCKET_INPUT = 'mestrado-dev-phyml-input'
+MSG_SUBJECT = "LOCALTEST_{}_{}".format(TRACE_FILE, datetime.now().isoformat()[0:19].replace(' ', '').replace(':', '-'))
+#MSG_SUBJECT = "VMware-aP6"
+SNS_TOPIC_INPUT = 'arn:aws:sns:us-east-2:280819064017:mestrado-dev-input'
+
+sns_cli = boto3.client('sns')
+dynamo_res = boto3.resource('dynamodb')
+dynamo_table = None
 
 try:
     dynamo_create()
@@ -167,4 +171,4 @@ try:
 finally:
     dynamo_clear()
 
-logging.warn('-- DONE -- ' + runid)
+logging.warn('-- DONE -- ' + MSG_SUBJECT)
