@@ -51,7 +51,7 @@ def dynamo_clear():
 
     if dynamo_table == None:
         return
-    
+
     table_entries = dynamo_countentries()
 
     dynamo_table.delete()
@@ -78,7 +78,7 @@ def collect():
 
 def sendmessages(i):
 
-    with io.open('traces/{}_cmds.log'.format(TRACE_FILE),mode='r',buffering=1048576,encoding='UTF-8',newline=None) as cmds:
+    with io.open('traces/{}_cmds.log'.format(TRACE_FILE), mode='r', buffering=1048576, encoding='UTF-8', newline=None) as cmds:
         dynamo_writer = dynamo_table.batch_writer()
         dynamo_writer.__enter__()
         for line in cmds:
@@ -89,7 +89,9 @@ def sendmessages(i):
 
             if line == "$$ STAGE COMPLETE $$":
                 unused_anything = 0
-                dynamo_writer.__exit__(unused_anything, unused_anything, unused_anything)
+                dynamo_writer.__exit__(
+                    unused_anything, unused_anything, unused_anything
+                )
 
                 collect()
 
@@ -97,8 +99,11 @@ def sendmessages(i):
                 dynamo_writer.__enter__()
                 continue
 
-            path, *args = line.rstrip('\n').split(' -',maxsplit=2)[1:]
-            message = { "path": "{}:/{}".format(S3_BUCKET_INPUT, path[2:]), "cmd": '-' + args[0] }
+            path, *args = line.rstrip('\n').split(' -', maxsplit=2)[1:]
+            message = {
+                "path": "{}:/{}".format(S3_BUCKET_INPUT, path[2:]), 
+                "cmd": '-' + args[0]
+            }
             msg_obj = {'default': json.dumps(message)}
             snsmessage = json.dumps(msg_obj)
 
@@ -121,7 +126,8 @@ def sendmessages(i):
 
 
 def test_dynamo():
-    data = ["GTR", "SYM+I", "GTR+I", "SYM", "GTR+G", "SYM+I+G", "SYM+G", "GTR+I+G"]
+    data = ["GTR", "SYM+I", "GTR+I", "SYM",
+            "GTR+G", "SYM+I+G", "SYM+G", "GTR+I+G"]
 
     dynamo_cli = boto3.client('dynamodb')
 
@@ -131,7 +137,7 @@ def test_dynamo():
                 'Model': model
             })
         pass
-    
+
     for model in data:
         del_response = dynamo_cli.delete_item(
             TableName=MSG_SUBJECT,
@@ -144,10 +150,10 @@ def test_dynamo():
         assert(del_response['ResponseMetadata']['HTTPStatusCode'] == 200)
 
 
-#with concurrent.futures.ThreadPoolExecutor() as executor:
-#    for i in range(0, 5):
-#        executor.submit(sendmessages, i)
-#    print('submitted = ' + MSG_SUBJECT)
+# with concurrent.futures.ThreadPoolExecutor() as executor:
+#     for i in range(0, 5):
+#         executor.submit(sendmessages, i)
+#     print('submitted = ' + MSG_SUBJECT)
 
 
 logging.warn("BORA FICAR MONSTRO!")
@@ -155,7 +161,10 @@ logging.warn("BORA FICAR MONSTRO!")
 TRACE_FILE = sys.argv[1] or "aP6"
 
 S3_BUCKET_INPUT = 'mestrado-dev-phyml-input'
-MSG_SUBJECT = "LOCALTEST_{}_{}".format(TRACE_FILE, datetime.now().isoformat()[0:19].replace(' ', '').replace(':', '-'))
+MSG_SUBJECT = "LOCALTEST_{}_{}".format(
+    TRACE_FILE, 
+    datetime.now().isoformat()[0:19].replace(' ', '').replace(':', '-')
+)
 #MSG_SUBJECT = "VMware-aP6"
 SNS_TOPIC_INPUT = 'arn:aws:sns:us-east-2:280819064017:mestrado-dev-input'
 
@@ -166,7 +175,7 @@ dynamo_table = None
 try:
     dynamo_create()
     sendmessages(0)
-    #test_dynamo()
+    # test_dynamo()
 
 finally:
     dynamo_clear()
