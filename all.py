@@ -9,7 +9,7 @@ import backoff
 from datetime import datetime
 
 logging.basicConfig(
-    level=logging.DEBUG,
+    level=logging.INFO,
     format='[%(asctime)s] - %(name)s - %(levelname)-8s - %(message)s'
 )
 OTHERS_LEVEL = logging.WARNING
@@ -23,7 +23,10 @@ logging.getLogger('asyncio').setLevel(OTHERS_LEVEL)
 
 
 def dynamo_create():
+    logging.warn('creating dynamo table: {}'.format(MSG_SUBJECT))
+
     global dynamo_table
+    
     dynamo_table = dynamo_res.create_table(
         TableName=MSG_SUBJECT,
         AttributeDefinitions=[
@@ -44,14 +47,17 @@ def dynamo_create():
         }
     )
     dynamo_table.wait_until_exists()
-    logging.info('dynamo table: {}'.format(MSG_SUBJECT))
+    logging.info('ok!')
 
 
 def dynamo_clear():
     global dynamo_table
 
     if dynamo_table == None:
+        logging.warn('dynamodb disposal not needed')
         return
+
+    logging.warn('disposing dynamodb resources')
 
     table_entries = dynamo_countentries()
 
@@ -60,6 +66,8 @@ def dynamo_clear():
 
     if table_entries > 0:
         raise Exception("Table still had itens!")
+
+    logging.info('ok!')
 
 
 def dynamo_countentries():
@@ -80,7 +88,7 @@ def collect():
 def sendmessages(i, phy_file):
 
     with io.open('traces/{}_cmds.log'.format(TRACE_FILE), mode='r', buffering=1048576, encoding='UTF-8', newline=None) as cmds:
-
+        
         for line in cmds:
             line = line.rstrip().replace('/path/data.phy', phy_file)
 
@@ -143,18 +151,19 @@ def test_dynamo():
 
 
 def s3_upload():
-    s3_cli = boto3.client('s3')
-
     src_file = 'traces/{}.phy'.format(TRACE_FILE)
     dst_file = '{}.phy'.format(TRACE_FILE)
 
+    logging.warn('uploading to S3 {}://{}'.format(S3_BUCKET_INPUT, dst_file))
+
+    s3_cli = boto3.client('s3')
     s3_cli.upload_file(
         src_file,
         S3_BUCKET_INPUT,
         dst_file
     )
 
-    logging.info('uploaded {}://{}'.format(S3_BUCKET_INPUT, dst_file))
+    logging.info('ok!')
 
     return dst_file
 
@@ -168,7 +177,7 @@ def argv(index, default):
 #     print('submitted = ' + MSG_SUBJECT)
 
 
-logging.warn("BORA FICAR MONSTRO!")
+logging.error("BORA FICAR MONSTRO!")
 
 TRACE_FILE = argv(1, "aP6")
 
@@ -193,4 +202,4 @@ try:
 finally:
     dynamo_clear()
 
-logging.warn('-- DONE -- ' + MSG_SUBJECT)
+logging.error('-- DONE -- ' + MSG_SUBJECT)
