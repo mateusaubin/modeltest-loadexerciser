@@ -44,6 +44,7 @@ def dynamo_create():
         }
     )
     dynamo_table.wait_until_exists()
+    logging.info('dynamo table: {}'.format(MSG_SUBJECT))
 
 
 def dynamo_clear():
@@ -79,8 +80,6 @@ def collect():
 def sendmessages(i, phy_file):
 
     with io.open('traces/{}_cmds.log'.format(TRACE_FILE), mode='r', buffering=1048576, encoding='UTF-8', newline=None) as cmds:
-        dynamo_writer = dynamo_table.batch_writer()
-        dynamo_writer.__enter__()
 
         for line in cmds:
             line = line.rstrip().replace('/path/data.phy', phy_file)
@@ -89,15 +88,7 @@ def sendmessages(i, phy_file):
                 continue
 
             if line == "$$ STAGE COMPLETE $$":
-                unused_anything = 0
-                dynamo_writer.__exit__(
-                    unused_anything, unused_anything, unused_anything
-                )
-
                 collect()
-
-                dynamo_writer = dynamo_table.batch_writer()
-                dynamo_writer.__enter__()
                 continue
 
             path, *args = line.rstrip().lstrip('/').split(' -', maxsplit=2)[1:]
@@ -111,17 +102,18 @@ def sendmessages(i, phy_file):
             logging.debug(snsmessage)
 
             modelname = args[0].split('--run_id')[1].split()[0]
-            dynamo_writer.put_item(Item={
+            dynamo_response = dynamo_table.put_item(Item={
                 'Model': modelname
             })
+            assert(dynamo_response['ResponseMetadata']['HTTPStatusCode'] == 200)
 
-            response = sns_cli.publish(
+            sns_response = sns_cli.publish(
                 TopicArn=SNS_TOPIC_INPUT,
                 Subject=MSG_SUBJECT,
                 Message=snsmessage,
                 MessageStructure='json'
             )
-            assert(response['ResponseMetadata']['HTTPStatusCode'] == 200)
+            assert(sns_response['ResponseMetadata']['HTTPStatusCode'] == 200)
     pass
 
 
@@ -161,6 +153,9 @@ def s3_upload():
         S3_BUCKET_INPUT,
         dst_file
     )
+
+    logging.info('uploaded {}://{}'.format(S3_BUCKET_INPUT, dst_file))
+
     return dst_file
 
 
