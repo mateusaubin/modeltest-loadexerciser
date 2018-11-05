@@ -1,9 +1,26 @@
+import io
 import boto3
 import json
 import string
+import logging
 import concurrent.futures
+import backoff
 from datetime import datetime
 
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='[%(asctime)s] - %(name)s - %(levelname)-8s - %(message)s'
+)
+OTHERS_LEVEL = logging.WARNING
+
+logging.getLogger('nose').setLevel(OTHERS_LEVEL)
+logging.getLogger('boto3').setLevel(OTHERS_LEVEL)
+logging.getLogger('urllib3').setLevel(OTHERS_LEVEL)
+logging.getLogger('botocore').setLevel(OTHERS_LEVEL)
+logging.getLogger('s3transfer').setLevel(OTHERS_LEVEL)
+logging.getLogger('asyncio').setLevel(OTHERS_LEVEL)
+
+logging.warn("BORA FICAR MONSTRO!")
 
 s3bucket = 'mestrado-dev-phyml-input'
 runid = "LOCALTEST_" + (datetime.now().isoformat()[0:19].replace(' ', '').replace(':', '-'))
@@ -45,51 +62,72 @@ def dynamo_clear():
     if dynamo_table == None:
         return
     
+    table_entries = dynamo_countentries()
+
+    dynamo_table.delete()
+    dynamo_table = None
+
+    if table_entries > 0:
+        raise Exception("Table still had itens!")
+
+
+def dynamo_countentries():
     scan_response = dynamo_table.scan(
         Select='COUNT',
         ConsistentRead=True
     )
     assert(scan_response['ResponseMetadata']['HTTPStatusCode'] == 200)
-
-    dynamo_table.delete()
-    dynamo_table = None
-
-    if scan_response['Count'] > 0:
-        raise Exception("Table still had itens!")
+    return scan_response['Count']
 
 
+@backoff.on_predicate(backoff.expo, max_value=300)
 def collect():
-    pass
+    table_entries = dynamo_countentries()
+    return table_entries == 0
 
 
 def sendmessages(i):
 
-    with open('cmdlines.log','r',1048576,'UTF-8') as cmds:
+    with io.open('cmdlines.log',mode='r',buffering=1048576,encoding='UTF-8',newline=None) as cmds:
+        dynamo_writer = dynamo_table.batch_writer()
+        dynamo_writer.__enter__()
         for line in cmds:
+            line = line.rstrip()
 
-            if (len(line) < 1):
+            if len(line) == 0 or line.isspace():
                 continue
 
             if line == "$$ STAGE COMPLETE $$":
+                unused_anything = 0
+                dynamo_writer.__exit__(unused_anything, unused_anything, unused_anything)
+
                 collect()
+
+                dynamo_writer = dynamo_table.batch_writer()
+                dynamo_writer.__enter__()
                 continue
 
             path, *args = line.rstrip('\n').split(' -',maxsplit=2)[1:]
-            message = { "path": "{}:/{}".format(s3bucket, path[2:]), "cmd": '-'+args[0] }
+            message = { "path": "{}:/{}".format(s3bucket, path[2:]), "cmd": '-' + args[0] }
             msg_obj = {'default': json.dumps(message)}
             snsmessage = json.dumps(msg_obj)
 
-            # print(snsmessage)
+            logging.debug(snsmessage)
 
-            response = sns_cli.publish(
-                TopicArn=topicarn,
-                Subject=runid,
-                Message=snsmessage,
-                MessageStructure='json'
-            )
-            assert(response['ResponseMetadata']['HTTPStatusCode'] == 200)
+            modelname = args[0].split('--run_id')[1].split()[0]
+            dynamo_writer.put_item(Item={
+                'Model': modelname
+            })
+
+            # response = sns_cli.publish(
+            #     TopicArn=topicarn,
+            #     Subject=runid,
+            #     Message=snsmessage,
+            #     MessageStructure='json'
+            # )
+            # assert(response['ResponseMetadata']['HTTPStatusCode'] == 200)
             # print(response)
-    print(i)
+    pass
 
 
 def test_dynamo():
@@ -123,10 +161,10 @@ def test_dynamo():
 
 try:
     dynamo_create()
-    #sendmessages(0)
-    test_dynamo()
+    sendmessages(0)
+    #test_dynamo()
 
 finally:
     dynamo_clear()
 
-print('-- DONE -- ' + runid)
+logging.warn('-- DONE -- ' + runid)
