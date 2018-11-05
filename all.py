@@ -76,13 +76,14 @@ def collect():
     return table_entries == 0
 
 
-def sendmessages(i):
+def sendmessages(i, phy_file):
 
     with io.open('traces/{}_cmds.log'.format(TRACE_FILE), mode='r', buffering=1048576, encoding='UTF-8', newline=None) as cmds:
         dynamo_writer = dynamo_table.batch_writer()
         dynamo_writer.__enter__()
+
         for line in cmds:
-            line = line.rstrip()
+            line = line.rstrip().replace('/path/data.phy', phy_file)
 
             if len(line) == 0 or line.isspace():
                 continue
@@ -99,9 +100,9 @@ def sendmessages(i):
                 dynamo_writer.__enter__()
                 continue
 
-            path, *args = line.rstrip('\n').split(' -', maxsplit=2)[1:]
+            path, *args = line.rstrip().lstrip('/').split(' -', maxsplit=2)[1:]
             message = {
-                "path": "{}:/{}".format(S3_BUCKET_INPUT, path[2:]), 
+                "path": "{}://{}".format(S3_BUCKET_INPUT, path[2:]), 
                 "cmd": '-' + args[0]
             }
             msg_obj = {'default': json.dumps(message)}
@@ -121,7 +122,6 @@ def sendmessages(i):
                 MessageStructure='json'
             )
             assert(response['ResponseMetadata']['HTTPStatusCode'] == 200)
-            # print(response)
     pass
 
 
@@ -150,6 +150,23 @@ def test_dynamo():
         assert(del_response['ResponseMetadata']['HTTPStatusCode'] == 200)
 
 
+def s3_upload():
+    s3_cli = boto3.client('s3')
+
+    src_file = 'traces/{}.phy'.format(TRACE_FILE)
+    dst_file = '{}.phy'.format(TRACE_FILE)
+
+    s3_cli.upload_file(
+        src_file,
+        S3_BUCKET_INPUT,
+        dst_file
+    )
+    return dst_file
+
+
+def argv(index, default):
+    return (sys.argv[index:index+1]+[default])[0]
+
 # with concurrent.futures.ThreadPoolExecutor() as executor:
 #     for i in range(0, 5):
 #         executor.submit(sendmessages, i)
@@ -158,9 +175,9 @@ def test_dynamo():
 
 logging.warn("BORA FICAR MONSTRO!")
 
-TRACE_FILE = sys.argv[1] or "aP6"
+TRACE_FILE = argv(1, "aP6")
 
-S3_BUCKET_INPUT = 'mestrado-dev-phyml-input'
+S3_BUCKET_INPUT = 'mestrado-dev-phyml'
 MSG_SUBJECT = "LOCALTEST_{}_{}".format(
     TRACE_FILE, 
     datetime.now().isoformat()[0:19].replace(' ', '').replace(':', '-')
@@ -173,8 +190,9 @@ dynamo_res = boto3.resource('dynamodb')
 dynamo_table = None
 
 try:
+    phy_file = s3_upload()
     dynamo_create()
-    sendmessages(0)
+    sendmessages(0, phy_file)
     # test_dynamo()
 
 finally:
