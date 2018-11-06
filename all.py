@@ -133,7 +133,7 @@ def dispatch(stage_data):
     pass
 
 
-@backoff.on_predicate(backoff.expo, max_value=300)
+@backoff.on_predicate(backoff.fibo, jitter=None, max_value=300)
 def collect():
     table_entries = dynamo_countentries()
     return table_entries == 0
@@ -141,7 +141,7 @@ def collect():
 
 def handle_stage(stage_num, stage_data):
 
-    logging.warn('dispatching requests of stage #{}'.format(stage_num))
+    logging.warn('dispatching requests of stage #{} [{}]'.format(stage_num, len(stage_data['sns'])))
     dispatch(stage_data)
 
     logging.warn('collecting results of stage #{}'.format(stage_num))
@@ -160,7 +160,7 @@ def sendmessages(phy_file):
             'sns': [], 
             'dynamo': [] 
         }
-        stage_count = 0
+        stage_count = 1
 
         for line in cmds:
             if '/tmp/jmodeltest' in line:
@@ -172,8 +172,8 @@ def sendmessages(phy_file):
                 continue
 
             if line == "$$ STAGE COMPLETE $$":
-                stage_count += 1
                 handle_stage(stage_count, stage_data)
+                stage_count += 1
                 continue
 
             path, *args = line.rstrip().lstrip('/').split(' -', maxsplit=2)[1:]
@@ -189,6 +189,10 @@ def sendmessages(phy_file):
             
             stage_data['dynamo'].append(modelname)
             stage_data['sns'].append(snsmessage)
+
+        # one last execution if there's anything left in the buffers
+        if len(stage_data['sns']) > 0:
+            handle_stage(stage_count, stage_data)
     pass
 
 
