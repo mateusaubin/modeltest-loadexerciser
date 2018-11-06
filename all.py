@@ -1,3 +1,4 @@
+import os
 import io
 import sys
 import boto3
@@ -75,8 +76,61 @@ def dynamo_countentries():
         Select='COUNT',
         ConsistentRead=True
     )
-    assert(scan_response['ResponseMetadata']['HTTPStatusCode'] == 200)
+    assert scan_response['ResponseMetadata']['HTTPStatusCode'] == 200
+    
     return scan_response['Count']
+
+
+def dispatch_parallel(index, sns, dynamo):
+    logging.info('received: #{} | sns=[{}] | dynamo=[{}]'.format(index,len(sns),len(dynamo)))
+
+    sns_cli = boto3.client('sns')
+    dyn_cli = boto3.client('dynamodb')
+
+    for i in range(0, len(sns)):
+        try:
+            dynamo_response = dyn_cli.put_item(
+                TableName=dynamo_table.name,
+                Item={
+                    'Model': {
+                        'S': dynamo[i]
+                    }
+                }
+            )
+            assert dynamo_response['ResponseMetadata']['HTTPStatusCode'] == 200
+
+            sns_response = sns_cli.publish(
+                TopicArn=SNS_TOPIC_INPUT,
+                Subject=MSG_SUBJECT,
+                Message=sns[i],
+                MessageStructure='json'
+            )
+            assert sns_response['ResponseMetadata']['HTTPStatusCode'] == 200
+        except:
+            logging.error(sys.exc_info()[0])
+    
+    pass
+
+
+def dispatch(stage_data):
+
+    assert len(stage_data['sns']) == len(stage_data['dynamo']), "Dynamo and SNS lists must be of the same length"
+
+    maxdop = os.cpu_count() * 4
+    maxlen = len(stage_data['sns'])
+    size = min(maxdop,maxlen)
+    
+    dynamo_range = list(stage_data['dynamo'][i::size] for i in range(size))
+    sns_range    = list(stage_data['sns'][i::size]    for i in range(size))
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=size) as executor:
+        futures = []
+        for i in range(0, size):
+            promise = executor.submit(dispatch_parallel, i, sns_range[i], dynamo_range[i])
+            futures.append(promise)
+
+        concurrent.futures.wait(futures)
+    pass
 
 
 @backoff.on_predicate(backoff.expo, max_value=300)
@@ -85,10 +139,29 @@ def collect():
     return table_entries == 0
 
 
-def sendmessages(i, phy_file):
+def handle_stage(stage_num, stage_data):
+
+    logging.warn('dispatching requests of stage #{}'.format(stage_num))
+    dispatch(stage_data)
+
+    logging.warn('collecting results of stage #{}'.format(stage_num))
+    collect()
+
+    stage_data['dynamo'].clear()
+    stage_data['sns'].clear()
+
+    logging.info('ok!')
+
+
+def sendmessages(phy_file):
 
     with io.open('traces/{}_cmds.log'.format(TRACE_FILE), mode='r', buffering=1048576, encoding='UTF-8', newline=None) as cmds:
-        
+        stage_data = { 
+            'sns': [], 
+            'dynamo': [] 
+        }
+        stage_count = 0
+
         for line in cmds:
             line = line.rstrip().replace('/path/data.phy', phy_file)
 
@@ -96,7 +169,8 @@ def sendmessages(i, phy_file):
                 continue
 
             if line == "$$ STAGE COMPLETE $$":
-                collect()
+                stage_count += 1
+                handle_stage(stage_count, stage_data)
                 continue
 
             path, *args = line.rstrip().lstrip('/').split(' -', maxsplit=2)[1:]
@@ -106,22 +180,12 @@ def sendmessages(i, phy_file):
             }
             msg_obj = {'default': json.dumps(message)}
             snsmessage = json.dumps(msg_obj)
+            modelname = args[0].split('--run_id')[1].split()[0]
 
             logging.debug(snsmessage)
-
-            modelname = args[0].split('--run_id')[1].split()[0]
-            dynamo_response = dynamo_table.put_item(Item={
-                'Model': modelname
-            })
-            assert(dynamo_response['ResponseMetadata']['HTTPStatusCode'] == 200)
-
-            sns_response = sns_cli.publish(
-                TopicArn=SNS_TOPIC_INPUT,
-                Subject=MSG_SUBJECT,
-                Message=snsmessage,
-                MessageStructure='json'
-            )
-            assert(sns_response['ResponseMetadata']['HTTPStatusCode'] == 200)
+            
+            stage_data['dynamo'].append(modelname)
+            stage_data['sns'].append(snsmessage)
     pass
 
 
@@ -171,10 +235,8 @@ def s3_upload():
 def argv(index, default):
     return (sys.argv[index:index+1]+[default])[0]
 
-# with concurrent.futures.ThreadPoolExecutor() as executor:
-#     for i in range(0, 5):
-#         executor.submit(sendmessages, i)
-#     print('submitted = ' + MSG_SUBJECT)
+
+# --- VAI COMEÇAR A BAIXARIA --- # 
 
 
 logging.error("BORA FICAR MONSTRO!")
@@ -196,8 +258,7 @@ dynamo_table = None
 try:
     phy_file = s3_upload()
     dynamo_create()
-    sendmessages(0, phy_file)
-    # test_dynamo()
+    sendmessages(phy_file)
 
 finally:
     dynamo_clear()
