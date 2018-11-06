@@ -77,7 +77,7 @@ def dynamo_countentries():
         ConsistentRead=True
     )
     assert scan_response['ResponseMetadata']['HTTPStatusCode'] == 200
-    
+
     return scan_response['Count']
 
 
@@ -163,6 +163,9 @@ def sendmessages(phy_file):
         stage_count = 0
 
         for line in cmds:
+            if '/tmp/jmodeltest' in line:
+                raise Exception('bad trace file!')
+            
             line = line.rstrip().replace('/path/data.phy', phy_file)
 
             if len(line) == 0 or line.isspace():
