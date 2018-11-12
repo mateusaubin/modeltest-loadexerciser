@@ -10,7 +10,7 @@ import backoff
 from datetime import datetime
 
 logging.basicConfig(
-    level=logging.INFO,
+    level=logging.DEBUG,
     format='[%(asctime)s] - %(name)s - %(levelname)-8s - %(message)s'
 )
 OTHERS_LEVEL = logging.WARNING
@@ -43,8 +43,8 @@ def dynamo_create():
             },
         ],
         ProvisionedThroughput={
-            'ReadCapacityUnits': 2,
-            'WriteCapacityUnits': 2
+            'ReadCapacityUnits':  1,
+            'WriteCapacityUnits': 1
         }
     )
     dynamo_table.wait_until_exists()
@@ -66,7 +66,7 @@ def dynamo_clear():
     dynamo_table = None
 
     if table_entries > 0:
-        raise Exception("Table still had itens!")
+        logging.error("Table still had {} itens!".format(table_entries))
 
     logging.info('ok!')
 
@@ -132,10 +132,16 @@ def dispatch(stage_data):
         concurrent.futures.wait(futures)
     pass
 
-
-@backoff.on_predicate(backoff.fibo, jitter=None, max_value=300)
+retry_lastcount = 0
+@backoff.on_predicate(backoff.fibo, jitter=None, max_value=150)
 def collect():
+    global retry_lastcount
+
     table_entries = dynamo_countentries()
+    if table_entries != retry_lastcount:
+        logging.debug("Worklist Update: {} ({})".format(table_entries, table_entries - retry_lastcount))
+        retry_lastcount = table_entries
+
     return table_entries == 0
 
 
@@ -251,9 +257,9 @@ logging.error("BORA FICAR MONSTRO!")
 TRACE_FILE = argv(1, "aP6")
 
 S3_BUCKET_INPUT = 'mestrado-dev-phyml'
-MSG_SUBJECT = "LOCALTEST_{}_{}".format(
-    TRACE_FILE, 
-    datetime.now().isoformat()[0:19].replace(' ', '').replace(':', '-')
+MSG_SUBJECT = "{}_{}".format(
+    datetime.now().isoformat()[0:16].replace(' ', '').replace(':', '-'),
+    TRACE_FILE
 )
 #MSG_SUBJECT = "VMware-aP6"
 SNS_TOPIC_INPUT = 'arn:aws:sns:us-east-2:280819064017:mestrado-dev-input'
@@ -262,10 +268,21 @@ sns_cli = boto3.client('sns')
 dynamo_res = boto3.resource('dynamodb')
 dynamo_table = None
 
+from timeit import default_timer as timer
+
 try:
     phy_file = s3_upload()
     dynamo_create()
+
+    start = timer()
+
+    # hotness
     sendmessages(phy_file)
+
+    duration = (timer() - start)
+    duration = int(duration * 1000)
+
+    logging.critical("REPORT Duration: {} ms".format(duration))
 
 finally:
     dynamo_clear()
