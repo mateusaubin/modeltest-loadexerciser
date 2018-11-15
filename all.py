@@ -21,6 +21,7 @@ logging.getLogger('urllib3').setLevel(OTHERS_LEVEL)
 logging.getLogger('botocore').setLevel(OTHERS_LEVEL)
 logging.getLogger('s3transfer').setLevel(OTHERS_LEVEL)
 logging.getLogger('asyncio').setLevel(OTHERS_LEVEL)
+logging.getLogger('backoff').setLevel(OTHERS_LEVEL)
 
 
 def dynamo_create():
@@ -100,7 +101,7 @@ def dispatch_parallel(index, sns, dynamo):
             assert dynamo_response['ResponseMetadata']['HTTPStatusCode'] == 200
 
             sns_response = sns_cli.publish(
-                TopicArn=SNS_TOPIC_INPUT,
+                TopicArn=STACK_OUTPUTS['inputtopic'],
                 Subject=MSG_SUBJECT,
                 Message=sns[i],
                 MessageStructure='json'
@@ -133,7 +134,7 @@ def dispatch(stage_data):
     pass
 
 retry_lastcount = 0
-@backoff.on_predicate(backoff.fibo, jitter=None, max_value=150)
+@backoff.on_predicate(backoff.constant, interval=5, jitter=None)
 def collect():
     global retry_lastcount
 
@@ -184,7 +185,7 @@ def sendmessages(phy_file):
 
             path, *args = line.rstrip().lstrip('/').split(' -', maxsplit=2)[1:]
             message = {
-                "path": "{}://{}".format(S3_BUCKET_INPUT, path[2:]), 
+                "path": "{}://{}".format(STACK_OUTPUTS['inputbucket'], path[2:]), 
                 "cmd": '-' + args[0]
             }
             msg_obj = {'default': json.dumps(message)}
@@ -229,14 +230,14 @@ def test_dynamo():
 
 def s3_upload():
     src_file = 'traces/{}.phy'.format(TRACE_FILE)
-    dst_file = '{}.phy'.format(TRACE_FILE)
+    dst_file = 'inputfiles/{}.phy'.format(MSG_SUBJECT)
 
-    logging.warn('uploading to S3 {}://{}'.format(S3_BUCKET_INPUT, dst_file))
+    logging.warn('uploading to S3 {}://{}'.format(STACK_OUTPUTS['inputbucket'], dst_file))
 
     s3_cli = boto3.client('s3')
     s3_cli.upload_file(
         src_file,
-        S3_BUCKET_INPUT,
+        STACK_OUTPUTS['inputbucket'],
         dst_file
     )
 
@@ -249,28 +250,43 @@ def argv(index, default):
     return (sys.argv[index:index+1]+[default])[0]
 
 
+def get_variables():
+    cfn_cli = boto3.client('cloudformation')
+
+    response = cfn_cli.describe_stacks(
+        StackName='mestrado-dev'
+    )
+    assert response['ResponseMetadata']['HTTPStatusCode'] == 200
+
+    STACK_OUTPUTS = { i['OutputKey'] : i['OutputValue'] for i in response['Stacks'][0]['Outputs']}
+    logging.info(json.dumps(STACK_OUTPUTS))
+
+    return STACK_OUTPUTS
+
+
 # --- VAI COMEÇAR A BAIXARIA --- # 
 
 
 logging.error("BORA FICAR MONSTRO!")
 
-TRACE_FILE = argv(1, "aP6")
+RUNDATE = datetime.now().isoformat()[0:16].replace(' ', '').replace(':', '-')
+TRACE_FILE = argv(1, "gusanosCOI.mafft")
 
-S3_BUCKET_INPUT = 'mestrado-dev-phyml'
+#S3_BUCKET_INPUT = 'mestrado-dev-phyml'
 MSG_SUBJECT = "{}_{}".format(
-    datetime.now().isoformat()[0:16].replace(' ', '').replace(':', '-'),
+    RUNDATE,
     TRACE_FILE
 )
 #MSG_SUBJECT = "VMware-aP6"
-SNS_TOPIC_INPUT = 'arn:aws:sns:us-east-2:280819064017:mestrado-dev-input'
 
-sns_cli = boto3.client('sns')
+#sns_cli = boto3.client('sns')
 dynamo_res = boto3.resource('dynamodb')
 dynamo_table = None
 
 from timeit import default_timer as timer
 
 try:
+    STACK_OUTPUTS = get_variables()
     phy_file = s3_upload()
     dynamo_create()
 
