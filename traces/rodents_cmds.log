@@ -1,0 +1,276 @@
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id GTR+I+G --no_memory_check -m 012345 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id SYM --no_memory_check -m 012345 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id GTR --no_memory_check -m 012345 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id SYM+G --no_memory_check -m 012345 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id GTR+G --no_memory_check -m 012345 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id SYM+I+G --no_memory_check -m 012345 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id GTR+I --no_memory_check -m 012345 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id SYM+I --no_memory_check -m 012345 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+
+
+$$ STAGE COMPLETE $$
+
+
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 001234+I+G+F --no_memory_check -m 001234 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 001234+I+G --no_memory_check -m 001234 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 001234+G+F --no_memory_check -m 001234 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 001234+G --no_memory_check -m 001234 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 001234+I+F --no_memory_check -m 001234 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 001234+I --no_memory_check -m 001234 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 001234+F --no_memory_check -m 001234 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 001234 --no_memory_check -m 001234 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010234+I+G+F --no_memory_check -m 010234 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010234+I+G --no_memory_check -m 010234 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010234+G+F --no_memory_check -m 010234 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010234+G --no_memory_check -m 010234 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010234+I+F --no_memory_check -m 010234 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010234+I --no_memory_check -m 010234 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010234+F --no_memory_check -m 010234 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010234 --no_memory_check -m 010234 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 011234+I+G+F --no_memory_check -m 011234 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 011234+I+G --no_memory_check -m 011234 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 011234+G+F --no_memory_check -m 011234 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 011234+G --no_memory_check -m 011234 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 011234+I+F --no_memory_check -m 011234 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 011234+I --no_memory_check -m 011234 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 011234+F --no_memory_check -m 011234 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 011234 --no_memory_check -m 011234 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012034+I+G+F --no_memory_check -m 012034 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012034+I+G --no_memory_check -m 012034 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012034+G+F --no_memory_check -m 012034 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012034+G --no_memory_check -m 012034 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012034+I+F --no_memory_check -m 012034 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012034+I --no_memory_check -m 012034 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012034+F --no_memory_check -m 012034 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012034 --no_memory_check -m 012034 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012134+I+G+F --no_memory_check -m 012134 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012134+I+G --no_memory_check -m 012134 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012134+G+F --no_memory_check -m 012134 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012134+G --no_memory_check -m 012134 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012134+I+F --no_memory_check -m 012134 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012134+I --no_memory_check -m 012134 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012134+F --no_memory_check -m 012134 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012134 --no_memory_check -m 012134 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012234+I+G+F --no_memory_check -m 012234 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012234+I+G --no_memory_check -m 012234 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012234+G+F --no_memory_check -m 012234 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012234+G --no_memory_check -m 012234 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012234+I+F --no_memory_check -m 012234 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012234+I --no_memory_check -m 012234 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012234+F --no_memory_check -m 012234 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012234 --no_memory_check -m 012234 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012304+I+G+F --no_memory_check -m 012304 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012304+I+G --no_memory_check -m 012304 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012304+G+F --no_memory_check -m 012304 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012304+G --no_memory_check -m 012304 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012304+I+F --no_memory_check -m 012304 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012304+I --no_memory_check -m 012304 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012304+F --no_memory_check -m 012304 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012304 --no_memory_check -m 012304 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TVM+I+G --no_memory_check -m 012314 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TVMef+I+G --no_memory_check -m 012314 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TVM+G --no_memory_check -m 012314 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TVMef+G --no_memory_check -m 012314 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TVM+I --no_memory_check -m 012314 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TVMef+I --no_memory_check -m 012314 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TVM --no_memory_check -m 012314 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TVMef --no_memory_check -m 012314 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012324+I+G+F --no_memory_check -m 012324 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012324+I+G --no_memory_check -m 012324 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012324+G+F --no_memory_check -m 012324 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012324+G --no_memory_check -m 012324 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012324+I+F --no_memory_check -m 012324 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012324+I --no_memory_check -m 012324 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012324+F --no_memory_check -m 012324 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012324 --no_memory_check -m 012324 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012334+I+G+F --no_memory_check -m 012334 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012334+I+G --no_memory_check -m 012334 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012334+G+F --no_memory_check -m 012334 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012334+G --no_memory_check -m 012334 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012334+I+F --no_memory_check -m 012334 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012334+I --no_memory_check -m 012334 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012334+F --no_memory_check -m 012334 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012334 --no_memory_check -m 012334 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012340+I+G+F --no_memory_check -m 012340 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012340+I+G --no_memory_check -m 012340 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012340+G+F --no_memory_check -m 012340 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012340+G --no_memory_check -m 012340 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012340+I+F --no_memory_check -m 012340 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012340+I --no_memory_check -m 012340 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012340+F --no_memory_check -m 012340 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012340 --no_memory_check -m 012340 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012341+I+G+F --no_memory_check -m 012341 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012341+I+G --no_memory_check -m 012341 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012341+G+F --no_memory_check -m 012341 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012341+G --no_memory_check -m 012341 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012341+I+F --no_memory_check -m 012341 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012341+I --no_memory_check -m 012341 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012341+F --no_memory_check -m 012341 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012341 --no_memory_check -m 012341 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012342+I+G+F --no_memory_check -m 012342 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012342+I+G --no_memory_check -m 012342 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012342+G+F --no_memory_check -m 012342 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012342+G --no_memory_check -m 012342 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012342+I+F --no_memory_check -m 012342 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012342+I --no_memory_check -m 012342 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012342+F --no_memory_check -m 012342 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012342 --no_memory_check -m 012342 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012343+I+G+F --no_memory_check -m 012343 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012343+I+G --no_memory_check -m 012343 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012343+G+F --no_memory_check -m 012343 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012343+G --no_memory_check -m 012343 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012343+I+F --no_memory_check -m 012343 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012343+I --no_memory_check -m 012343 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012343+F --no_memory_check -m 012343 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012343 --no_memory_check -m 012343 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012344+I+G+F --no_memory_check -m 012344 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012344+I+G --no_memory_check -m 012344 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012344+G+F --no_memory_check -m 012344 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012344+G --no_memory_check -m 012344 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012344+I+F --no_memory_check -m 012344 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012344+I --no_memory_check -m 012344 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012344+F --no_memory_check -m 012344 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 012344 --no_memory_check -m 012344 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+
+
+$$ STAGE COMPLETE $$
+
+
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 000123+I+G+F --no_memory_check -m 000123 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 000123+I+G --no_memory_check -m 000123 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 000123+G+F --no_memory_check -m 000123 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 000123+G --no_memory_check -m 000123 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 000123+I+F --no_memory_check -m 000123 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 000123+I --no_memory_check -m 000123 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 000123+F --no_memory_check -m 000123 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 000123 --no_memory_check -m 000123 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010023+I+G+F --no_memory_check -m 010023 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010023+I+G --no_memory_check -m 010023 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010023+G+F --no_memory_check -m 010023 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010023+G --no_memory_check -m 010023 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010023+I+F --no_memory_check -m 010023 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010023+I --no_memory_check -m 010023 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010023+F --no_memory_check -m 010023 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010023 --no_memory_check -m 010023 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010123+I+G+F --no_memory_check -m 010123 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010123+I+G --no_memory_check -m 010123 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010123+G+F --no_memory_check -m 010123 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010123+G --no_memory_check -m 010123 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010123+I+F --no_memory_check -m 010123 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010123+I --no_memory_check -m 010123 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010123+F --no_memory_check -m 010123 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010123 --no_memory_check -m 010123 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010203+I+G+F --no_memory_check -m 010203 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010203+I+G --no_memory_check -m 010203 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010203+G+F --no_memory_check -m 010203 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010203+G --no_memory_check -m 010203 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010203+I+F --no_memory_check -m 010203 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010203+I --no_memory_check -m 010203 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010203+F --no_memory_check -m 010203 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010203 --no_memory_check -m 010203 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010213+I+G+F --no_memory_check -m 010213 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010213+I+G --no_memory_check -m 010213 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010213+G+F --no_memory_check -m 010213 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010213+G --no_memory_check -m 010213 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010213+I+F --no_memory_check -m 010213 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010213+I --no_memory_check -m 010213 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010213+F --no_memory_check -m 010213 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010213 --no_memory_check -m 010213 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010223+I+G+F --no_memory_check -m 010223 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010223+I+G --no_memory_check -m 010223 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010223+G+F --no_memory_check -m 010223 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010223+G --no_memory_check -m 010223 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010223+I+F --no_memory_check -m 010223 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010223+I --no_memory_check -m 010223 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010223+F --no_memory_check -m 010223 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010223 --no_memory_check -m 010223 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010230+I+G+F --no_memory_check -m 010230 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010230+I+G --no_memory_check -m 010230 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010230+G+F --no_memory_check -m 010230 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010230+G --no_memory_check -m 010230 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010230+I+F --no_memory_check -m 010230 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010230+I --no_memory_check -m 010230 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010230+F --no_memory_check -m 010230 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010230 --no_memory_check -m 010230 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010231+I+G+F --no_memory_check -m 010231 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010231+I+G --no_memory_check -m 010231 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010231+G+F --no_memory_check -m 010231 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010231+G --no_memory_check -m 010231 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010231+I+F --no_memory_check -m 010231 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010231+I --no_memory_check -m 010231 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010231+F --no_memory_check -m 010231 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010231 --no_memory_check -m 010231 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM2+I+G --no_memory_check -m 010232 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM2ef+I+G --no_memory_check -m 010232 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM2+G --no_memory_check -m 010232 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM2ef+G --no_memory_check -m 010232 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM2+I --no_memory_check -m 010232 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM2ef+I --no_memory_check -m 010232 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM2 --no_memory_check -m 010232 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TIM2ef --no_memory_check -m 010232 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010233+I+G+F --no_memory_check -m 010233 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010233+I+G --no_memory_check -m 010233 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010233+G+F --no_memory_check -m 010233 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010233+G --no_memory_check -m 010233 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010233+I+F --no_memory_check -m 010233 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010233+I --no_memory_check -m 010233 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010233+F --no_memory_check -m 010233 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010233 --no_memory_check -m 010233 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+
+
+$$ STAGE COMPLETE $$
+
+
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 000012+I+G+F --no_memory_check -m 000012 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 000012+I+G --no_memory_check -m 000012 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 000012+G+F --no_memory_check -m 000012 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 000012+G --no_memory_check -m 000012 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 000012+I+F --no_memory_check -m 000012 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 000012+I --no_memory_check -m 000012 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 000012+F --no_memory_check -m 000012 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 000012 --no_memory_check -m 000012 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010002+I+G+F --no_memory_check -m 010002 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010002+I+G --no_memory_check -m 010002 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010002+G+F --no_memory_check -m 010002 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010002+G --no_memory_check -m 010002 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010002+I+F --no_memory_check -m 010002 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010002+I --no_memory_check -m 010002 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010002+F --no_memory_check -m 010002 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010002 --no_memory_check -m 010002 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010012+I+G+F --no_memory_check -m 010012 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010012+I+G --no_memory_check -m 010012 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010012+G+F --no_memory_check -m 010012 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010012+G --no_memory_check -m 010012 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010012+I+F --no_memory_check -m 010012 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010012+I --no_memory_check -m 010012 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010012+F --no_memory_check -m 010012 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010012 --no_memory_check -m 010012 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TrN+I+G --no_memory_check -m 010020 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TrNef+I+G --no_memory_check -m 010020 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TrN+G --no_memory_check -m 010020 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TrNef+G --no_memory_check -m 010020 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TrN+I --no_memory_check -m 010020 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TrNef+I --no_memory_check -m 010020 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TrN --no_memory_check -m 010020 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id TrNef --no_memory_check -m 010020 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010021+I+G+F --no_memory_check -m 010021 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010021+I+G --no_memory_check -m 010021 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010021+G+F --no_memory_check -m 010021 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010021+G --no_memory_check -m 010021 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010021+I+F --no_memory_check -m 010021 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010021+I --no_memory_check -m 010021 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010021+F --no_memory_check -m 010021 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010021 --no_memory_check -m 010021 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010022+I+G+F --no_memory_check -m 010022 -f m -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010022+I+G --no_memory_check -m 010022 -f 0.25,0.25,0.25,0.25 -v e -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010022+G+F --no_memory_check -m 010022 -f m -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010022+G --no_memory_check -m 010022 -f 0.25,0.25,0.25,0.25 -c 4 -a e -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010022+I+F --no_memory_check -m 010022 -f m -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010022+I --no_memory_check -m 010022 -f 0.25,0.25,0.25,0.25 -v e -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010022+F --no_memory_check -m 010022 -f m -c 1 -o tlr -s BEST
+ -i /path/data.phy -d nt -n 1 -b 0 --r_seed 12345 --run_id 010022 --no_memory_check -m 010022 -f 0.25,0.25,0.25,0.25 -c 1 -o tlr -s BEST
+
+
+$$ STAGE COMPLETE $$
+
+
