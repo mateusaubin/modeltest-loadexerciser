@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import os
 import io
 import sys
@@ -10,8 +11,12 @@ import backoff
 from datetime import datetime
 
 logging.basicConfig(
-    level=logging.DEBUG,
-    format='[%(asctime)s] - %(name)s - %(levelname)-8s - %(message)s'
+    level=logging.INFO,
+    format='[%(asctime)s] - %(name)s - %(levelname)-8s - %(message)s',
+    handlers=[
+        logging.FileHandler("log/self.txt", mode='w'),
+        logging.StreamHandler()
+    ]
 )
 OTHERS_LEVEL = logging.WARNING
 
@@ -44,8 +49,8 @@ def dynamo_create():
             },
         ],
         ProvisionedThroughput={
-            'ReadCapacityUnits':  1,
-            'WriteCapacityUnits': 1
+            'ReadCapacityUnits':  2,
+            'WriteCapacityUnits': 2
         }
     )
     dynamo_table.wait_until_exists()
@@ -83,7 +88,7 @@ def dynamo_countentries():
 
 
 def dispatch_parallel(index, sns, dynamo):
-    logging.info('received: #{} | sns=[{}] | dynamo=[{}]'.format(index,len(sns),len(dynamo)))
+    logging.debug('received: #{} | sns=[{}] | dynamo=[{}]'.format(index,len(sns),len(dynamo)))
 
     sns_cli = boto3.client('sns')
     dyn_cli = boto3.client('dynamodb')
@@ -114,12 +119,14 @@ def dispatch_parallel(index, sns, dynamo):
 
 
 def dispatch(stage_data):
+    global retry_lastcount
 
     assert len(stage_data['sns']) == len(stage_data['dynamo']), "Dynamo and SNS lists must be of the same length"
 
-    maxdop = os.cpu_count() * 4
+    maxdop = os.cpu_count() * 2
     maxlen = len(stage_data['sns'])
     size = min(maxdop,maxlen)
+    retry_lastcount = maxlen
     
     dynamo_range = list(stage_data['dynamo'][i::size] for i in range(size))
     sns_range    = list(stage_data['sns'][i::size]    for i in range(size))
@@ -140,7 +147,7 @@ def collect():
 
     table_entries = dynamo_countentries()
     if table_entries != retry_lastcount:
-        logging.debug("Worklist Update: {} ({})".format(table_entries, table_entries - retry_lastcount))
+        logging.info("Worklist Update: {} ({})".format(table_entries, table_entries - retry_lastcount))
         retry_lastcount = table_entries
 
     return table_entries == 0
@@ -228,6 +235,25 @@ def test_dynamo():
         assert(del_response['ResponseMetadata']['HTTPStatusCode'] == 200)
 
 
+def upload_logs():
+    dirname = 'log'
+    filename = 'cloudwatch.txt'
+
+    shell_cmd = "mkdir {} ; (awslogs get /aws/lambda/mestrado-dev-modeltest --no-color --timestamp --start='2w' ; awslogs get /aws/lambda/mestrado-dev-forwarder --no-color --timestamp --start='2w' ; awslogs get /aws/batch/job --no-color --timestamp --start='2w' ; ) | sort -u -k 3 > {}/{}"
+    os.system(shell_cmd.format(dirname,dirname,filename))
+
+    s3_cli = boto3.client('s3')
+    for list_filename in os.listdir('{}/'.format(dirname)):
+        dst_file = '{}/{}/{}'.format(MSG_SUBJECT, dirname, list_filename)
+        list_filename = '{}/{}'.format(dirname,list_filename)
+
+        s3_cli.upload_file(
+            list_filename,
+            STACK_OUTPUTS['inputbucket'],
+            dst_file
+        )
+    pass
+
 def s3_upload():
     src_file = 'traces/{}.phy'.format(TRACE_FILE)
     dst_file = 'inputfiles/{}.phy'.format(MSG_SUBJECT)
@@ -270,7 +296,7 @@ def get_variables():
 logging.error("BORA FICAR MONSTRO!")
 
 RUNDATE = datetime.now().isoformat()[0:16].replace(' ', '').replace(':', '-')
-TRACE_FILE = argv(1, "gusanosCOI.mafft")
+TRACE_FILE = argv(1, "aP6")
 
 #S3_BUCKET_INPUT = 'mestrado-dev-phyml'
 MSG_SUBJECT = "{}_{}".format(
@@ -299,6 +325,8 @@ try:
     duration = int(duration * 1000)
 
     logging.critical("REPORT Duration: {} ms".format(duration))
+
+    upload_logs()
 
 finally:
     dynamo_clear()
