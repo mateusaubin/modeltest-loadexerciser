@@ -236,6 +236,20 @@ def test_dynamo():
         assert(del_response['ResponseMetadata']['HTTPStatusCode'] == 200)
 
 
+def reset_logs():
+    shell_pattern = "aws logs delete-log-group --log-group-name {0} && aws logs create-log-group --log-group-name {0}"
+    shell_discover = "aws logs describe-log-groups --output text | awk '{ print $4 }'"
+
+    f = os.popen(shell_discover)
+    logs = f.readlines()
+
+    cmds = list(map(lambda logname: shell_pattern.format(logname.rstrip()), logs))
+    cmds_exec = ' && '.join(cmds)
+
+    os.system(cmds_exec)
+    pass
+
+
 def upload_logs():
     dirname = 'log'
     filename = 'cloudwatch.txt'
@@ -328,6 +342,7 @@ try:
     logging.critical("REPORT Duration: {} ms".format(duration))
 
     upload_logs()
+    reset_logs()
 
 finally:
     dynamo_clear()
