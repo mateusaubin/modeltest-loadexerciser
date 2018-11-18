@@ -141,7 +141,8 @@ def dispatch(stage_data):
     pass
 
 retry_lastcount = 0
-@backoff.on_predicate(backoff.constant, interval=5, jitter=None)
+#@backoff.on_predicate(backoff.constant, interval=5, jitter=None)
+@backoff.on_predicate(backoff.fibo, max_value=5, jitter=None)
 def collect():
     global retry_lastcount
 
