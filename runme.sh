@@ -5,8 +5,8 @@ sudo apt update
 sudo apt install awscli
 sudo apt install python3-pip
 
-git clone https://github.com/mateusaubin/modeltest-loadexerciser.git
-cd modeltest-loadexerciser
+#git clone https://github.com/mateusaubin/modeltest-loadexerciser.git
+#cd modeltest-loadexerciser
 
 pip3 install -r requirements.txt
 
