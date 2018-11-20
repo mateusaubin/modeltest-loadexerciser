@@ -2,6 +2,7 @@
 set -e # bail-out if anything goes wrong
 
 sudo apt update
+sudo apt install awscli
 sudo apt install python3-pip
 
 git clone https://github.com/mateusaubin/modeltest-loadexerciser.git
