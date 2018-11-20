@@ -113,7 +113,7 @@ def dispatch_parallel(index, sns, dynamo):
             )
             assert sns_response['ResponseMetadata']['HTTPStatusCode'] == 200
         except:
-            logging.error(sys.exc_info()[0])
+            logging.exception("dispatch_parallel")
     
     pass
 
