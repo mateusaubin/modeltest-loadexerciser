@@ -64,15 +64,16 @@ def dynamo_clear():
         logging.warn('dynamodb disposal not needed')
         return
 
-    logging.warn('disposing dynamodb resources')
-
     table_entries = dynamo_countentries()
 
+    logging.warn('disposing dynamodb resources')
     dynamo_table.delete()
-    dynamo_table = None
 
     if table_entries > 0:
         logging.error("Table still had {} itens!".format(table_entries))
+    
+    dynamo_table.wait_until_not_exists()
+    dynamo_table = None
 
     logging.info('ok!')
 
@@ -328,8 +329,8 @@ from timeit import default_timer as timer
 
 try:
     STACK_OUTPUTS = get_variables()
-    phy_file = s3_upload()
     dynamo_create()
+    phy_file = s3_upload()
 
     start = timer()
 
