@@ -12,5 +12,21 @@ pip3 install -r requirements.txt
 
 export AWS_DEFAULT_REGION=$(curl -m5 -sS http://169.254.169.254/latest/meta-data/placement/availability-zone | sed 's/.$//')
 
-mkdir log/
-./all.py $1
+mkdir log/ | true
+
+sl=30
+for i in `seq 1 11`;
+do
+  echo "---------------------------------------------"
+  echo "              step $i                        "
+  echo "---------------------------------------------"
+
+  ./all.py $1
+
+  echo "---------------------------------------------"
+  echo "---------------------------------------------"
+  echo "           sleeping $sl"
+  echo "---------------------------------------------"
+  echo "---------------------------------------------"
+  sleep $sl
+done 

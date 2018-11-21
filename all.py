@@ -72,7 +72,7 @@ def dynamo_clear():
     if table_entries > 0:
         logging.error("Table still had {} itens!".format(table_entries))
     
-    dynamo_table.wait_until_not_exists()
+    # dynamo_table.wait_until_not_exists()
     dynamo_table = None
 
     logging.info('ok!')
@@ -311,7 +311,7 @@ def get_variables():
 
 logging.error("BORA FICAR MONSTRO!")
 
-RUNDATE = datetime.now().isoformat()[0:16].replace(' ', '').replace(':', '-')
+RUNDATE = datetime.now().isoformat()[0:19].replace(' ', '').replace(':', '-')
 TRACE_FILE = argv(1, "aP6")
 
 #S3_BUCKET_INPUT = 'mestrado-dev-phyml'
