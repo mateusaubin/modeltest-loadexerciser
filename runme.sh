@@ -20,7 +20,7 @@ sl=${3:=1800}
 iters=${2:=11}
 
 echo ""
-echo "SLEEP: $Sl"
+echo "SLEEP: $sl"
 echo "ITERS: $iters"
 echo ""
 
