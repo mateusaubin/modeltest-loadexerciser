@@ -16,8 +16,8 @@ export AWS_DEFAULT_REGION=$(curl -m5 -sS http://169.254.169.254/latest/meta-data
 
 mkdir log/ | true
 
-sl=${3:-1800}
-iters=${2:-11}
+sl=${3:=1800}
+iters=${2:=11}
 
 echo ""
 echo "SLEEP: $Sl"
