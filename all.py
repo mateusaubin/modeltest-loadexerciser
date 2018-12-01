@@ -238,25 +238,32 @@ def test_dynamo():
 
 
 def reset_logs():
-    shell_pattern = "aws logs delete-log-group --log-group-name {0} && aws logs create-log-group --log-group-name {0}"
     shell_discover = "aws logs describe-log-groups --output text | awk '{ print $4 }'"
+    delete_pattern = "aws logs delete-log-group --log-group-name {0} && aws logs create-log-group --log-group-name {0}"
 
     f = os.popen(shell_discover)
     logs = f.readlines()
 
-    cmds = list(map(lambda logname: shell_pattern.format(logname.rstrip()), logs))
+    upload_logs(logs)
+
+    cmds = list(map(lambda logname: delete_pattern.format(logname.rstrip()), logs))
     cmds_exec = ' && '.join(cmds)
 
     os.system(cmds_exec)
     pass
 
 
-def upload_logs():
+def upload_logs(logs):
     dirname = 'log'
     filename = 'cloudwatch.txt'
+    output_pattern = "mkdir {} ; ({}) | sort -u -k 3 > {}/{}"
+    awslogs_pattern = "awslogs get {} --timestamp --start='2w' --no-color"
 
-    shell_cmd = "mkdir {} ; (awslogs get /aws/lambda/mestrado-dev-modeltest --no-color --timestamp --start='2w' ; awslogs get /aws/lambda/mestrado-dev-forwarder --no-color --timestamp --start='2w' ; awslogs get /aws/batch/job --no-color --timestamp --start='2w' ; ) | sort -u -k 3 > {}/{}"
-    os.system(shell_cmd.format(dirname,dirname,filename))
+    cmds = list(map(lambda logname: awslogs_pattern.format(logname.rstrip()), logs))
+    inner_cmd = ' ; '.join(cmds)
+
+    exec_cmd = output_pattern.format(dirname, inner_cmd, dirname, filename)
+    os.system(exec_cmd)
 
     s3_cli = boto3.client('s3')
     for list_filename in os.listdir('{}/'.format(dirname)):
@@ -269,6 +276,7 @@ def upload_logs():
             dst_file
         )
     pass
+
 
 def s3_upload():
     src_file = 'traces/{}.phy'.format(TRACE_FILE)
@@ -342,7 +350,6 @@ try:
 
     logging.critical("REPORT Duration: {} ms".format(duration))
 
-    upload_logs()
     reset_logs()
 
 finally:
