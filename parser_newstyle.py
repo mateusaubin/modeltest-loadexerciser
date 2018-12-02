@@ -7,6 +7,7 @@ import datetime
 from dateutil.parser import parse as dateparse
 from dateutil import tz
 import json
+import sys
 
 
 def assertCounts(log_data):
@@ -27,15 +28,14 @@ def to_timedelta(ms_interval):
 
 
 def extract_data(logfilepath):
+    state = 0
+    stage = None
     result = {
         'stages': [],
         'total_models': 0
     }
-    f = open(logfilepath)
 
-    state = 0
-    stage = None
-    for line in f:
+    for line in open(logfilepath):
         logfields = line.rstrip().split('- ')
 
         if state == 0 and 'INFO' in logfields[2]:
@@ -78,12 +78,32 @@ def extract_data(logfilepath):
 
 
 def extract_cloud(logfilepath, result):
-    f = open(logfilepath)
-
     batch_models = 0
     accum = { }
-    for line in f:
+    compute = { }
+
+    for line in open(logfilepath):
         logfields = line.rstrip().split(' ', 3)
+
+        if 'REPORT' in logfields[3]:
+            regex_pattern = r"REPORT RequestId: [a-z0-9-]{36}\sDuration: ([0-9\.]+) ms"
+            if logfields[0] == '/aws/batch/job':
+                # CRITICAL | REPORT RequestId: abb650b3-9226-432b-9db8-db2a3a201e55 Duration: 33442 ms
+                regex_pattern = r"CRITICAL \| " + regex_pattern
+                pass
+
+            elif logfields[0].startswith('/aws/lambda'):
+                # REPORT RequestId: 9a1fec8d-f62b-11e8-91de-25dc3ddf5870	Duration: 97.68 ms	Billed Duration: 100 ms
+                regex_pattern = regex_pattern + r"\sBilled Duration: ([0-9\.]+) ms"
+                pass
+
+            matches = re.search(regex_pattern, logfields[3])
+            if matches and matches.groups():
+                groups = matches.groups()
+
+                compute['raw'] = compute.get('raw', 0) + float(groups[0])
+                compute['billed'] = compute.get('billed', 0) + (float(groups[1]) if len(groups) > 1 else 0)
+                compute[logfields[0]] = compute.get(logfields[0], 0) + float(groups[0])
 
         if logfields[0] == '/aws/batch/job' and logfields[3].startswith('CRITICAL'):
 
@@ -101,8 +121,14 @@ def extract_cloud(logfilepath, result):
     for k in [x for x in accum.keys() if x < 99]:
         result['stages'][k]['batch'] = accum[k]
 
+    # convert compute units from ms to timedelta
+    for k in compute.keys():
+        compute[k] = datetime.timedelta(milliseconds=compute[k])
+
     result['total_batch'] = batch_models
     result['total_batch_missing'] = accum.get(99, 0)
+    result['total_compute'] = compute.get('raw', 0)
+    result['compute'] = compute
 
 
 dir = expanduser('~') + '/aws-s3/mestrado-dev-phyml'
@@ -128,6 +154,7 @@ for subdir in sorted([d for d in os.listdir(dir) if d != 'inputfiles' and os.pat
             str(log_data['l-timeout']),
             str(log_data['b-cpus']),
             str(log_data['total_batch'] / log_data['total_models']),
+            str(log_data['total_compute']),
             json.dumps(log_data, default=str) # indent=4, sort_keys=True,
         ]
         print('\t'.join(result))
