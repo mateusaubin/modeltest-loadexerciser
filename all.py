@@ -9,6 +9,7 @@ import logging
 import concurrent.futures
 import backoff
 from datetime import datetime
+from datetime import timedelta
 
 logging.basicConfig(
     level=logging.INFO,
@@ -142,15 +143,28 @@ def dispatch(stage_data):
     pass
 
 retry_lastcount = 0
+retry_firstattempt = None
 #@backoff.on_predicate(backoff.constant, interval=5, jitter=None)
 @backoff.on_predicate(backoff.fibo, max_value=5, jitter=None)
 def collect():
     global retry_lastcount
+    global retry_firstattempt
 
     table_entries = dynamo_countentries()
     if table_entries != retry_lastcount:
         logging.info("Worklist Update: {} ({})".format(table_entries, table_entries - retry_lastcount))
         retry_lastcount = table_entries
+        retry_firstattempt = None
+
+    if KILL_ON_TIMEOUT:
+        if retry_firstattempt == None:
+            retry_firstattempt = datetime.now()
+        else:
+            diff = datetime.now() - retry_firstattempt
+            retry_maxwait = timedelta(seconds=int(STACK_OUTPUTS['lambdatimeout'])*5)
+            if diff > retry_maxwait:
+                logging.error("Tired of waiting for a response... aborting! ({})".format(str(diff)))
+                raise EnvironmentError("Tired of waiting")
 
     return table_entries == 0
 
@@ -321,6 +335,7 @@ logging.error("BORA FICAR MONSTRO!")
 
 RUNDATE = datetime.now().isoformat()[0:19].replace(' ', '').replace(':', '-')
 TRACE_FILE = argv(1, "aP6")
+KILL_ON_TIMEOUT = bool(argv(2, 'False'))
 
 #S3_BUCKET_INPUT = 'mestrado-dev-phyml'
 MSG_SUBJECT = "{}_{}".format(
@@ -350,9 +365,8 @@ try:
 
     logging.critical("REPORT Duration: {} ms".format(duration))
 
-    reset_logs()
-
 finally:
+    reset_logs()
     dynamo_clear()
 
 logging.error('-- DONE -- ' + MSG_SUBJECT)
