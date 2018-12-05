@@ -2,6 +2,7 @@
 import os
 import io
 import sys
+import math
 import boto3
 import json
 import string
@@ -92,8 +93,8 @@ def dynamo_countentries():
 def dispatch_parallel(index, sns, dynamo):
     logging.debug('received: #{} | sns=[{}] | dynamo=[{}]'.format(index,len(sns),len(dynamo)))
 
-    sns_cli = boto3.client('sns')
     dyn_cli = boto3.client('dynamodb')
+    b_cli = boto3.client('batch')
 
     for i in range(0, len(sns)):
         try:
@@ -107,13 +108,16 @@ def dispatch_parallel(index, sns, dynamo):
             )
             assert dynamo_response['ResponseMetadata']['HTTPStatusCode'] == 200
 
-            sns_response = sns_cli.publish(
-                TopicArn=STACK_OUTPUTS['inputtopic'],
-                Subject=MSG_SUBJECT,
-                Message=sns[i],
-                MessageStructure='json'
+            payload = json.loads(json.loads(sns[i])['default'])
+            payload['jmodeltestrunid'] = MSG_SUBJECT
+            payload['sourcerequestid'] = dynamo[i].replace('+','-')
+            b_response = b_cli.submit_job(
+                jobName       = payload['sourcerequestid'],
+                jobDefinition = BATCH_JOBDEF,
+                jobQueue      = BATCH_QUEUE,
+                parameters    = payload
             )
-            assert sns_response['ResponseMetadata']['HTTPStatusCode'] == 200
+            assert b_response['ResponseMetadata']['HTTPStatusCode'] == 200
         except:
             logging.exception("dispatch_parallel")
     
@@ -140,6 +144,30 @@ def dispatch(stage_data):
             futures.append(promise)
 
         concurrent.futures.wait(futures)
+
+
+    b_cli = boto3.client('batch')
+    b_response = b_cli.describe_compute_environments(computeEnvironments=[BATCH_COMPUTE])
+    assert b_response['ResponseMetadata']['HTTPStatusCode'] == 200, "Bad response from Batch.Describe_ComputeEnvironments"
+
+    envdata = b_response['computeEnvironments'][0]
+    desired = envdata['computeResources']['desiredvCpus']
+    maximum = envdata['computeResources']['maxvCpus']
+
+    runnableToCpuRatio=(3/4)
+    gross_new_cpu = (maxlen) * runnableToCpuRatio
+    net_new_cpu = math.ceil(gross_new_cpu / 2.0) * 2    # rounded to nearest even number
+    new_cpus = min(maximum, net_new_cpu)
+
+    if (desired < new_cpus):
+        logging.warn("Triggering update to '{}' CPUs in ComputeEnvironment".format(new_cpus))
+        b_response = b_cli.update_compute_environment(
+            computeEnvironment=BATCH_COMPUTE,
+            computeResources={
+                'desiredvCpus': new_cpus
+            }
+        )
+        assert b_response['ResponseMetadata']['HTTPStatusCode'] == 200
     pass
 
 retry_lastcount = 0
@@ -226,31 +254,6 @@ def sendmessages(phy_file):
     pass
 
 
-def test_dynamo():
-    data = ["GTR", "SYM+I", "GTR+I", "SYM",
-            "GTR+G", "SYM+I+G", "SYM+G", "GTR+I+G"]
-
-    dynamo_cli = boto3.client('dynamodb')
-
-    with dynamo_table.batch_writer() as batch:
-        for model in data:
-            batch.put_item(Item={
-                'Model': model
-            })
-        pass
-
-    for model in data:
-        del_response = dynamo_cli.delete_item(
-            TableName=MSG_SUBJECT,
-            Key={
-                'Model': {
-                    'S': model
-                }
-            }
-        )
-        assert(del_response['ResponseMetadata']['HTTPStatusCode'] == 200)
-
-
 def reset_logs():
     shell_discover = "aws logs describe-log-groups --output text | awk '{ print $4 }'"
     delete_pattern = "aws logs delete-log-group --log-group-name {0} && aws logs create-log-group --log-group-name {0}"
@@ -335,7 +338,10 @@ logging.error("BORA FICAR MONSTRO!")
 
 RUNDATE = datetime.now().isoformat()[0:19].replace(' ', '').replace(':', '-')
 TRACE_FILE = argv(1, "aP6")
-KILL_ON_TIMEOUT = eval(argv(2, 'False'))
+KILL_ON_TIMEOUT = False
+BATCH_COMPUTE = argv(3, "")
+BATCH_QUEUE = argv(4, "")
+BATCH_JOBDEF = argv(5, "")
 
 #S3_BUCKET_INPUT = 'mestrado-dev-phyml'
 MSG_SUBJECT = "{}_{}".format(
