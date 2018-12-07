@@ -40,6 +40,7 @@ def extract_data(logfilepath):
 
         if state == 0 and 'INFO' in logfields[2]:
             logstr = json.loads(logfields[3])
+            result['scenario'] = logstr.get('runner') or logstr.get('batchrunner') or ' -- default -- '
             result['b-cpus'] = int(logstr['batchclustercpus'])
             result['l-power'] = int(logstr['lambdapower'])
             result['l-timeout'] = int(logstr['lambdatimeout'])
@@ -60,19 +61,30 @@ def extract_data(logfilepath):
             result['total_models'] = result['total_models'] + int(found[1])
             state = 11
 
-        if state == 11 and 'INFO' in logfields[2] and logfields[3] == 'ok!':
+        if (state == 11 and 'INFO'  in logfields[2] and logfields[3] == 'ok!') or \
+           (state == 11 and 'ERROR' in logfields[2] and 'Tired of waiting for a response' in logfields[3]):
             stage['finish'] = dateparse(logfields[0][1:-2])
             stage['duration'] = (stage['finish'] - stage['start'])
             result['stages'].append(stage)
 
+            if 'ERROR' in logfields[2]:
+                result['runtime'] = datetime.timedelta(seconds=-1)
+                state = 999
+            else:
+                state = 10
+
             stage = None
-            state = 10
 
         if state == 10 and 'CRITICAL' in logfields[2]:
             duration = logfields[3].split(' ')[2]
             runtime = to_timedelta(duration)
             result['runtime'] = runtime
             state = 999
+
+        if state == 999:
+            break
+
+    assert state == 999, "Exiting 'extract_data' on non-final state"
 
     return result
 
@@ -147,6 +159,7 @@ for subdir in sorted([d for d in os.listdir(dir) if d != 'inputfiles' and os.pat
         extract_cloud(watchfile, log_data)
 
         result = [
+            log_data['scenario'],
             input_file,
             subdir,
             str(log_data['runtime']),
