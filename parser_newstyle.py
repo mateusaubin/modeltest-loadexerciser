@@ -8,6 +8,7 @@ from dateutil.parser import parse as dateparse
 from dateutil import tz
 import json
 import sys
+import math
 
 
 def assertCounts(log_data):
@@ -89,19 +90,73 @@ def extract_data(logfilepath):
     return result
 
 
+def FitLogTimestampToStage(log_timestamp, stages):
+
+    # timestamp do log = sempre UTC
+    # stage{start/finish} pode set BR 
+
+    try:
+        logdate_direct = dateparse(log_timestamp).replace(tzinfo=None)
+        logdate_tzfix = dateparse(log_timestamp).astimezone(tz.tzlocal()).replace(tzinfo=None)
+        
+        res_dr = [idx for idx, x in enumerate(stages) if x['start'] <= logdate_direct <= x['finish']]
+        res_tz = [idx for idx, x in enumerate(stages) if x['start'] <= logdate_tzfix <= x['finish']]
+        
+        index = [ ]
+        index.extend(res_dr)
+        index.extend(res_tz)
+        return min(index)
+    except:
+        return None
+
+
+def DetectSource(log_source):
+    ACCEPTED = ['modeltest', 'batch', 'forwarder']
+
+    try:
+        indexofdash = log_source.rfind('-')
+        source = log_source[indexofdash+1:] if indexofdash else log_source
+
+        for proposed in ACCEPTED:
+            if proposed in source:
+                return proposed
+    except:
+        pass
+        
+    return None
+
+
 def extract_cloud(logfilepath, result):
+    f_size = os.path.getsize(logfilepath)
+    if f_size < 1024:
+        return
+
+    ERROR_STAGE = 99
+
     batch_models = 0
-    accum = { }
     compute = { }
+
+    jobs_in_stage = { ERROR_STAGE: { } }
+    lambda_runners = { ERROR_STAGE: { } }
+    lambda_failers = { ERROR_STAGE: { } }
+    for stageNum in range(len(result['stages'])):
+        jobs_in_stage[stageNum] = { }
+        lambda_runners[stageNum] = { }
+        lambda_failers[stageNum] = { }
 
     for line in open(logfilepath):
         logfields = line.rstrip().split(' ', 3)
+
+        stage_index = FitLogTimestampToStage(logfields[2], result['stages'])
+        stage_index = ERROR_STAGE if stage_index == None else stage_index
+        source = DetectSource(logfields[0])
 
         if 'REPORT' in logfields[3]:
             regex_pattern = r"REPORT RequestId: [a-z0-9-]{36}\sDuration: ([0-9\.]+) ms"
             if logfields[0] == '/aws/batch/job':
                 # CRITICAL | REPORT RequestId: abb650b3-9226-432b-9db8-db2a3a201e55 Duration: 33442 ms
                 regex_pattern = r"CRITICAL \| " + regex_pattern
+                batch_models += 1
                 pass
 
             elif logfields[0].startswith('/aws/lambda'):
@@ -117,30 +172,47 @@ def extract_cloud(logfilepath, result):
                 compute['billed'] = compute.get('billed', 0) + (float(groups[1]) if len(groups) > 1 else 0)
                 compute[logfields[0]] = compute.get(logfields[0], 0) + float(groups[0])
 
-        if logfields[0] == '/aws/batch/job' and logfields[3].startswith('CRITICAL'):
+            jobs_in_stage[stage_index][source] = jobs_in_stage.get(stage_index, { }).get(source, 0) + 1
 
-            logdate_direct = dateparse(logfields[2]).replace(tzinfo=None)
-            logdate_tzfix = dateparse(logfields[2]).astimezone(tz.tzlocal()).replace(tzinfo=None)
-            
-            res_dr = [idx for idx, x in enumerate(result['stages']) if x['start'] <= logdate_direct <= x['finish']]
-            res_tz = [idx for idx, x in enumerate(result['stages']) if x['start'] <= logdate_tzfix <= x['finish']]
-            
-            index = [ res_dr[0] if res_dr else 99, res_tz[0] if res_tz else 99 ]
-            add_to = min(index)
-            accum[add_to] = accum.get(add_to, 0) + 1
-            batch_models = batch_models + 1
+
+        if logfields[0].startswith('/aws/lambda'):
+            # lambda container id
+            lcid = logfields[1].index(']')+1
+            lcid = logfields[1][lcid:]
+
+            if logfields[3].startswith('START'):
+                lcid += '|' + logfields[3].split(' ')[2]
+                lambda_runners[stage_index].setdefault(source, set()).add(lcid)
+
+            elif 'Task timed out after' in logfields[3]:
+                lcid += '|' + logfields[3].split(' ',2)[1]
+                lambda_failers[stage_index].setdefault(source, set()).add(lcid)
     
-    for k in [x for x in accum.keys() if x < 99]:
-        result['stages'][k]['batch'] = accum[k]
+    
+    for stageNum in [x for x in jobs_in_stage.keys() if x < ERROR_STAGE]:
+
+        for kind in jobs_in_stage[stageNum].keys():
+            result['stages'][stageNum][kind] = jobs_in_stage[stageNum][kind]
+            
+            # if some lambdas failed we have to count differently due to retries (mostly due to time-outs)
+            if  kind in lambda_failers[stageNum].keys():
+                lambda_success = lambda_runners[stageNum][kind] - lambda_failers[stageNum][kind]
+                result['stages'][stageNum][kind] = len(lambda_success)
+
+        # check = result['stages'][stageNum].get('batch',0) + result['stages'][stageNum].get('modeltest',0)
+        # exp = result['stages'][stageNum]['models']
+        # assert abs(check - exp) <= math.ceil(exp * 0.1) , "Models don't match [Exp: {} | Act: {} | Stage: {}]".format(exp, check, stageNum)
+
 
     # convert compute units from ms to timedelta
-    for k in compute.keys():
-        compute[k] = datetime.timedelta(milliseconds=compute[k])
+    for kind in compute.keys():
+        compute[kind] = datetime.timedelta(milliseconds=compute[kind])
 
     result['total_batch'] = batch_models
-    result['total_batch_missing'] = accum.get(99, 0)
+    result['total_orphans'] = jobs_in_stage.get(ERROR_STAGE, 0) # jobs which didn't fit in any stage
     result['total_compute'] = compute.get('raw', 0)
     result['compute'] = compute
+    pass
 
 
 dir = expanduser('~') + '/aws-s3/mestrado-dev-phyml'
@@ -166,13 +238,13 @@ for subdir in sorted([d for d in os.listdir(dir) if d != 'inputfiles' and os.pat
             str(log_data['l-power']),
             str(log_data['l-timeout']),
             str(log_data['b-cpus']),
-            str(log_data['total_batch'] / log_data['total_models']),
-            str(log_data['total_compute']),
+            str(log_data['total_batch'] / log_data['total_models']) if 'total_batch' in log_data.keys() else '??',
+            str(log_data['total_compute'] if 'total_compute' in log_data.keys() else '??')
             json.dumps(log_data, default=str) # indent=4, sort_keys=True,
         ]
         print('\t'.join(result))
-    except AssertionError:
-        print('###       {}       ###  assertion'.format(subdir))
-    except:
-        print('###       {}       ###'.format(subdir))
+    except AssertionError as ase:
+        print('###       {}       ###  assertion: {}'.format(subdir, str(ase)))
+    except as ex:
+        print('###       {}       ### {}'.format(subdir, str(ex)))
     pass
