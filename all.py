@@ -227,31 +227,6 @@ def sendmessages(phy_file):
     pass
 
 
-def test_dynamo():
-    data = ["GTR", "SYM+I", "GTR+I", "SYM",
-            "GTR+G", "SYM+I+G", "SYM+G", "GTR+I+G"]
-
-    dynamo_cli = boto3.client('dynamodb')
-
-    with dynamo_table.batch_writer() as batch:
-        for model in data:
-            batch.put_item(Item={
-                'Model': model
-            })
-        pass
-
-    for model in data:
-        del_response = dynamo_cli.delete_item(
-            TableName=MSG_SUBJECT,
-            Key={
-                'Model': {
-                    'S': model
-                }
-            }
-        )
-        assert(del_response['ResponseMetadata']['HTTPStatusCode'] == 200)
-
-
 def reset_logs():
     shell_discover = "aws logs describe-log-groups --output text | awk '{ print $4 }'"
     delete_pattern = "aws logs delete-log-group --log-group-name {0} && aws logs create-log-group --log-group-name {0}"
