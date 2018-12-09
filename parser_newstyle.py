@@ -239,12 +239,12 @@ for subdir in sorted([d for d in os.listdir(dir) if d != 'inputfiles' and os.pat
             str(log_data['l-timeout']),
             str(log_data['b-cpus']),
             str(log_data['total_batch'] / log_data['total_models']) if 'total_batch' in log_data.keys() else '??',
-            str(log_data['total_compute'] if 'total_compute' in log_data.keys() else '??')
+            str(log_data['total_compute'] if 'total_compute' in log_data.keys() else '??'),
             json.dumps(log_data, default=str) # indent=4, sort_keys=True,
         ]
         print('\t'.join(result))
     except AssertionError as ase:
         print('###       {}       ###  assertion: {}'.format(subdir, str(ase)))
-    except as ex:
+    except Exception as ex:
         print('###       {}       ### {}'.format(subdir, str(ex)))
     pass
