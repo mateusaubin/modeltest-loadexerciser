@@ -2,6 +2,7 @@
 import os
 import io
 import sys
+import time
 import boto3
 import json
 import string
@@ -254,6 +255,9 @@ def test_dynamo():
 def reset_logs():
     shell_discover = "aws logs describe-log-groups --output text | awk '{ print $4 }'"
     delete_pattern = "aws logs delete-log-group --log-group-name {0} && aws logs create-log-group --log-group-name {0}"
+
+    # sleep to let logs flush so we don't miss recent events
+    time.sleep(1*60)
 
     f = os.popen(shell_discover)
     logs = f.readlines()
