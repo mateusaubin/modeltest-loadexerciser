@@ -28,6 +28,10 @@ def match_0(line):
     start = dateparse(found[1])
     end = dateparse(found[2])
     diff = end-start
+    
+    if diff.total_seconds() < 3:
+        return
+
     diff_ms = to_str(diff)
 
     print('{}\t{}\t{}\t{}'.format(id,procs,phyfile,diff_ms))
@@ -40,11 +44,12 @@ for subdir in sorted([d for d in os.listdir(dir) if os.path.isdir(os.path.join(d
 
     curfile = os.path.join(dir,subdir,'#_stats.txt')
     f = open(curfile)
+
     for line in f:
         try:
             match_0(line)
-        except:
-            print('###       {}       ###'.format(curfile))
+        except Exception as exc:
+            print('###       {}       ### {}'.format(curfile, str(exc)))
         pass
 
     pass
