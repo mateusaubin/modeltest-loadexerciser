@@ -129,6 +129,7 @@ def DetectSource(log_source):
 def extract_cloud(logfilepath, result):
     f_size = os.path.getsize(logfilepath)
     if f_size < 1024:
+        result['strange'] = 'Cloudwatch logs missing'
         return
 
     ERROR_STAGE = 99
@@ -199,20 +200,48 @@ def extract_cloud(logfilepath, result):
                 lambda_success = lambda_runners[stageNum][kind] - lambda_failers[stageNum][kind]
                 result['stages'][stageNum][kind] = len(lambda_success)
 
-        # check = result['stages'][stageNum].get('batch',0) + result['stages'][stageNum].get('modeltest',0)
-        # exp = result['stages'][stageNum]['models']
-        # assert abs(check - exp) <= math.ceil(exp * 0.1) , "Models don't match [Exp: {} | Act: {} | Stage: {}]".format(exp, check, stageNum)
+        check = result['stages'][stageNum].get('batch',0) + result['stages'][stageNum].get('modeltest',0)
+        exp = result['stages'][stageNum]['models']
+        #assert abs(check - exp) <= math.ceil(exp * 0.1) , "Models don't match [Exp: {} | Act: {} | Stage: {}]".format(exp, check, stageNum)
+        if abs(check - exp) >= math.ceil(exp * 0.1):
+            result['strange'] = "Models don't match"
+    
 
+    # distinct lambda execution units
+    lambda_executors = len(
+        { runid[:runid.rfind('|')] for stage 
+            in lambda_runners for runid 
+                in lambda_runners[stage].get('modeltest', []) }
+    )
 
     # convert compute units from ms to timedelta
-    for kind in compute.keys():
-        compute[kind] = datetime.timedelta(milliseconds=compute[kind])
+    compute = {kind: datetime.timedelta(milliseconds=compute[kind]) for kind in compute}
 
+    # jobs which didn't fit in any stage
+    orphaned_jobs = sum([ jobs_in_stage[ERROR_STAGE][kind] for kind in jobs_in_stage.get(ERROR_STAGE, []) ])
+
+
+    result['l-cpus'] = lambda_executors
     result['total_batch'] = batch_models
-    result['total_orphans'] = jobs_in_stage.get(ERROR_STAGE, 0) # jobs which didn't fit in any stage
+    result['total_orphans'] = orphaned_jobs 
     result['total_compute'] = compute.get('raw', 0)
     result['compute'] = compute
+
+    if batch_models > result['total_models']:
+        result['strange'] = 'More batch than Models'
+    if orphaned_jobs > 9:
+        result['strange'] = 'Orphaned jobs'
+    
     pass
+
+
+def to_str(obj):
+    if isinstance(obj, (datetime.timedelta)):
+        hours, remainder = divmod(obj.total_seconds(), 3600)
+        minutes, seconds = divmod(remainder, 60)
+        formatted = '{0:02}:{1:02}:{2:02}'.format(int(hours),int(minutes), int(seconds))
+        return formatted
+    return str(obj)
 
 
 dir = expanduser('~') + '/aws-s3/mestrado-dev-phyml'
@@ -234,13 +263,15 @@ for subdir in sorted([d for d in os.listdir(dir) if d != 'inputfiles' and os.pat
             log_data['scenario'],
             input_file,
             subdir,
-            str(log_data['runtime']),
+            to_str(log_data['runtime']),
+            str(log_data.get('l-cpus', 0)),
             str(log_data['l-power']),
             str(log_data['l-timeout']),
             str(log_data['b-cpus']),
-            str(log_data['total_batch'] / log_data['total_models']) if 'total_batch' in log_data.keys() else '??',
-            str(log_data['total_compute'] if 'total_compute' in log_data.keys() else '??'),
-            json.dumps(log_data, default=str) # indent=4, sort_keys=True,
+            str(log_data['total_batch'] / log_data['total_models'] if 'total_batch' in log_data.keys() else 0.0),
+            to_str(log_data['total_compute'] if 'total_compute' in log_data.keys() else 0),
+            log_data.get('strange', ''),
+            json.dumps(log_data, default=to_str) # indent=4, sort_keys=True,
         ]
         print('\t'.join(result))
     except AssertionError as ase:
