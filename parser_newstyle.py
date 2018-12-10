@@ -239,7 +239,13 @@ def to_str(obj):
     if isinstance(obj, (datetime.timedelta)):
         hours, remainder = divmod(obj.total_seconds(), 3600)
         minutes, seconds = divmod(remainder, 60)
-        formatted = '{0:02}:{1:02}:{2:02}'.format(int(hours),int(minutes), int(seconds))
+        days, hours = divmod(hours, 24)
+
+        baseformat = '{1:02}:{2:02}:{3:02}'
+        if (days > 0):
+            baseformat = '{0:}.' + baseformat
+        
+        formatted = baseformat.format(int(days),int(hours),int(minutes), int(seconds))
         return formatted
     return str(obj)
 

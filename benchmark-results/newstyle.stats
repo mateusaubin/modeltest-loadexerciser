@@ -1,5 +1,5 @@
  -- default -- 	gusanosCOI.mafft	2018-11-18T18-21_gusanosCOI.mafft	01:20:11	225	1536	60	16	1.0	15:28:53	Models don't match
-stamatakis-59	stamatakis-59	2018-11-18T19-51_stamatakis-59	02:11:17	352	1536	45	16	1.0	37:41:11	Models don't match
+stamatakis-59	stamatakis-59	2018-11-18T19-51_stamatakis-59	02:11:17	352	1536	45	16	1.0	1.13:41:11	Models don't match
 aP6	aP6	2018-11-18T22-58_aP6	00:00:42	8	1536	45	16	0.0	00:01:11	Models don't match
 gusanos16S.mafft	gusanos16S.mafft	2018-11-18T23-06_gusanos16S.mafft	00:48:41	208	1536	45	16	0.44140625	07:26:32	
 gusanos16S.mafft	gusanos16S.mafft	2018-11-20T01-39_gusanos16S.mafft	00:48:59	0	1536	45	16	0.0	0	Cloudwatch logs missing
@@ -87,17 +87,17 @@ HIV_vpu.ref2	HIV_vpu.ref2	2018-11-21T04-44-00_HIV_vpu.ref2	00:04:09	120	1536	60	
 HIV_vpu.ref2	HIV_vpu.ref2	2018-11-21T04-49-07_HIV_vpu.ref2	00:06:09	120	1536	60	16	0.0	01:46:19	
 HIV_vpu.ref2	HIV_vpu.ref2	2018-11-21T04-56-14_HIV_vpu.ref2	00:03:56	120	1536	60	16	0.0	01:45:24	
 HIV_vpu.ref2	HIV_vpu.ref2	2018-11-21T05-01-08_HIV_vpu.ref2	00:04:05	120	1536	60	16	0.0	01:44:39	
-stamatakis-59	stamatakis-59	2018-11-21T13-38-13_stamatakis-59	03:45:07	128	1536	60	8	1.0	31:01:49	Models don't match
-stamatakis-59	stamatakis-59	2018-11-21T17-24-25_stamatakis-59	03:52:14	128	1536	60	8	1.0	30:57:10	Models don't match
-stamatakis-59	stamatakis-59	2018-11-21T22-47-26_stamatakis-59	03:45:53	127	1536	60	8	1.0	31:12:32	Models don't match
-stamatakis-59	stamatakis-59	2018-11-22T04-24-21_stamatakis-59	03:46:27	128	1536	60	8	1.0	30:48:51	Models don't match
-stamatakis-59	stamatakis-59	2018-11-22T08-11-52_stamatakis-59	03:36:41	127	1536	60	8	1.0	30:32:58	Models don't match
-stamatakis-59	stamatakis-59	2018-11-22T13-25-27_stamatakis-59	03:42:43	128	1536	60	8	1.015625	31:11:03	More batch than Models
-stamatakis-59	stamatakis-59	2018-11-22T17-38-44_stamatakis-59	03:38:23	127	1536	60	8	1.0	30:45:29	Models don't match
-stamatakis-59	stamatakis-59	2018-11-22T21-45-50_stamatakis-59	03:36:30	127	1536	60	8	1.0	31:07:49	Models don't match
-stamatakis-59	stamatakis-59	2018-11-23T01-52-54_stamatakis-59	03:38:43	127	1536	60	8	1.0	31:00:33	Models don't match
-stamatakis-59	stamatakis-59	2018-11-23T06-02-13_stamatakis-59	03:38:29	127	1536	60	8	1.0	30:50:17	Models don't match
-stamatakis-59	stamatakis-59	2018-11-23T10-11-36_stamatakis-59	03:37:34	127	1536	60	8	1.0	30:38:46	Models don't match
+stamatakis-59	stamatakis-59	2018-11-21T13-38-13_stamatakis-59	03:45:07	128	1536	60	8	1.0	1.07:01:49	Models don't match
+stamatakis-59	stamatakis-59	2018-11-21T17-24-25_stamatakis-59	03:52:14	128	1536	60	8	1.0	1.06:57:10	Models don't match
+stamatakis-59	stamatakis-59	2018-11-21T22-47-26_stamatakis-59	03:45:53	127	1536	60	8	1.0	1.07:12:32	Models don't match
+stamatakis-59	stamatakis-59	2018-11-22T04-24-21_stamatakis-59	03:46:27	128	1536	60	8	1.0	1.06:48:51	Models don't match
+stamatakis-59	stamatakis-59	2018-11-22T08-11-52_stamatakis-59	03:36:41	127	1536	60	8	1.0	1.06:32:58	Models don't match
+stamatakis-59	stamatakis-59	2018-11-22T13-25-27_stamatakis-59	03:42:43	128	1536	60	8	1.015625	1.07:11:03	More batch than Models
+stamatakis-59	stamatakis-59	2018-11-22T17-38-44_stamatakis-59	03:38:23	127	1536	60	8	1.0	1.06:45:29	Models don't match
+stamatakis-59	stamatakis-59	2018-11-22T21-45-50_stamatakis-59	03:36:30	127	1536	60	8	1.0	1.07:07:49	Models don't match
+stamatakis-59	stamatakis-59	2018-11-23T01-52-54_stamatakis-59	03:38:43	127	1536	60	8	1.0	1.07:00:33	Models don't match
+stamatakis-59	stamatakis-59	2018-11-23T06-02-13_stamatakis-59	03:38:29	127	1536	60	8	1.0	1.06:50:17	Models don't match
+stamatakis-59	stamatakis-59	2018-11-23T10-11-36_stamatakis-59	03:37:34	127	1536	60	8	1.0	1.06:38:46	Models don't match
 stamatakis-59	Hex_EF1a	2018-11-23T15-46-46_Hex_EF1a	00:01:03	120	1536	60	8	0.0	00:23:52	Models don't match
 stamatakis-59	Hex_EF1a	2018-11-23T15-50-02_Hex_EF1a	00:00:53	120	1536	60	8	0.0	00:23:01	Models don't match
 stamatakis-59	Hex_EF1a	2018-11-23T16-07-23_Hex_EF1a	00:00:58	119	1536	60	8	0.0	00:23:37	Models don't match
@@ -120,14 +120,14 @@ stamatakis-59	18S_insects2	2018-11-24T00-30-15_18S_insects2	00:00:20	101	1536	60
 stamatakis-59	18S_insects2	2018-11-24T00-34-03_18S_insects2	00:00:20	102	1536	60	8	0.0	00:05:29	Orphaned jobs
 stamatakis-59	18S_insects2	2018-11-24T00-37-51_18S_insects2	00:00:19	101	1536	60	8	0.0	00:04:32	Orphaned jobs
 stamatakis-59	18S_insects2	2018-11-24T00-41-37_18S_insects2	00:00:20	103	1536	60	8	0.0	00:04:15	Orphaned jobs
-stamatakis-59	stamatakis-59	2018-11-24T01-18-47_stamatakis-59	02:13:28	128	1536	60	16	1.0	30:19:12	Models don't match
-stamatakis-59	stamatakis-59	2018-11-24T04-02-48_stamatakis-59	02:14:53	127	1536	60	16	1.0	30:39:19	Models don't match
-stamatakis-59	stamatakis-59	2018-11-24T06-48-13_stamatakis-59	02:14:29	127	1536	60	16	1.0	30:38:45	Models don't match
-stamatakis-59	stamatakis-59	2018-11-24T09-33-15_stamatakis-59	02:18:45	128	1536	60	16	1.0	30:47:41	Models don't match
-stamatakis-59	stamatakis-59	2018-11-24T12-22-33_stamatakis-59	02:10:38	127	1536	60	16	1.0	30:50:21	Models don't match
-stamatakis-59	stamatakis-59	2018-11-24T15-03-45_stamatakis-59	02:10:43	127	1536	60	16	1.0	30:34:36	Models don't match
-stamatakis-59	stamatakis-59	2018-11-24T17-45-00_stamatakis-59	02:07:17	126	1536	60	16	1.0	30:20:51	Models don't match
-stamatakis-59	stamatakis-59	2018-11-24T20-22-49_stamatakis-59	02:12:54	128	1536	60	16	1.0	30:36:40	Models don't match
+stamatakis-59	stamatakis-59	2018-11-24T01-18-47_stamatakis-59	02:13:28	128	1536	60	16	1.0	1.06:19:12	Models don't match
+stamatakis-59	stamatakis-59	2018-11-24T04-02-48_stamatakis-59	02:14:53	127	1536	60	16	1.0	1.06:39:19	Models don't match
+stamatakis-59	stamatakis-59	2018-11-24T06-48-13_stamatakis-59	02:14:29	127	1536	60	16	1.0	1.06:38:45	Models don't match
+stamatakis-59	stamatakis-59	2018-11-24T09-33-15_stamatakis-59	02:18:45	128	1536	60	16	1.0	1.06:47:41	Models don't match
+stamatakis-59	stamatakis-59	2018-11-24T12-22-33_stamatakis-59	02:10:38	127	1536	60	16	1.0	1.06:50:21	Models don't match
+stamatakis-59	stamatakis-59	2018-11-24T15-03-45_stamatakis-59	02:10:43	127	1536	60	16	1.0	1.06:34:36	Models don't match
+stamatakis-59	stamatakis-59	2018-11-24T17-45-00_stamatakis-59	02:07:17	126	1536	60	16	1.0	1.06:20:51	Models don't match
+stamatakis-59	stamatakis-59	2018-11-24T20-22-49_stamatakis-59	02:12:54	128	1536	60	16	1.0	1.06:36:40	Models don't match
 stamatakis-59	stamatakis-59	2018-11-24T23-06-16_stamatakis-59	00:00:24	4	1536	60	16	0.0	00:00:17	Models don't match
 stamatakis-59	example	2018-11-25T00-56-17_example	00:00:25	93	1536	60	16	0.0	00:06:24	Models don't match
 stamatakis-59	example	2018-11-25T01-00-10_example	00:00:27	93	1536	60	16	0.0	00:06:52	
@@ -140,8 +140,8 @@ stamatakis-59	example	2018-11-25T01-23-45_example	00:00:26	87	1536	60	16	0.0	00:
 stamatakis-59	example	2018-11-25T01-27-38_example	00:00:23	98	1536	60	16	0.0	00:05:51	Models don't match
 stamatakis-59	example	2018-11-25T01-31-29_example	00:00:29	87	1536	60	16	0.0	00:06:27	Models don't match
 stamatakis-59	example	2018-11-25T01-35-26_example	00:00:25	88	1536	60	16	0.0	00:06:03	Models don't match
-stamatakis-59	stamatakis-59	2018-11-25T01-53-41_stamatakis-59	02:09:15	136	1536	60	16	1.0	30:52:38	Models don't match
-stamatakis-59	stamatakis-59	2018-11-25T04-33-29_stamatakis-59	02:15:01	127	1536	60	16	1.0	30:29:08	Models don't match
+stamatakis-59	stamatakis-59	2018-11-25T01-53-41_stamatakis-59	02:09:15	136	1536	60	16	1.0	1.06:52:38	Models don't match
+stamatakis-59	stamatakis-59	2018-11-25T04-33-29_stamatakis-59	02:15:01	127	1536	60	16	1.0	1.06:29:08	Models don't match
 gusanosCOI.mafft	gusanosCOI.mafft	2018-11-25T07-03-31_gusanosCOI.mafft	01:21:40	230	1536	60	8	0.49642857142857144	12:16:44	
 gusanosCOI.mafft	gusanosCOI.mafft	2018-11-25T08-55-48_gusanosCOI.mafft	01:19:54	215	1536	60	8	0.5142857142857142	12:45:47	
 gusanosCOI.mafft	gusanosCOI.mafft	2018-11-25T10-46-18_gusanosCOI.mafft	01:18:57	227	1536	60	8	0.5071428571428571	12:33:29	
@@ -248,17 +248,17 @@ mixed	primate-mtDNA	2018-11-28T16-12-16_primate-mtDNA	00:01:32	120	1536	60	16	0.
 mixed	primate-mtDNA	2018-11-28T16-16-17_primate-mtDNA	00:01:39	120	1536	60	16	0.0	00:35:10	
 mixed	primate-mtDNA	2018-11-28T16-20-24_primate-mtDNA	00:01:35	120	1536	60	16	0.0	00:34:25	Models don't match
 mixed	primate-mtDNA	2018-11-28T16-24-27_primate-mtDNA	00:01:33	120	1536	60	16	0.0	00:34:15	Models don't match
-mixed	stamatakis-59	2018-11-28T16-41-22_stamatakis-59	01:23:55	127	1536	60	36	1.0	30:14:22	
-mixed	stamatakis-59	2018-11-28T18-15-50_stamatakis-59	01:20:25	127	1536	60	36	1.0078125	30:47:37	More batch than Models
-mixed	stamatakis-59	2018-11-28T19-46-49_stamatakis-59	01:19:26	127	1536	60	36	1.0	30:21:51	
-mixed	stamatakis-59	2018-11-28T21-16-48_stamatakis-59	01:25:56	127	1536	60	36	1.0	29:55:56	
-mixed	stamatakis-59	2018-11-28T22-53-16_stamatakis-59	01:24:26	127	1536	60	36	1.0	30:07:21	
-mixed	stamatakis-59	2018-11-29T00-28-20_stamatakis-59	01:27:56	128	1536	60	36	1.0	30:03:57	
-mixed	stamatakis-59	2018-11-29T02-06-50_stamatakis-59	01:17:56	127	1536	60	36	1.0	29:59:57	
-mixed	stamatakis-59	2018-11-29T03-35-19_stamatakis-59	01:27:56	127	1536	60	36	1.0	30:29:20	
-mixed	stamatakis-59	2018-11-29T05-13-48_stamatakis-59	01:19:56	127	1536	60	36	1.0	30:41:44	
-mixed	stamatakis-59	2018-11-29T06-44-16_stamatakis-59	01:21:56	127	1536	60	36	1.0	30:11:07	
-mixed	stamatakis-59	2018-11-29T08-16-45_stamatakis-59	01:20:56	127	1536	60	36	1.0	30:41:32	
+mixed	stamatakis-59	2018-11-28T16-41-22_stamatakis-59	01:23:55	127	1536	60	36	1.0	1.06:14:22	
+mixed	stamatakis-59	2018-11-28T18-15-50_stamatakis-59	01:20:25	127	1536	60	36	1.0078125	1.06:47:37	More batch than Models
+mixed	stamatakis-59	2018-11-28T19-46-49_stamatakis-59	01:19:26	127	1536	60	36	1.0	1.06:21:51	
+mixed	stamatakis-59	2018-11-28T21-16-48_stamatakis-59	01:25:56	127	1536	60	36	1.0	1.05:55:56	
+mixed	stamatakis-59	2018-11-28T22-53-16_stamatakis-59	01:24:26	127	1536	60	36	1.0	1.06:07:21	
+mixed	stamatakis-59	2018-11-29T00-28-20_stamatakis-59	01:27:56	128	1536	60	36	1.0	1.06:03:57	
+mixed	stamatakis-59	2018-11-29T02-06-50_stamatakis-59	01:17:56	127	1536	60	36	1.0	1.05:59:57	
+mixed	stamatakis-59	2018-11-29T03-35-19_stamatakis-59	01:27:56	127	1536	60	36	1.0	1.06:29:20	
+mixed	stamatakis-59	2018-11-29T05-13-48_stamatakis-59	01:19:56	127	1536	60	36	1.0	1.06:41:44	
+mixed	stamatakis-59	2018-11-29T06-44-16_stamatakis-59	01:21:56	127	1536	60	36	1.0	1.06:11:07	
+mixed	stamatakis-59	2018-11-29T08-16-45_stamatakis-59	01:20:56	127	1536	60	36	1.0	1.06:41:32	
 mixed	gusanosCOI.mafft	2018-11-29T09-48-28_gusanosCOI.mafft	01:06:10	190	1536	60	36	0.5071428571428571	12:42:03	
 mixed	gusanosCOI.mafft	2018-11-29T11-05-15_gusanosCOI.mafft	00:58:09	148	1536	60	36	0.4857142857142857	12:18:50	
 mixed	gusanosCOI.mafft	2018-11-29T12-13-58_gusanosCOI.mafft	00:59:39	160	1536	60	36	0.4928571428571429	12:24:43	
@@ -634,10 +634,10 @@ batch-only-16	gusanosCOI.mafft	2018-12-07T09-59-04_gusanosCOI.mafft	00:30:57	0	1
 batch-only-16	gusanosCOI.mafft	2018-12-07T10-40-33_gusanosCOI.mafft	00:29:31	0	1536	1	16	1.0	04:28:28	
 batch-only-16	gusanosCOI.mafft	2018-12-07T11-20-35_gusanosCOI.mafft	00:30:17	0	1536	1	16	1.0	04:29:35	
 batch-only-16	gusanosCOI.mafft	2018-12-07T12-01-23_gusanosCOI.mafft	00:37:08	0	1536	1	16	1.0	04:31:54	
-batch-only-16	stamatakis-59	2018-12-07T12-49-07_stamatakis-59	01:56:44	0	1536	1	16	1.0	24:12:30	
-batch-only-16	stamatakis-59	2018-12-07T14-56-22_stamatakis-59	01:53:21	0	1536	1	16	1.0	24:13:57	
-batch-only-16	stamatakis-59	2018-12-07T17-01-22_stamatakis-59	01:54:33	0	1536	1	16	1.0	24:16:48	
-batch-only-16	stamatakis-59	2018-12-08T02-08-20_stamatakis-59	01:55:08	0	1536	1	16	1.0	24:13:40	
+batch-only-16	stamatakis-59	2018-12-07T12-49-07_stamatakis-59	01:56:44	0	1536	1	16	1.0	1.00:12:30	
+batch-only-16	stamatakis-59	2018-12-07T14-56-22_stamatakis-59	01:53:21	0	1536	1	16	1.0	1.00:13:57	
+batch-only-16	stamatakis-59	2018-12-07T17-01-22_stamatakis-59	01:54:33	0	1536	1	16	1.0	1.00:16:48	
+batch-only-16	stamatakis-59	2018-12-08T02-08-20_stamatakis-59	01:55:08	0	1536	1	16	1.0	1.00:13:40	
 batch-only-8	aP6	2018-12-08T13-10-57_aP6	00:34:18	0	1536	1	8	1.0	00:01:27	
 batch-only-8	aP6	2018-12-08T13-55-46_aP6	00:23:05	0	1536	1	8	1.0	00:01:27	
 batch-only-8	aP6	2018-12-08T14-29-23_aP6	00:23:14	0	1536	1	8	1.0	00:01:26	
