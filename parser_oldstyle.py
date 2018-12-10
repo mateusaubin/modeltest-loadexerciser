@@ -4,6 +4,15 @@ import os
 from os.path import expanduser
 import re
 from dateutil.parser import parse as dateparse
+import datetime
+
+def to_str(obj):
+    if isinstance(obj, (datetime.timedelta)):
+        hours, remainder = divmod(obj.total_seconds(), 3600)
+        minutes, seconds = divmod(remainder, 60)
+        formatted = '{0:02}:{1:02}:{2:02}'.format(int(hours),int(minutes), int(seconds))
+        return formatted
+    return str(obj)
 
 def match_0(line):
     regex_0 = r"^.*/(\w+).*\= ([0-9\-\ :\.]+) .+?\| ([0-9\-\ :\.]+) .*"
@@ -19,7 +28,7 @@ def match_0(line):
     start = dateparse(found[1])
     end = dateparse(found[2])
     diff = end-start
-    diff_ms = round(diff.total_seconds() * 1000)
+    diff_ms = to_str(diff)
 
     print('{}\t{}\t{}\t{}'.format(id,procs,phyfile,diff_ms))
 
