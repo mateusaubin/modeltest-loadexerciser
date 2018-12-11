@@ -3,6 +3,13 @@ set -e # bail-out if anything goes wrong
 
 sudo apt update
 
+# keep time in sync
+sudo apt install chrony
+chronyconf='/etc/chrony/chrony.conf'
+grep -q -e '169.254.169.123' $chronyconf || sudo sed -i '1iserver 169.254.169.123 prefer iburst' $chronyconf
+sudo service chronyd start
+sudo chronyc makestep
+
 sudo apt install python3-pip
 pip3 install -r requirements.txt
 
@@ -31,13 +38,13 @@ do
   echo "---------------------------------------------"
 
   #  MIXED
-  #./all.py $1 False
+  #./all.py $1 False || true
   
   #  LAMBDA-ONLY
-  #./all.py $1 True
+  #./all.py $1 True || true
   
   #  BATCH-ONLY
-  #./batchonly.py $1 False SpotComputeEnvironment-XXXXXXXXXXXXXXX BatchJobQueue-XXXXXXXXXXXXXXX BatchJobDef-XXXXXXXXXXXXXXX:1
+  #./batchonly.py $1 False SpotComputeEnvironment-XXXXXXXXXXXXXXX BatchJobQueue-XXXXXXXXXXXXXXX BatchJobDef-XXXXXXXXXXXXXXX:1 || true
 
   echo "---------------------------------------------"
   echo "---------------------------------------------"
