@@ -30,7 +30,14 @@ do
   echo "              step $i                        "
   echo "---------------------------------------------"
 
-  ./all.py $1
+  #  MIXED
+  #./all.py $1 False
+  
+  #  LAMBDA-ONLY
+  #./all.py $1 True
+  
+  #  BATCH-ONLY
+  #./batchonly.py $1 False SpotComputeEnvironment-XXXXXXXXXXXXXXX BatchJobQueue-XXXXXXXXXXXXXXX BatchJobDef-XXXXXXXXXXXXXXX:1
 
   echo "---------------------------------------------"
   echo "---------------------------------------------"
