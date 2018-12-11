@@ -96,18 +96,25 @@ def FitLogTimestampToStage(log_timestamp, stages):
     # stage{start/finish} pode set BR 
 
     try:
+        # ALL DATES ARE UTC AND WE ARE HAPPY
         logdate_direct = dateparse(log_timestamp).replace(tzinfo=None)
-        logdate_tzfix = dateparse(log_timestamp).astimezone(tz.tzlocal()).replace(tzinfo=None)
-        
         res_dr = [idx for idx, x in enumerate(stages) if x['start'] <= logdate_direct <= x['finish']]
+        
+        if res_dr:
+            return res_dr[0]
+
+        # MATCHING DATE NOT FOUND, MAYBE WAS EXECUTING LOCALLY AND HAD TZ MISMATCH
+        logdate_tzfix = dateparse(log_timestamp).astimezone(tz.tzlocal()).replace(tzinfo=None)
         res_tz = [idx for idx, x in enumerate(stages) if x['start'] <= logdate_tzfix <= x['finish']]
         
-        index = [ ]
-        index.extend(res_dr)
-        index.extend(res_tz)
-        return min(index)
+        if res_tz:
+            return res_tz[0]
+
     except:
-        return None
+        pass
+
+    # ALL HOPE IS LOST
+    return None
 
 
 def DetectSource(log_source):
@@ -248,6 +255,9 @@ def to_str(obj):
         formatted = baseformat.format(int(days),int(hours),int(minutes), int(seconds))
         return formatted
     return str(obj)
+
+
+## -------------------------------- ##
 
 
 dir = expanduser('~') + '/aws-s3/mestrado-dev-phyml'
