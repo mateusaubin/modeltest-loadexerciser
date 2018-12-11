@@ -69,7 +69,7 @@ def extract_data(logfilepath):
             result['stages'].append(stage)
 
             if 'ERROR' in logfields[2]:
-                result['runtime'] = datetime.timedelta(seconds=-1)
+                result['runtime'] = datetime.timedelta(days=-1)
                 state = 999
             else:
                 state = 10
@@ -210,7 +210,7 @@ def extract_cloud(logfilepath, result):
         check = result['stages'][stageNum].get('batch',0) + result['stages'][stageNum].get('modeltest',0)
         exp = result['stages'][stageNum]['models']
         #assert abs(check - exp) <= math.ceil(exp * 0.1) , "Models don't match [Exp: {} | Act: {} | Stage: {}]".format(exp, check, stageNum)
-        if abs(check - exp) >= math.ceil(exp * 0.1):
+        if abs(check - exp) >= math.ceil(exp * 0.1) and result['runtime'].total_seconds() > 0:
             result['strange'] = "Models don't match"
     
 
@@ -249,7 +249,7 @@ def to_str(obj):
         days, hours = divmod(hours, 24)
 
         baseformat = '{1:02}:{2:02}:{3:02}'
-        if (days > 0):
+        if (days != 0):
             baseformat = '{0:}.' + baseformat
         
         formatted = baseformat.format(int(days),int(hours),int(minutes), int(seconds))
