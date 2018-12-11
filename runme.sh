@@ -23,7 +23,8 @@ export AWS_DEFAULT_REGION=$(curl -m5 -sS http://169.254.169.254/latest/meta-data
 
 mkdir log/ | true
 
-sl=${3:-1800}
+sl=${4:-60}
+mode=${3:-0}
 iters=${2:-11}
 
 echo ""
@@ -37,14 +38,11 @@ do
   echo "              step $i                        "
   echo "---------------------------------------------"
 
-  #  MIXED
-  #./all.py $1 False || true
-  
-  #  LAMBDA-ONLY
-  #./all.py $1 True || true
-  
-  #  BATCH-ONLY
-  #./batchonly.py $1 False SpotComputeEnvironment-XXXXXXXXXXXXXXX BatchJobQueue-XXXXXXXXXXXXXXX BatchJobDef-XXXXXXXXXXXXXXX:1 || true
+  # 0 - MIXED
+  # 1 - LAMBDA ONLY
+  # 2 - BATCH ONLY
+
+  ./all.py $1 $3 || true
 
   echo "---------------------------------------------"
   echo "---------------------------------------------"
@@ -52,5 +50,5 @@ do
   echo "---------------------------------------------"
   echo "---------------------------------------------"
   sleep $sl
-  
+
 done 

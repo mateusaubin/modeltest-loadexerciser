@@ -2,6 +2,7 @@
 import os
 import io
 import sys
+import math
 import time
 import boto3
 import json
@@ -29,6 +30,14 @@ logging.getLogger('botocore').setLevel(OTHERS_LEVEL)
 logging.getLogger('s3transfer').setLevel(OTHERS_LEVEL)
 logging.getLogger('asyncio').setLevel(OTHERS_LEVEL)
 logging.getLogger('backoff').setLevel(OTHERS_LEVEL)
+
+
+s3_cli = boto3.client('s3')
+sns_cli = boto3.client('sns')
+dyn_cli = boto3.client('dynamodb')
+batch_cli = boto3.client('batch')
+dynamo_res = boto3.resource('dynamodb')
+dynamo_table = None
 
 
 def dynamo_create():
@@ -93,9 +102,6 @@ def dynamo_countentries():
 def dispatch_parallel(index, sns, dynamo):
     logging.debug('received: #{} | sns=[{}] | dynamo=[{}]'.format(index,len(sns),len(dynamo)))
 
-    sns_cli = boto3.client('sns')
-    dyn_cli = boto3.client('dynamodb')
-
     for i in range(0, len(sns)):
         try:
             dynamo_response = dyn_cli.put_item(
@@ -108,13 +114,31 @@ def dispatch_parallel(index, sns, dynamo):
             )
             assert dynamo_response['ResponseMetadata']['HTTPStatusCode'] == 200
 
-            sns_response = sns_cli.publish(
-                TopicArn=STACK_OUTPUTS['inputtopic'],
-                Subject=MSG_SUBJECT,
-                Message=sns[i],
-                MessageStructure='json'
-            )
-            assert sns_response['ResponseMetadata']['HTTPStatusCode'] == 200
+            if BENCH_EXECUTION_MODE == 0 or BENCH_EXECUTION_MODE == 1:
+
+                sns_response = sns_cli.publish(
+                    TopicArn=STACK_OUTPUTS['inputtopic'],
+                    Subject=MSG_SUBJECT,
+                    Message=sns[i],
+                    MessageStructure='json'
+                )
+                assert sns_response['ResponseMetadata']['HTTPStatusCode'] == 200
+
+            elif BENCH_EXECUTION_MODE == 2:
+
+                payload = json.loads(json.loads(sns[i])['default'])
+                payload['jmodeltestrunid'] = MSG_SUBJECT
+                payload['sourcerequestid'] = dynamo[i].replace('+','-')
+                b_response = batch_cli.submit_job(
+                    jobName       = payload['sourcerequestid'],
+                    jobDefinition = STACK_OUTPUTS['batchjobdefinition'],
+                    jobQueue      = STACK_OUTPUTS['batchjobqueue'],
+                    parameters    = payload
+                )
+                assert b_response['ResponseMetadata']['HTTPStatusCode'] == 200
+
+            else:
+                raise Exception
         except:
             logging.exception("dispatch_parallel")
     
@@ -141,6 +165,30 @@ def dispatch(stage_data):
             futures.append(promise)
 
         concurrent.futures.wait(futures)
+
+
+    if BENCH_EXECUTION_MODE == 2:
+        b_response = batch_cli.describe_compute_environments(computeEnvironments=[STACK_OUTPUTS['batchcomputeenv']])
+        assert b_response['ResponseMetadata']['HTTPStatusCode'] == 200, "Bad response from Batch.Describe_ComputeEnvironments"
+
+        envdata = b_response['computeEnvironments'][0]
+        desired = envdata['computeResources']['desiredvCpus']
+        maximum = envdata['computeResources']['maxvCpus']
+
+        runnableToCpuRatio=(3/4)
+        gross_new_cpu = (maxlen) * runnableToCpuRatio
+        net_new_cpu = math.ceil(gross_new_cpu / 2.0) * 2    # rounded to nearest even number
+        new_cpus = min(maximum, net_new_cpu)
+
+        if (desired < new_cpus):
+            logging.warn("Triggering update to '{}' CPUs in ComputeEnvironment".format(new_cpus))
+            b_response = batch_cli.update_compute_environment(
+                computeEnvironment=STACK_OUTPUTS['batchcomputeenv'],
+                computeResources={
+                    'desiredvCpus': new_cpus
+                }
+            )
+            assert b_response['ResponseMetadata']['HTTPStatusCode'] == 200
     pass
 
 retry_lastcount = 0
@@ -157,13 +205,12 @@ def collect():
         retry_lastcount = table_entries
         retry_firstattempt = None
 
-    if KILL_ON_TIMEOUT:
+    if BENCH_EXECUTION_MODE == 1:
         if retry_firstattempt == None:
             retry_firstattempt = datetime.now()
         else:
             diff = datetime.now() - retry_firstattempt
-            retry_maxwait = timedelta(seconds=int(STACK_OUTPUTS['lambdatimeout'])*10)
-            if diff > retry_maxwait:
+            if diff > RETRY_MAXWAIT:
                 logging.error("Tired of waiting for a response... aborting! ({})".format(str(diff)))
                 raise EnvironmentError("Tired of waiting")
 
@@ -231,8 +278,7 @@ def reset_logs():
     shell_discover = "aws logs describe-log-groups --output text | awk '{ print $4 }'"
     delete_pattern = "aws logs delete-log-group --log-group-name {0} && aws logs create-log-group --log-group-name {0}"
 
-    # sleep to let logs flush so we don't miss recent events
-    time.sleep(1*60)
+    logging.warn('uploading cloudwatch logs')
 
     f = os.popen(shell_discover)
     logs = f.readlines()
@@ -243,6 +289,8 @@ def reset_logs():
     cmds_exec = ' && '.join(cmds)
 
     os.system(cmds_exec)
+
+    logging.info("ok!")
     pass
 
 
@@ -258,7 +306,6 @@ def upload_logs(logs):
     exec_cmd = output_pattern.format(dirname, inner_cmd, dirname, filename)
     os.system(exec_cmd)
 
-    s3_cli = boto3.client('s3')
     for list_filename in os.listdir('{}/'.format(dirname)):
         dst_file = '{}/{}/{}'.format(MSG_SUBJECT, dirname, list_filename)
         list_filename = '{}/{}'.format(dirname,list_filename)
@@ -266,9 +313,42 @@ def upload_logs(logs):
         s3_cli.upload_file(
             list_filename,
             STACK_OUTPUTS['inputbucket'],
-            dst_file
+            dst_file,
+            ExtraArgs={
+                'ContentType': "text/plain"
+            }
         )
     pass
+
+
+@backoff.on_predicate(backoff.fibo, max_value=60)
+def cooldown(dt_first):
+
+    if BENCH_EXECUTION_MODE != 1:
+        try:
+            b_response = batch_cli.describe_compute_environments(computeEnvironments=[STACK_OUTPUTS['batchcomputeenv']])
+            assert b_response['ResponseMetadata']['HTTPStatusCode'] == 200, "Bad response from Batch.Describe_ComputeEnvironments"
+
+            envdata = b_response['computeEnvironments'][0]
+            minimum = envdata['computeResources']['minvCpus']
+            desired = envdata['computeResources']['desiredvCpus']
+            
+            logging.info("COOLDOWN: {} vCPUs Running".format(desired))
+            if desired != minimum:
+                return False
+        except:
+            pass
+
+    diff = datetime.now() - dt_first
+    if diff < RETRY_MAXWAIT and not BENCH_EXECUTION_MODE == 2:
+        logging.info("COOLDOWN: waiting until {}".format(dt_first + RETRY_MAXWAIT))
+        
+        diff_s = diff.total_seconds()
+        time.sleep(diff_s)
+        
+        return False
+
+    return True
 
 
 def s3_upload():
@@ -277,7 +357,6 @@ def s3_upload():
 
     logging.warn('uploading to S3 {}://{}'.format(STACK_OUTPUTS['inputbucket'], dst_file))
 
-    s3_cli = boto3.client('s3')
     s3_cli.upload_file(
         src_file,
         STACK_OUTPUTS['inputbucket'],
@@ -312,25 +391,28 @@ def get_variables():
 
 logging.error("BORA FICAR MONSTRO!")
 
-RUNDATE = datetime.now().isoformat()[0:19].replace(' ', '').replace(':', '-')
 TRACE_FILE = argv(1, "aP6")
-KILL_ON_TIMEOUT = eval(argv(2, 'False'))
 
-#S3_BUCKET_INPUT = 'mestrado-dev-phyml'
+# 0 - MIXED
+# 1 - LAMBDA ONLY
+# 2 - BATCH ONLY
+BENCH_EXECUTION_MODE = int(argv(2, 0))
+
+
+RUNDATE = datetime.now().isoformat()[0:19].replace(' ', '').replace(':', '-')
 MSG_SUBJECT = "{}_{}".format(
     RUNDATE,
     TRACE_FILE
 )
-#MSG_SUBJECT = "VMware-aP6"
 
-#sns_cli = boto3.client('sns')
-dynamo_res = boto3.resource('dynamodb')
-dynamo_table = None
+
+STACK_OUTPUTS = get_variables()
+RETRY_MAXWAIT = timedelta(seconds=int(STACK_OUTPUTS['lambdatimeout'])*3)
+
 
 from timeit import default_timer as timer
 
 try:
-    STACK_OUTPUTS = get_variables()
     dynamo_create()
     phy_file = s3_upload()
 
@@ -345,7 +427,11 @@ try:
     logging.critical("REPORT Duration: {} ms".format(duration))
 
 finally:
+    dt_now = retry_firstattempt or datetime.now()
+    cooldown(dt_now)
+
     reset_logs()
     dynamo_clear()
+    pass
 
 logging.error('-- DONE -- ' + MSG_SUBJECT)
