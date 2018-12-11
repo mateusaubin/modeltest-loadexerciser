@@ -190,7 +190,7 @@ def collect():
             retry_firstattempt = datetime.now()
         else:
             diff = datetime.now() - retry_firstattempt
-            retry_maxwait = timedelta(seconds=int(STACK_OUTPUTS['lambdatimeout'])*5)
+            retry_maxwait = timedelta(seconds=int(STACK_OUTPUTS['lambdatimeout'])*10)
             if diff > retry_maxwait:
                 logging.error("Tired of waiting for a response... aborting! ({})".format(str(diff)))
                 raise EnvironmentError("Tired of waiting")
