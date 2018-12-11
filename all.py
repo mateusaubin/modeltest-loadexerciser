@@ -51,8 +51,8 @@ def dynamo_create():
             },
         ],
         ProvisionedThroughput={
-            'ReadCapacityUnits':  2,
-            'WriteCapacityUnits': 2
+            'ReadCapacityUnits':  3,
+            'WriteCapacityUnits': 3
         }
     )
     dynamo_table.wait_until_exists()
