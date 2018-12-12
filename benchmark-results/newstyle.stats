@@ -1,125 +1,125 @@
- -- default -- 	gusanosCOI.mafft	2018-11-18T18-21_gusanosCOI.mafft	01:20:11	225	1536	60	16	1.0	15:28:53	Models don't match
-stamatakis-59	stamatakis-59	2018-11-18T19-51_stamatakis-59	02:11:17	352	1536	45	16	1.0	1.13:41:11	Models don't match
-aP6	aP6	2018-11-18T22-58_aP6	00:00:42	8	1536	45	16	0.0	00:01:11	Models don't match
+ -- default -- 	gusanosCOI.mafft	2018-11-18T18-21_gusanosCOI.mafft	01:20:11	225	1536	60	16	1.0	15:28:53	Models don't match	Act: 28 | Exp: 24 | Stage: 4
+stamatakis-59	stamatakis-59	2018-11-18T19-51_stamatakis-59	02:11:17	352	1536	45	16	1.0	1.13:41:11	Models don't match	Act: 260 | Exp: 120 | Stage: 1
+aP6	aP6	2018-11-18T22-58_aP6	00:00:42	8	1536	45	16	0.0	00:01:11	Models don't match	Act: 2 | Exp: 8 | Stage: 5
 gusanos16S.mafft	gusanos16S.mafft	2018-11-18T23-06_gusanos16S.mafft	00:48:41	208	1536	45	16	0.44140625	07:26:32	
 gusanos16S.mafft	gusanos16S.mafft	2018-11-20T01-39_gusanos16S.mafft	00:48:59	0	1536	45	16	0.0	0	Cloudwatch logs missing
-gusanos16S.mafft	gusanos16S.mafft	2018-11-20T02-46_gusanos16S.mafft	00:37:02	466	1536	45	16	0.87109375	14:27:45	Orphaned jobs
-Birds	Birds	2018-11-20T03-48_Birds	00:23:13	144	1536	45	16	1.1682692307692308	06:49:50	Orphaned jobs
+gusanos16S.mafft	gusanos16S.mafft	2018-11-20T02-46_gusanos16S.mafft	00:37:02	466	1536	45	16	0.87109375	14:27:45	Orphaned jobs	715
+Birds	Birds	2018-11-20T03-48_Birds	00:23:13	144	1536	45	16	1.1682692307692308	06:49:50	More batch than Models	243/208
 gusanosCOI.mafft	gusanosCOI.mafft	2018-11-20T12-01_gusanosCOI.mafft	00:56:24	148	1536	45	16	0.5678571428571428	11:14:27	
-aP6	aP6	2018-11-20T13-03_aP6	00:00:38	8	1536	45	16	0.0	00:01:11	Models don't match
-aP6	aP6	2018-11-20T13-05_aP6	00:00:40	8	1536	45	16	0.0	00:01:12	Models don't match
-aP6	aP6	2018-11-20T13-07_aP6	00:00:38	7	1536	45	16	0.0	00:01:13	Models don't match
-rodents	rodents	2018-11-20T13-11_rodents	00:00:33	24	1536	45	16	0.0	00:03:43	Models don't match
-rodents	rodents	2018-11-20T13-13_rodents	00:00:30	19	1536	45	16	0.0	00:03:51	Models don't match
-rodents	rodents	2018-11-20T13-14_rodents	00:00:29	21	1536	45	16	0.0	00:03:30	Models don't match
-rodents	rodents	2018-11-20T13-16_rodents	00:00:30	18	1536	45	16	0.0	00:03:44	Models don't match
-18S_insects2	example	2018-11-20T21-48_example	00:00:56	30	1536	45	16	0.0	00:06:18	Models don't match
-18S_insects2	example	2018-11-20T21-51_example	00:01:02	20	1536	45	16	0.0	00:05:42	Models don't match
+aP6	aP6	2018-11-20T13-03_aP6	00:00:38	8	1536	45	16	0.0	00:01:11	Models don't match	Act: 6 | Exp: 8 | Stage: 5
+aP6	aP6	2018-11-20T13-05_aP6	00:00:40	8	1536	45	16	0.0	00:01:12	Models don't match	Act: 3 | Exp: 8 | Stage: 5
+aP6	aP6	2018-11-20T13-07_aP6	00:00:38	7	1536	45	16	0.0	00:01:13	Models don't match	Act: 5 | Exp: 8 | Stage: 5
+rodents	rodents	2018-11-20T13-11_rodents	00:00:33	24	1536	45	16	0.0	00:03:43	Models don't match	Act: 24 | Exp: 48 | Stage: 3
+rodents	rodents	2018-11-20T13-13_rodents	00:00:30	19	1536	45	16	0.0	00:03:51	Models don't match	Act: 35 | Exp: 48 | Stage: 3
+rodents	rodents	2018-11-20T13-14_rodents	00:00:29	21	1536	45	16	0.0	00:03:30	Models don't match	Act: 17 | Exp: 48 | Stage: 3
+rodents	rodents	2018-11-20T13-16_rodents	00:00:30	18	1536	45	16	0.0	00:03:44	Models don't match	Act: 32 | Exp: 48 | Stage: 3
+18S_insects2	example	2018-11-20T21-48_example	00:00:56	30	1536	45	16	0.0	00:06:18	Models don't match	Act: 7 | Exp: 8 | Stage: 5
+18S_insects2	example	2018-11-20T21-51_example	00:01:02	20	1536	45	16	0.0	00:05:42	Models don't match	Act: 6 | Exp: 8 | Stage: 5
 18S_insects2	aP6	2018-11-20T23-24_aP6	00:00:13	0	1536	45	16	0.0	0	Cloudwatch logs missing
-18S_insects2	example	2018-11-21T00-21_example	00:00:25	134	1536	45	16	0.0	00:09:58	Orphaned jobs
-18S_insects2	example	2018-11-21T00-22_example	00:00:29	98	1536	45	16	0.0	00:06:50	Models don't match
-18S_insects2	example	2018-11-21T00-23_example	00:00:29	98	1536	45	16	0.0	00:06:50	Models don't match
-18S_insects2	aP6	2018-11-21T00-32_aP6	00:00:10	27	1536	45	16	0.0	00:00:10	Models don't match
-18S_insects2	aP6	2018-11-21T00-34_aP6	00:00:11	54	1536	45	16	0.0	00:01:45	Orphaned jobs
-18S_insects2	aP6	2018-11-21T00-35_aP6	00:00:10	27	1536	45	16	0.0	00:00:27	Orphaned jobs
-18S_insects2	aP6	2018-11-21T00-36_aP6	00:00:12	25	1536	45	16	0.0	00:01:17	Orphaned jobs
-18S_insects2	aP6	2018-11-21T00-37_aP6	00:00:11	23	1536	45	16	0.0	00:00:33	Orphaned jobs
-18S_insects2	aP6	2018-11-21T00-38_aP6	00:00:11	25	1536	45	16	0.0	00:00:53	Orphaned jobs
-18S_insects2	aP6	2018-11-21T00-39_aP6	00:00:11	25	1536	45	16	0.0	00:01:17	Orphaned jobs
-18S_insects2	aP6	2018-11-21T00-40_aP6	00:00:11	26	1536	45	16	0.0	00:01:15	Orphaned jobs
-18S_insects2	aP6	2018-11-21T00-41_aP6	00:00:11	25	1536	45	16	0.0	00:01:18	Orphaned jobs
-18S_insects2	aP6	2018-11-21T00-42_aP6	00:00:10	30	1536	45	16	0.0	00:01:17	Orphaned jobs
-18S_insects2	aP6	2018-11-21T00-43_aP6	00:00:11	27	1536	45	16	0.0	00:01:17	Orphaned jobs
-rodents	rodents	2018-11-21T00-51_rodents	00:00:14	121	1536	45	16	0.0	00:03:22	Orphaned jobs
-rodents	rodents	2018-11-21T00-52_rodents	00:00:13	72	1536	45	16	0.0	00:02:57	Orphaned jobs
-rodents	rodents	2018-11-21T00-55_rodents	00:00:12	87	1536	45	16	0.0	00:03:19	Orphaned jobs
-rodents	rodents	2018-11-21T01-01_rodents	00:00:14	89	1536	45	16	0.0	00:03:42	Orphaned jobs
-rodents	rodents	2018-11-21T01-02_rodents	00:00:15	74	1536	45	16	0.0	00:03:36	Orphaned jobs
-rodents	rodents	2018-11-21T01-04_rodents	00:00:12	81	1536	45	16	0.0	00:03:02	Orphaned jobs
-rodents	rodents	2018-11-21T01-07_rodents	00:00:14	89	1536	45	16	0.0	00:03:59	Orphaned jobs
-rodents	rodents	2018-11-21T01-09_rodents	00:00:24	89	1536	45	16	0.0	00:05:52	Orphaned jobs
-rodents	rodents	2018-11-21T01-12_rodents	00:00:22	89	1536	45	16	0.0	00:03:23	Orphaned jobs
-rodents	rodents	2018-11-21T01-14_rodents	00:00:12	90	1536	45	16	0.0	00:02:59	Orphaned jobs
-rodents	rodents	2018-11-21T01-16_rodents	00:00:16	88	1536	45	16	0.0	00:03:10	Orphaned jobs
-example	example	2018-11-21T01-43-08_example	00:00:59	121	1536	60	16	0.0	00:18:03	Orphaned jobs
-example	example	2018-11-21T01-45-05_example	00:00:27	93	1536	60	16	0.0	00:06:09	Models don't match
-example	example	2018-11-21T01-46-30_example	00:00:59	81	1536	60	16	0.0	00:09:36	Models don't match
-example	example	2018-11-21T01-48-26_example	00:00:29	96	1536	60	16	0.0	00:06:47	Models don't match
-example	example	2018-11-21T01-49-53_example	00:00:30	93	1536	60	16	0.0	00:06:17	Models don't match
-example	example	2018-11-21T01-51-21_example	00:01:05	118	1536	60	16	0.0	00:24:44	Models don't match
-example	example	2018-11-21T01-53-33_example	00:00:51	91	1536	60	16	0.0	00:08:12	Models don't match
-example	example	2018-11-21T01-55-32_example	00:00:29	90	1536	60	16	0.0	00:06:31	Models don't match
-example	example	2018-11-21T01-56-58_example	00:00:29	94	1536	60	16	0.0	00:06:22	Models don't match
-example	example	2018-11-21T01-58-24_example	00:00:25	88	1536	60	16	0.0	00:06:02	Models don't match
-example	example	2018-11-21T01-59-47_example	00:00:23	88	1536	60	16	0.0	00:06:06	Orphaned jobs
-HIVpol.groupM	HIVpol.groupM	2018-11-21T02-05-56_HIVpol.groupM	00:00:30	112	1536	60	16	0.0	00:10:43	Models don't match
-HIVpol.groupM	HIVpol.groupM	2018-11-21T02-07-18_HIVpol.groupM	00:00:33	112	1536	60	16	0.0	00:11:47	Models don't match
-HIVpol.groupM	HIVpol.groupM	2018-11-21T02-08-49_HIVpol.groupM	00:00:33	111	1536	60	16	0.0	00:10:43	Models don't match
-HIVpol.groupM	HIVpol.groupM	2018-11-21T02-10-20_HIVpol.groupM	00:00:33	111	1536	60	16	0.0	00:11:41	Models don't match
-HIVpol.groupM	HIVpol.groupM	2018-11-21T02-11-51_HIVpol.groupM	00:00:30	109	1536	60	16	0.0	00:11:20	Models don't match
-HIVpol.groupM	HIVpol.groupM	2018-11-21T02-13-19_HIVpol.groupM	00:00:33	114	1536	60	16	0.0	00:10:45	Models don't match
-HIVpol.groupM	HIVpol.groupM	2018-11-21T02-14-50_HIVpol.groupM	00:00:33	111	1536	60	16	0.0	00:11:37	Models don't match
-HIVpol.groupM	HIVpol.groupM	2018-11-21T02-16-20_HIVpol.groupM	00:00:32	116	1536	60	16	0.0	00:11:13	Models don't match
-HIVpol.groupM	HIVpol.groupM	2018-11-21T02-17-51_HIVpol.groupM	00:00:33	112	1536	60	16	0.0	00:11:25	Orphaned jobs
-HIVpol.groupM	HIVpol.groupM	2018-11-21T02-19-22_HIVpol.groupM	00:00:33	111	1536	60	16	0.0	00:11:15	Models don't match
-HIVpol.groupM	HIVpol.groupM	2018-11-21T02-20-53_HIVpol.groupM	00:00:32	117	1536	60	16	0.0	00:10:58	Models don't match
-HIVpol.groupM	HIVpol.groupM	2018-11-21T02-22-22_HIVpol.groupM	00:00:32	113	1536	60	16	0.0	00:10:46	Models don't match
-primate-mtDNA	primate-mtDNA	2018-11-21T03-33-50_primate-mtDNA	00:01:26	240	1536	60	16	0.0	00:57:38	Orphaned jobs
-primate-mtDNA	primate-mtDNA	2018-11-21T03-37-30_primate-mtDNA	00:01:36	120	1536	60	16	0.0	00:33:49	Models don't match
-primate-mtDNA	primate-mtDNA	2018-11-21T03-40-04_primate-mtDNA	00:01:33	120	1536	60	16	0.0	00:35:10	
-primate-mtDNA	primate-mtDNA	2018-11-21T03-42-35_primate-mtDNA	00:01:30	120	1536	60	16	0.0	00:32:14	Models don't match
-primate-mtDNA	primate-mtDNA	2018-11-21T03-45-02_primate-mtDNA	00:01:29	120	1536	60	16	0.0	00:35:13	
+18S_insects2	example	2018-11-21T00-21_example	00:00:25	134	1536	45	16	0.0	00:09:58	Models don't match	Act: 3 | Exp: 8 | Stage: 5
+18S_insects2	example	2018-11-21T00-22_example	00:00:29	98	1536	45	16	0.0	00:06:50	Models don't match	Act: 3 | Exp: 8 | Stage: 5
+18S_insects2	example	2018-11-21T00-23_example	00:00:29	98	1536	45	16	0.0	00:06:50	Models don't match	Act: 5 | Exp: 8 | Stage: 5
+18S_insects2	aP6	2018-11-21T00-32_aP6	00:00:10	27	1536	45	16	0.0	00:00:10	Models don't match	Act: 0 | Exp: 8 | Stage: 5
+18S_insects2	aP6	2018-11-21T00-34_aP6	00:00:11	54	1536	45	16	0.0	00:01:45	Models don't match	Act: 3 | Exp: 8 | Stage: 5
+18S_insects2	aP6	2018-11-21T00-35_aP6	00:00:10	27	1536	45	16	0.0	00:00:27	Models don't match	Act: 0 | Exp: 8 | Stage: 5
+18S_insects2	aP6	2018-11-21T00-36_aP6	00:00:12	25	1536	45	16	0.0	00:01:17	Models don't match	Act: 0 | Exp: 8 | Stage: 5
+18S_insects2	aP6	2018-11-21T00-37_aP6	00:00:11	23	1536	45	16	0.0	00:00:33	Models don't match	Act: 0 | Exp: 8 | Stage: 5
+18S_insects2	aP6	2018-11-21T00-38_aP6	00:00:11	25	1536	45	16	0.0	00:00:53	Models don't match	Act: 0 | Exp: 8 | Stage: 5
+18S_insects2	aP6	2018-11-21T00-39_aP6	00:00:11	25	1536	45	16	0.0	00:01:17	Models don't match	Act: 0 | Exp: 8 | Stage: 5
+18S_insects2	aP6	2018-11-21T00-40_aP6	00:00:11	26	1536	45	16	0.0	00:01:15	Models don't match	Act: 0 | Exp: 8 | Stage: 5
+18S_insects2	aP6	2018-11-21T00-41_aP6	00:00:11	25	1536	45	16	0.0	00:01:18	Models don't match	Act: 0 | Exp: 8 | Stage: 5
+18S_insects2	aP6	2018-11-21T00-42_aP6	00:00:10	30	1536	45	16	0.0	00:01:17	Models don't match	Act: 0 | Exp: 8 | Stage: 5
+18S_insects2	aP6	2018-11-21T00-43_aP6	00:00:11	27	1536	45	16	0.0	00:01:17	Models don't match	Act: 0 | Exp: 8 | Stage: 5
+rodents	rodents	2018-11-21T00-51_rodents	00:00:14	121	1536	45	16	0.0	00:03:22	Models don't match	Act: 17 | Exp: 48 | Stage: 3
+rodents	rodents	2018-11-21T00-52_rodents	00:00:13	72	1536	45	16	0.0	00:02:57	Models don't match	Act: 14 | Exp: 48 | Stage: 3
+rodents	rodents	2018-11-21T00-55_rodents	00:00:12	87	1536	45	16	0.0	00:03:19	Models don't match	Act: 16 | Exp: 48 | Stage: 3
+rodents	rodents	2018-11-21T01-01_rodents	00:00:14	89	1536	45	16	0.0	00:03:42	Models don't match	Act: 22 | Exp: 48 | Stage: 3
+rodents	rodents	2018-11-21T01-02_rodents	00:00:15	74	1536	45	16	0.0	00:03:36	Models don't match	Act: 11 | Exp: 48 | Stage: 3
+rodents	rodents	2018-11-21T01-04_rodents	00:00:12	81	1536	45	16	0.0	00:03:02	Models don't match	Act: 17 | Exp: 48 | Stage: 3
+rodents	rodents	2018-11-21T01-07_rodents	00:00:14	89	1536	45	16	0.0	00:03:59	Models don't match	Act: 16 | Exp: 48 | Stage: 3
+rodents	rodents	2018-11-21T01-09_rodents	00:00:24	89	1536	45	16	0.0	00:05:52	Models don't match	Act: 27 | Exp: 48 | Stage: 3
+rodents	rodents	2018-11-21T01-12_rodents	00:00:22	89	1536	45	16	0.0	00:03:23	Models don't match	Act: 18 | Exp: 48 | Stage: 3
+rodents	rodents	2018-11-21T01-14_rodents	00:00:12	90	1536	45	16	0.0	00:02:59	Models don't match	Act: 8 | Exp: 48 | Stage: 3
+rodents	rodents	2018-11-21T01-16_rodents	00:00:16	88	1536	45	16	0.0	00:03:10	Models don't match	Act: 20 | Exp: 48 | Stage: 3
+example	example	2018-11-21T01-43-08_example	00:00:59	121	1536	60	16	0.0	00:18:03	Models don't match	Act: 4 | Exp: 8 | Stage: 5
+example	example	2018-11-21T01-45-05_example	00:00:27	93	1536	60	16	0.0	00:06:09	Models don't match	Act: 5 | Exp: 8 | Stage: 5
+example	example	2018-11-21T01-46-30_example	00:00:59	81	1536	60	16	0.0	00:09:36	Models don't match	Act: 6 | Exp: 8 | Stage: 5
+example	example	2018-11-21T01-48-26_example	00:00:29	96	1536	60	16	0.0	00:06:47	Models don't match	Act: 6 | Exp: 8 | Stage: 5
+example	example	2018-11-21T01-49-53_example	00:00:30	93	1536	60	16	0.0	00:06:17	Models don't match	Act: 3 | Exp: 8 | Stage: 5
+example	example	2018-11-21T01-51-21_example	00:01:05	118	1536	60	16	0.0	00:24:44	Models don't match	Act: 5 | Exp: 8 | Stage: 5
+example	example	2018-11-21T01-53-33_example	00:00:51	91	1536	60	16	0.0	00:08:12	Models don't match	Act: 6 | Exp: 8 | Stage: 5
+example	example	2018-11-21T01-55-32_example	00:00:29	90	1536	60	16	0.0	00:06:31	Models don't match	Act: 4 | Exp: 8 | Stage: 5
+example	example	2018-11-21T01-56-58_example	00:00:29	94	1536	60	16	0.0	00:06:22	Models don't match	Act: 4 | Exp: 8 | Stage: 5
+example	example	2018-11-21T01-58-24_example	00:00:25	88	1536	60	16	0.0	00:06:02	Models don't match	Act: 1 | Exp: 8 | Stage: 5
+example	example	2018-11-21T01-59-47_example	00:00:23	88	1536	60	16	0.0	00:06:06	Models don't match	Act: 3 | Exp: 8 | Stage: 5
+HIVpol.groupM	HIVpol.groupM	2018-11-21T02-05-56_HIVpol.groupM	00:00:30	112	1536	60	16	0.0	00:10:43	Models don't match	Act: 33 | Exp: 48 | Stage: 3
+HIVpol.groupM	HIVpol.groupM	2018-11-21T02-07-18_HIVpol.groupM	00:00:33	112	1536	60	16	0.0	00:11:47	Models don't match	Act: 39 | Exp: 48 | Stage: 3
+HIVpol.groupM	HIVpol.groupM	2018-11-21T02-08-49_HIVpol.groupM	00:00:33	111	1536	60	16	0.0	00:10:43	Models don't match	Act: 34 | Exp: 48 | Stage: 3
+HIVpol.groupM	HIVpol.groupM	2018-11-21T02-10-20_HIVpol.groupM	00:00:33	111	1536	60	16	0.0	00:11:41	Models don't match	Act: 37 | Exp: 48 | Stage: 3
+HIVpol.groupM	HIVpol.groupM	2018-11-21T02-11-51_HIVpol.groupM	00:00:30	109	1536	60	16	0.0	00:11:20	Models don't match	Act: 37 | Exp: 48 | Stage: 3
+HIVpol.groupM	HIVpol.groupM	2018-11-21T02-13-19_HIVpol.groupM	00:00:33	114	1536	60	16	0.0	00:10:45	Models don't match	Act: 32 | Exp: 48 | Stage: 3
+HIVpol.groupM	HIVpol.groupM	2018-11-21T02-14-50_HIVpol.groupM	00:00:33	111	1536	60	16	0.0	00:11:37	Models don't match	Act: 35 | Exp: 48 | Stage: 3
+HIVpol.groupM	HIVpol.groupM	2018-11-21T02-16-20_HIVpol.groupM	00:00:32	116	1536	60	16	0.0	00:11:13	Models don't match	Act: 32 | Exp: 48 | Stage: 3
+HIVpol.groupM	HIVpol.groupM	2018-11-21T02-17-51_HIVpol.groupM	00:00:33	112	1536	60	16	0.0	00:11:25	Models don't match	Act: 40 | Exp: 48 | Stage: 3
+HIVpol.groupM	HIVpol.groupM	2018-11-21T02-19-22_HIVpol.groupM	00:00:33	111	1536	60	16	0.0	00:11:15	Models don't match	Act: 36 | Exp: 48 | Stage: 3
+HIVpol.groupM	HIVpol.groupM	2018-11-21T02-20-53_HIVpol.groupM	00:00:32	117	1536	60	16	0.0	00:10:58	Models don't match	Act: 35 | Exp: 48 | Stage: 3
+HIVpol.groupM	HIVpol.groupM	2018-11-21T02-22-22_HIVpol.groupM	00:00:32	113	1536	60	16	0.0	00:10:46	Models don't match	Act: 34 | Exp: 48 | Stage: 3
+primate-mtDNA	primate-mtDNA	2018-11-21T03-33-50_primate-mtDNA	00:01:26	240	1536	60	16	0.0	00:57:38	Models don't match	Act: 7 | Exp: 8 | Stage: 5
+primate-mtDNA	primate-mtDNA	2018-11-21T03-37-30_primate-mtDNA	00:01:36	120	1536	60	16	0.0	00:33:49	Models don't match	Act: 4 | Exp: 8 | Stage: 5
+primate-mtDNA	primate-mtDNA	2018-11-21T03-40-04_primate-mtDNA	00:01:33	120	1536	60	16	0.0	00:35:10	Orphaned jobs	4
+primate-mtDNA	primate-mtDNA	2018-11-21T03-42-35_primate-mtDNA	00:01:30	120	1536	60	16	0.0	00:32:14	Models don't match	Act: 3 | Exp: 8 | Stage: 5
+primate-mtDNA	primate-mtDNA	2018-11-21T03-45-02_primate-mtDNA	00:01:29	120	1536	60	16	0.0	00:35:13	Orphaned jobs	4
 primate-mtDNA	primate-mtDNA	2018-11-21T03-47-30_primate-mtDNA	00:01:39	120	1536	60	16	0.0	00:34:07	
 primate-mtDNA	primate-mtDNA	2018-11-21T03-50-08_primate-mtDNA	00:01:41	120	1536	60	16	0.0	00:34:31	
-primate-mtDNA	primate-mtDNA	2018-11-21T03-52-47_primate-mtDNA	00:01:33	120	1536	60	16	0.0	00:33:30	Models don't match
-primate-mtDNA	primate-mtDNA	2018-11-21T03-55-17_primate-mtDNA	00:01:36	120	1536	60	16	0.0	00:34:48	Models don't match
-primate-mtDNA	primate-mtDNA	2018-11-21T03-57-50_primate-mtDNA	00:01:42	120	1536	60	16	0.0	00:34:03	Models don't match
-primate-mtDNA	primate-mtDNA	2018-11-21T04-00-31_primate-mtDNA	00:01:32	120	1536	60	16	0.0	00:34:41	
-primate-mtDNA	primate-mtDNA	2018-11-21T04-03-02_primate-mtDNA	00:01:29	120	1536	60	16	0.0	00:33:45	Models don't match
-HIV_vpu.ref2	HIV_vpu.ref2	2018-11-21T04-09-19_HIV_vpu.ref2	00:04:02	120	1536	60	16	0.0	01:40:05	Models don't match
-HIV_vpu.ref2	HIV_vpu.ref2	2018-11-21T04-14-19_HIV_vpu.ref2	00:04:09	120	1536	60	16	0.0	01:43:06	
+primate-mtDNA	primate-mtDNA	2018-11-21T03-52-47_primate-mtDNA	00:01:33	120	1536	60	16	0.0	00:33:30	Models don't match	Act: 6 | Exp: 8 | Stage: 5
+primate-mtDNA	primate-mtDNA	2018-11-21T03-55-17_primate-mtDNA	00:01:36	120	1536	60	16	0.0	00:34:48	Models don't match	Act: 7 | Exp: 8 | Stage: 5
+primate-mtDNA	primate-mtDNA	2018-11-21T03-57-50_primate-mtDNA	00:01:42	120	1536	60	16	0.0	00:34:03	Models don't match	Act: 6 | Exp: 8 | Stage: 5
+primate-mtDNA	primate-mtDNA	2018-11-21T04-00-31_primate-mtDNA	00:01:32	120	1536	60	16	0.0	00:34:41	Orphaned jobs	1
+primate-mtDNA	primate-mtDNA	2018-11-21T04-03-02_primate-mtDNA	00:01:29	120	1536	60	16	0.0	00:33:45	Models don't match	Act: 5 | Exp: 8 | Stage: 5
+HIV_vpu.ref2	HIV_vpu.ref2	2018-11-21T04-09-19_HIV_vpu.ref2	00:04:02	120	1536	60	16	0.0	01:40:05	Models don't match	Act: 21 | Exp: 24 | Stage: 4
+HIV_vpu.ref2	HIV_vpu.ref2	2018-11-21T04-14-19_HIV_vpu.ref2	00:04:09	120	1536	60	16	0.0	01:43:06	Orphaned jobs	1
 HIV_vpu.ref2	HIV_vpu.ref2	2018-11-21T04-19-27_HIV_vpu.ref2	00:03:49	120	1536	60	16	0.0	01:42:14	
-HIV_vpu.ref2	HIV_vpu.ref2	2018-11-21T04-24-14_HIV_vpu.ref2	00:04:01	120	1536	60	16	0.0	01:43:51	
-HIV_vpu.ref2	HIV_vpu.ref2	2018-11-21T04-29-16_HIV_vpu.ref2	00:03:53	120	1536	60	16	0.0	01:40:13	
-HIV_vpu.ref2	HIV_vpu.ref2	2018-11-21T04-34-07_HIV_vpu.ref2	00:04:01	120	1536	60	16	0.0	01:42:41	
-HIV_vpu.ref2	HIV_vpu.ref2	2018-11-21T04-39-05_HIV_vpu.ref2	00:03:57	120	1536	60	16	0.0	01:42:14	
-HIV_vpu.ref2	HIV_vpu.ref2	2018-11-21T04-44-00_HIV_vpu.ref2	00:04:09	120	1536	60	16	0.0	01:41:54	
+HIV_vpu.ref2	HIV_vpu.ref2	2018-11-21T04-24-14_HIV_vpu.ref2	00:04:01	120	1536	60	16	0.0	01:43:51	Orphaned jobs	1
+HIV_vpu.ref2	HIV_vpu.ref2	2018-11-21T04-29-16_HIV_vpu.ref2	00:03:53	120	1536	60	16	0.0	01:40:13	Orphaned jobs	1
+HIV_vpu.ref2	HIV_vpu.ref2	2018-11-21T04-34-07_HIV_vpu.ref2	00:04:01	120	1536	60	16	0.0	01:42:41	Orphaned jobs	1
+HIV_vpu.ref2	HIV_vpu.ref2	2018-11-21T04-39-05_HIV_vpu.ref2	00:03:57	120	1536	60	16	0.0	01:42:14	Orphaned jobs	1
+HIV_vpu.ref2	HIV_vpu.ref2	2018-11-21T04-44-00_HIV_vpu.ref2	00:04:09	120	1536	60	16	0.0	01:41:54	Orphaned jobs	1
 HIV_vpu.ref2	HIV_vpu.ref2	2018-11-21T04-49-07_HIV_vpu.ref2	00:06:09	120	1536	60	16	0.0	01:46:19	
-HIV_vpu.ref2	HIV_vpu.ref2	2018-11-21T04-56-14_HIV_vpu.ref2	00:03:56	120	1536	60	16	0.0	01:45:24	
-HIV_vpu.ref2	HIV_vpu.ref2	2018-11-21T05-01-08_HIV_vpu.ref2	00:04:05	120	1536	60	16	0.0	01:44:39	
+HIV_vpu.ref2	HIV_vpu.ref2	2018-11-21T04-56-14_HIV_vpu.ref2	00:03:56	120	1536	60	16	0.0	01:45:24	Orphaned jobs	2
+HIV_vpu.ref2	HIV_vpu.ref2	2018-11-21T05-01-08_HIV_vpu.ref2	00:04:05	120	1536	60	16	0.0	01:44:39	Orphaned jobs	1
 stamatakis-59	stamatakis-59	2018-11-21T13-38-13_stamatakis-59	03:45:07	128	1536	60	8	1.0	1.07:01:49	
 stamatakis-59	stamatakis-59	2018-11-21T17-24-25_stamatakis-59	03:52:14	128	1536	60	8	1.0	1.06:57:10	
 stamatakis-59	stamatakis-59	2018-11-21T22-47-26_stamatakis-59	03:45:53	127	1536	60	8	1.0	1.07:12:32	
 stamatakis-59	stamatakis-59	2018-11-22T04-24-21_stamatakis-59	03:46:27	128	1536	60	8	1.0	1.06:48:51	
 stamatakis-59	stamatakis-59	2018-11-22T08-11-52_stamatakis-59	03:36:41	127	1536	60	8	1.0	1.06:32:58	
-stamatakis-59	stamatakis-59	2018-11-22T13-25-27_stamatakis-59	03:42:43	128	1536	60	8	1.015625	1.07:11:03	More batch than Models
+stamatakis-59	stamatakis-59	2018-11-22T13-25-27_stamatakis-59	03:42:43	128	1536	60	8	1.015625	1.07:11:03	More batch than Models	130/128
 stamatakis-59	stamatakis-59	2018-11-22T17-38-44_stamatakis-59	03:38:23	127	1536	60	8	1.0	1.06:45:29	
 stamatakis-59	stamatakis-59	2018-11-22T21-45-50_stamatakis-59	03:36:30	127	1536	60	8	1.0	1.07:07:49	
 stamatakis-59	stamatakis-59	2018-11-23T01-52-54_stamatakis-59	03:38:43	127	1536	60	8	1.0	1.07:00:33	
 stamatakis-59	stamatakis-59	2018-11-23T06-02-13_stamatakis-59	03:38:29	127	1536	60	8	1.0	1.06:50:17	
 stamatakis-59	stamatakis-59	2018-11-23T10-11-36_stamatakis-59	03:37:34	127	1536	60	8	1.0	1.06:38:46	
-stamatakis-59	Hex_EF1a	2018-11-23T15-46-46_Hex_EF1a	00:01:03	120	1536	60	8	0.0	00:23:52	Models don't match
-stamatakis-59	Hex_EF1a	2018-11-23T15-50-02_Hex_EF1a	00:00:53	120	1536	60	8	0.0	00:23:01	Models don't match
-stamatakis-59	Hex_EF1a	2018-11-23T16-07-23_Hex_EF1a	00:00:58	119	1536	60	8	0.0	00:23:37	Models don't match
-stamatakis-59	Hex_EF1a	2018-11-23T16-24-49_Hex_EF1a	00:00:58	119	1536	60	8	0.0	00:21:46	Models don't match
-stamatakis-59	Hex_EF1a	2018-11-23T16-42-15_Hex_EF1a	00:01:03	117	1536	60	8	0.0	00:21:44	Models don't match
-stamatakis-59	Hex_EF1a	2018-11-23T16-59-47_Hex_EF1a	00:00:58	117	1536	60	8	0.0	00:22:04	Models don't match
-stamatakis-59	Hex_EF1a	2018-11-23T17-17-13_Hex_EF1a	00:01:03	120	1536	60	8	0.0	00:22:33	Models don't match
-stamatakis-59	Hex_EF1a	2018-11-23T17-34-44_Hex_EF1a	00:01:03	118	1536	60	8	0.0	00:21:54	Models don't match
-stamatakis-59	Hex_EF1a	2018-11-23T17-52-17_Hex_EF1a	00:01:03	118	1536	60	8	0.0	00:21:28	Models don't match
-stamatakis-59	Hex_EF1a	2018-11-23T18-09-48_Hex_EF1a	00:00:53	119	1536	60	8	0.0	00:21:59	Models don't match
-stamatakis-59	Hex_EF1a	2018-11-23T18-27-21_Hex_EF1a	00:00:58	118	1536	60	8	0.0	00:22:56	Models don't match
-stamatakis-59	18S_insects2	2018-11-24T00-03-41_18S_insects2	00:00:20	115	1536	60	8	0.0	00:04:30	Models don't match
-stamatakis-59	18S_insects2	2018-11-24T00-07-30_18S_insects2	00:00:19	96	1536	60	8	0.0	00:04:07	Models don't match
-stamatakis-59	18S_insects2	2018-11-24T00-11-17_18S_insects2	00:00:18	98	1536	60	8	0.0	00:04:39	Orphaned jobs
-stamatakis-59	18S_insects2	2018-11-24T00-15-03_18S_insects2	00:00:20	99	1536	60	8	0.0	00:06:00	Orphaned jobs
-stamatakis-59	18S_insects2	2018-11-24T00-18-51_18S_insects2	00:00:20	101	1536	60	8	0.0	00:04:50	Models don't match
-stamatakis-59	18S_insects2	2018-11-24T00-22-39_18S_insects2	00:00:20	101	1536	60	8	0.0	00:05:05	Orphaned jobs
-stamatakis-59	18S_insects2	2018-11-24T00-26-27_18S_insects2	00:00:20	106	1536	60	8	0.0	00:04:36	Orphaned jobs
-stamatakis-59	18S_insects2	2018-11-24T00-30-15_18S_insects2	00:00:20	101	1536	60	8	0.0	00:05:22	Orphaned jobs
-stamatakis-59	18S_insects2	2018-11-24T00-34-03_18S_insects2	00:00:20	102	1536	60	8	0.0	00:05:29	Orphaned jobs
-stamatakis-59	18S_insects2	2018-11-24T00-37-51_18S_insects2	00:00:19	101	1536	60	8	0.0	00:04:32	Orphaned jobs
-stamatakis-59	18S_insects2	2018-11-24T00-41-37_18S_insects2	00:00:20	103	1536	60	8	0.0	00:04:15	Orphaned jobs
+stamatakis-59	Hex_EF1a	2018-11-23T15-46-46_Hex_EF1a	00:01:03	120	1536	60	8	0.0	00:23:52	Models don't match	Act: 38 | Exp: 48 | Stage: 3
+stamatakis-59	Hex_EF1a	2018-11-23T15-50-02_Hex_EF1a	00:00:53	120	1536	60	8	0.0	00:23:01	Models don't match	Act: 43 | Exp: 48 | Stage: 3
+stamatakis-59	Hex_EF1a	2018-11-23T16-07-23_Hex_EF1a	00:00:58	119	1536	60	8	0.0	00:23:37	Models don't match	Act: 41 | Exp: 48 | Stage: 3
+stamatakis-59	Hex_EF1a	2018-11-23T16-24-49_Hex_EF1a	00:00:58	119	1536	60	8	0.0	00:21:46	Models don't match	Act: 38 | Exp: 48 | Stage: 3
+stamatakis-59	Hex_EF1a	2018-11-23T16-42-15_Hex_EF1a	00:01:03	117	1536	60	8	0.0	00:21:44	Models don't match	Act: 39 | Exp: 48 | Stage: 3
+stamatakis-59	Hex_EF1a	2018-11-23T16-59-47_Hex_EF1a	00:00:58	117	1536	60	8	0.0	00:22:04	Models don't match	Act: 38 | Exp: 48 | Stage: 3
+stamatakis-59	Hex_EF1a	2018-11-23T17-17-13_Hex_EF1a	00:01:03	120	1536	60	8	0.0	00:22:33	Models don't match	Act: 42 | Exp: 48 | Stage: 3
+stamatakis-59	Hex_EF1a	2018-11-23T17-34-44_Hex_EF1a	00:01:03	118	1536	60	8	0.0	00:21:54	Models don't match	Act: 39 | Exp: 48 | Stage: 3
+stamatakis-59	Hex_EF1a	2018-11-23T17-52-17_Hex_EF1a	00:01:03	118	1536	60	8	0.0	00:21:28	Models don't match	Act: 40 | Exp: 48 | Stage: 3
+stamatakis-59	Hex_EF1a	2018-11-23T18-09-48_Hex_EF1a	00:00:53	119	1536	60	8	0.0	00:21:59	Models don't match	Act: 41 | Exp: 48 | Stage: 3
+stamatakis-59	Hex_EF1a	2018-11-23T18-27-21_Hex_EF1a	00:00:58	118	1536	60	8	0.0	00:22:56	Models don't match	Act: 41 | Exp: 48 | Stage: 3
+stamatakis-59	18S_insects2	2018-11-24T00-03-41_18S_insects2	00:00:20	115	1536	60	8	0.0	00:04:30	Models don't match	Act: 18 | Exp: 48 | Stage: 3
+stamatakis-59	18S_insects2	2018-11-24T00-07-30_18S_insects2	00:00:19	96	1536	60	8	0.0	00:04:07	Models don't match	Act: 10 | Exp: 48 | Stage: 3
+stamatakis-59	18S_insects2	2018-11-24T00-11-17_18S_insects2	00:00:18	98	1536	60	8	0.0	00:04:39	Models don't match	Act: 16 | Exp: 48 | Stage: 3
+stamatakis-59	18S_insects2	2018-11-24T00-15-03_18S_insects2	00:00:20	99	1536	60	8	0.0	00:06:00	Models don't match	Act: 36 | Exp: 48 | Stage: 3
+stamatakis-59	18S_insects2	2018-11-24T00-18-51_18S_insects2	00:00:20	101	1536	60	8	0.0	00:04:50	Models don't match	Act: 26 | Exp: 48 | Stage: 3
+stamatakis-59	18S_insects2	2018-11-24T00-22-39_18S_insects2	00:00:20	101	1536	60	8	0.0	00:05:05	Models don't match	Act: 25 | Exp: 48 | Stage: 3
+stamatakis-59	18S_insects2	2018-11-24T00-26-27_18S_insects2	00:00:20	106	1536	60	8	0.0	00:04:36	Models don't match	Act: 23 | Exp: 48 | Stage: 3
+stamatakis-59	18S_insects2	2018-11-24T00-30-15_18S_insects2	00:00:20	101	1536	60	8	0.0	00:05:22	Models don't match	Act: 24 | Exp: 48 | Stage: 3
+stamatakis-59	18S_insects2	2018-11-24T00-34-03_18S_insects2	00:00:20	102	1536	60	8	0.0	00:05:29	Models don't match	Act: 26 | Exp: 48 | Stage: 3
+stamatakis-59	18S_insects2	2018-11-24T00-37-51_18S_insects2	00:00:19	101	1536	60	8	0.0	00:04:32	Models don't match	Act: 22 | Exp: 48 | Stage: 3
+stamatakis-59	18S_insects2	2018-11-24T00-41-37_18S_insects2	00:00:20	103	1536	60	8	0.0	00:04:15	Models don't match	Act: 19 | Exp: 48 | Stage: 3
 stamatakis-59	stamatakis-59	2018-11-24T01-18-47_stamatakis-59	02:13:28	128	1536	60	16	1.0	1.06:19:12	
 stamatakis-59	stamatakis-59	2018-11-24T04-02-48_stamatakis-59	02:14:53	127	1536	60	16	1.0	1.06:39:19	
 stamatakis-59	stamatakis-59	2018-11-24T06-48-13_stamatakis-59	02:14:29	127	1536	60	16	1.0	1.06:38:45	
@@ -128,19 +128,19 @@ stamatakis-59	stamatakis-59	2018-11-24T12-22-33_stamatakis-59	02:10:38	127	1536	
 stamatakis-59	stamatakis-59	2018-11-24T15-03-45_stamatakis-59	02:10:43	127	1536	60	16	1.0	1.06:34:36	
 stamatakis-59	stamatakis-59	2018-11-24T17-45-00_stamatakis-59	02:07:17	126	1536	60	16	1.0	1.06:20:51	
 stamatakis-59	stamatakis-59	2018-11-24T20-22-49_stamatakis-59	02:12:54	128	1536	60	16	1.0	1.06:36:40	
-stamatakis-59	stamatakis-59	2018-11-24T23-06-16_stamatakis-59	00:00:24	4	1536	60	16	0.0	00:00:17	Models don't match
-stamatakis-59	example	2018-11-25T00-56-17_example	00:00:25	93	1536	60	16	0.0	00:06:24	Models don't match
-stamatakis-59	example	2018-11-25T01-00-10_example	00:00:27	93	1536	60	16	0.0	00:06:52	
-stamatakis-59	example	2018-11-25T01-04-04_example	00:00:27	97	1536	60	16	0.0	00:06:33	Models don't match
-stamatakis-59	example	2018-11-25T01-07-59_example	00:00:29	94	1536	60	16	0.0	00:06:54	Models don't match
-stamatakis-59	example	2018-11-25T01-11-57_example	00:00:25	96	1536	60	16	0.0	00:06:09	Models don't match
-stamatakis-59	example	2018-11-25T01-15-49_example	00:00:28	85	1536	60	16	0.0	00:07:21	Orphaned jobs
-stamatakis-59	example	2018-11-25T01-19-54_example	00:00:24	93	1536	60	16	0.0	00:06:06	Models don't match
-stamatakis-59	example	2018-11-25T01-23-45_example	00:00:26	87	1536	60	16	0.0	00:06:16	Models don't match
-stamatakis-59	example	2018-11-25T01-27-38_example	00:00:23	98	1536	60	16	0.0	00:05:51	Models don't match
-stamatakis-59	example	2018-11-25T01-31-29_example	00:00:29	87	1536	60	16	0.0	00:06:27	Models don't match
-stamatakis-59	example	2018-11-25T01-35-26_example	00:00:25	88	1536	60	16	0.0	00:06:03	Models don't match
-stamatakis-59	stamatakis-59	2018-11-25T01-53-41_stamatakis-59	02:09:15	136	1536	60	16	1.0	1.06:52:38	Models don't match
+stamatakis-59	stamatakis-59	2018-11-24T23-06-16_stamatakis-59	00:00:24	4	1536	60	16	0.0	00:00:17	Models don't match	Act: 3 | Exp: 8 | Stage: 5
+stamatakis-59	example	2018-11-25T00-56-17_example	00:00:25	93	1536	60	16	0.0	00:06:24	Models don't match	Act: 3 | Exp: 8 | Stage: 5
+stamatakis-59	example	2018-11-25T01-00-10_example	00:00:27	93	1536	60	16	0.0	00:06:52	Orphaned jobs	3
+stamatakis-59	example	2018-11-25T01-04-04_example	00:00:27	97	1536	60	16	0.0	00:06:33	Models don't match	Act: 4 | Exp: 8 | Stage: 5
+stamatakis-59	example	2018-11-25T01-07-59_example	00:00:29	94	1536	60	16	0.0	00:06:54	Models don't match	Act: 3 | Exp: 8 | Stage: 5
+stamatakis-59	example	2018-11-25T01-11-57_example	00:00:25	96	1536	60	16	0.0	00:06:09	Models don't match	Act: 4 | Exp: 8 | Stage: 5
+stamatakis-59	example	2018-11-25T01-15-49_example	00:00:28	85	1536	60	16	0.0	00:07:21	Orphaned jobs	19
+stamatakis-59	example	2018-11-25T01-19-54_example	00:00:24	93	1536	60	16	0.0	00:06:06	Models don't match	Act: 4 | Exp: 8 | Stage: 5
+stamatakis-59	example	2018-11-25T01-23-45_example	00:00:26	87	1536	60	16	0.0	00:06:16	Models don't match	Act: 6 | Exp: 8 | Stage: 5
+stamatakis-59	example	2018-11-25T01-27-38_example	00:00:23	98	1536	60	16	0.0	00:05:51	Models don't match	Act: 2 | Exp: 8 | Stage: 5
+stamatakis-59	example	2018-11-25T01-31-29_example	00:00:29	87	1536	60	16	0.0	00:06:27	Models don't match	Act: 4 | Exp: 8 | Stage: 5
+stamatakis-59	example	2018-11-25T01-35-26_example	00:00:25	88	1536	60	16	0.0	00:06:03	Models don't match	Act: 4 | Exp: 8 | Stage: 5
+stamatakis-59	stamatakis-59	2018-11-25T01-53-41_stamatakis-59	02:09:15	136	1536	60	16	1.0	1.06:52:38	Models don't match	Act: 13 | Exp: 8 | Stage: 0
 stamatakis-59	stamatakis-59	2018-11-25T04-33-29_stamatakis-59	02:15:01	127	1536	60	16	1.0	1.06:29:08	
 gusanosCOI.mafft	gusanosCOI.mafft	2018-11-25T07-03-31_gusanosCOI.mafft	01:21:40	230	1536	60	8	0.49642857142857144	12:16:44	
 gusanosCOI.mafft	gusanosCOI.mafft	2018-11-25T08-55-48_gusanosCOI.mafft	01:19:54	215	1536	60	8	0.5142857142857142	12:45:47	
@@ -149,14 +149,14 @@ gusanosCOI.mafft	gusanosCOI.mafft	2018-11-25T12-36-18_gusanosCOI.mafft	01:20:09	
 gusanosCOI.mafft	gusanosCOI.mafft	2018-11-25T14-27-02_gusanosCOI.mafft	01:20:15	231	1536	60	8	0.49642857142857144	12:35:43	
 gusanosCOI.mafft	gusanosCOI.mafft	2018-11-25T16-17-55_gusanosCOI.mafft	01:19:07	215	1536	60	8	0.5071428571428571	12:38:52	
 gusanosCOI.mafft	gusanosCOI.mafft	2018-11-25T18-07-36_gusanosCOI.mafft	01:21:18	232	1536	60	8	0.49642857142857144	12:31:11	
-gusanosCOI.mafft	gusanosCOI.mafft	2018-11-25T20-00-10_gusanosCOI.mafft	01:19:31	219	1536	60	8	0.5107142857142857	12:34:22	Models don't match
+gusanosCOI.mafft	gusanosCOI.mafft	2018-11-25T20-00-10_gusanosCOI.mafft	01:19:31	219	1536	60	8	0.5107142857142857	12:34:22	Models don't match	Act: 7 | Exp: 8 | Stage: 0
 gusanosCOI.mafft	gusanosCOI.mafft	2018-11-25T21-39-20_gusanosCOI.mafft	01:19:10	223	1536	60	8	0.5214285714285715	13:01:23	
 gusanosCOI.mafft	gusanosCOI.mafft	2018-11-25T23-07-41_gusanosCOI.mafft	01:22:05	227	1536	60	8	0.49642857142857144	12:24:10	
 gusanosCOI.mafft	gusanosCOI.mafft	2018-11-26T00-38-44_gusanosCOI.mafft	01:20:06	225	1536	60	8	0.5214285714285715	12:46:28	
 Birds	Birds	2018-11-26T02-10-31_Birds	00:16:48	140	1536	60	8	0.028846153846153848	02:28:41	
 Birds	Birds	2018-11-26T02-34-28_Birds	00:16:19	140	1536	60	8	0.019230769230769232	02:10:55	
 Birds	Birds	2018-11-26T02-57-57_Birds	00:12:21	140	1536	60	8	0.009615384615384616	01:56:00	
-Birds	Birds	2018-11-26T03-17-27_Birds	00:12:21	140	1536	60	8	0.009615384615384616	01:56:16	
+Birds	Birds	2018-11-26T03-17-27_Birds	00:12:21	140	1536	60	8	0.009615384615384616	01:56:16	Orphaned jobs	1
 Birds	Birds	2018-11-26T03-36-57_Birds	00:16:26	140	1536	60	8	0.02403846153846154	02:06:30	
 Birds	Birds	2018-11-26T04-00-31_Birds	00:16:13	140	1536	60	8	0.019230769230769232	02:05:02	
 Birds	Birds	2018-11-26T04-23-53_Birds	00:14:20	140	1536	60	8	0.004807692307692308	02:03:44	
@@ -164,7 +164,7 @@ Birds	Birds	2018-11-26T04-45-22_Birds	00:11:53	140	1536	60	8	0.00961538461538461
 Birds	Birds	2018-11-26T05-04-23_Birds	00:15:58	140	1536	60	8	0.019230769230769232	02:02:23	
 Birds	Birds	2018-11-26T05-27-30_Birds	00:29:11	140	1536	60	8	0.03365384615384615	02:12:29	
 Birds	Birds	2018-11-26T06-03-50_Birds	00:09:33	120	1536	60	8	0.0	02:13:14	
-gusanos16S.mafft	gusanos16S.mafft	2018-11-26T14-17-48_gusanos16S.mafft	00:46:49	202	1536	60	8	0.203125	06:26:34	
+gusanos16S.mafft	gusanos16S.mafft	2018-11-26T14-17-48_gusanos16S.mafft	00:46:49	202	1536	60	8	0.203125	06:26:34	Orphaned jobs	1
 gusanos16S.mafft	gusanos16S.mafft	2018-11-26T15-06-51_gusanos16S.mafft	00:39:48	183	1536	60	8	0.1875	05:59:20	
 gusanos16S.mafft	gusanos16S.mafft	2018-11-26T16-02-12_gusanos16S.mafft	00:47:10	202	1536	60	8	0.2109375	06:28:14	
 gusanos16S.mafft	gusanos16S.mafft	2018-11-26T17-04-54_gusanos16S.mafft	00:48:06	212	1536	60	8	0.1953125	06:21:53	
@@ -189,7 +189,7 @@ gusanosCOI.mafft	gusanosCOI.mafft	2018-11-27T13-20-41_gusanosCOI.mafft	00:59:33	
 Birds	Birds	2018-11-27T15-36-05_Birds	00:16:12	140	1536	60	16	0.019230769230769232	02:24:19	
 Birds	Birds	2018-11-27T16-07-47_Birds	00:17:36	140	1536	60	16	0.028846153846153848	02:29:48	
 Birds	Birds	2018-11-27T16-40-53_Birds	00:13:31	140	1536	60	16	0.028846153846153848	02:23:20	
-Birds	Birds	2018-11-27T17-09-52_Birds	00:11:32	120	1536	60	16	0.004807692307692308	02:07:45	
+Birds	Birds	2018-11-27T17-09-52_Birds	00:11:32	120	1536	60	16	0.004807692307692308	02:07:45	Orphaned jobs	1
 Birds	Birds	2018-11-27T17-36-54_Birds	00:17:16	140	1536	60	16	0.028846153846153848	02:21:22	
 Birds	Birds	2018-11-27T18-09-44_Birds	00:12:07	120	1536	60	16	0.009615384615384616	02:06:29	
 Birds	Birds	2018-11-27T18-37-21_Birds	00:17:02	140	1536	60	16	0.02403846153846154	02:24:07	
@@ -202,54 +202,54 @@ Birds	gusanos16S.mafft	2018-11-28T03-20-25_gusanos16S.mafft	00:43:04	182	1536	60
 Birds	gusanos16S.mafft	2018-11-28T04-19-02_gusanos16S.mafft	00:34:47	152	1536	60	16	0.20703125	06:08:32	
 Birds	gusanos16S.mafft	2018-11-28T05-09-20_gusanos16S.mafft	00:36:11	148	1536	60	16	0.1953125	06:06:46	
 Birds	gusanos16S.mafft	2018-11-28T06-01-02_gusanos16S.mafft	00:37:21	182	1536	60	16	0.21875	06:37:39	
-Birds	gusanos16S.mafft	2018-11-28T06-53-55_gusanos16S.mafft	00:35:42	152	1536	60	16	0.1953125	06:17:13	Models don't match
+Birds	gusanos16S.mafft	2018-11-28T06-53-55_gusanos16S.mafft	00:35:42	152	1536	60	16	0.1953125	06:17:13	Models don't match	Act: 7 | Exp: 8 | Stage: 0
 Birds	gusanos16S.mafft	2018-11-28T07-45-09_gusanos16S.mafft	00:36:38	148	1536	60	16	0.22265625	06:44:54	
 Birds	gusanos16S.mafft	2018-11-28T08-37-19_gusanos16S.mafft	00:35:57	154	1536	60	16	0.1875	06:00:56	
 Birds	gusanos16S.mafft	2018-11-28T09-28-57_gusanos16S.mafft	00:35:57	152	1536	60	16	0.19140625	06:07:25	
 Birds	gusanos16S.mafft	2018-11-28T10-20-26_gusanos16S.mafft	00:44:01	182	1536	60	16	0.1875	06:12:29	
 Birds	gusanos16S.mafft	2018-11-28T11-20-00_gusanos16S.mafft	00:36:53	148	1536	60	16	0.20703125	06:24:23	
 HIV_vpu.ref2	HIV_vpu.ref2	2018-11-28T13-27-32_HIV_vpu.ref2	00:06:14	120	1536	60	16	0.0	01:48:19	
-HIV_vpu.ref2	HIV_vpu.ref2	2018-11-28T13-41-48_HIV_vpu.ref2	00:05:44	125	1536	60	16	0.0	01:44:39	Models don't match
-HIV_vpu.ref2	HIV_vpu.ref2	2018-11-28T13-55-03_HIV_vpu.ref2	00:04:08	120	1536	60	16	0.0	01:42:41	
-HIV_vpu.ref2	HIV_vpu.ref2	2018-11-28T14-06-39_HIV_vpu.ref2	00:03:41	120	1536	60	16	0.0	01:39:14	Models don't match
-HIV_vpu.ref2	HIV_vpu.ref2	2018-11-28T14-17-49_HIV_vpu.ref2	00:05:33	120	1536	60	16	0.0	01:43:40	Models don't match
-HIV_vpu.ref2	aP6	2018-11-28T14-40-24_aP6	00:00:11	25	1536	60	16	0.0	00:01:17	Models don't match
-HIV_vpu.ref2	aP6	2018-11-28T14-43-01_aP6	00:00:12	21	1536	60	16	0.0	00:00:48	Orphaned jobs
-HIV_vpu.ref2	aP6	2018-11-28T14-45-39_aP6	00:00:12	25	1536	60	16	0.0	00:00:20	Orphaned jobs
-HIV_vpu.ref2	aP6	2018-11-28T14-48-17_aP6	00:00:12	21	1536	60	16	0.0	00:00:16	Orphaned jobs
-HIV_vpu.ref2	aP6	2018-11-28T14-50-55_aP6	00:00:11	25	1536	60	16	0.0	00:00:39	Orphaned jobs
-HIV_vpu.ref2	rodents	2018-11-28T14-53-38_rodents	00:00:18	131	1536	60	16	0.0	00:05:01	Orphaned jobs
-mixed	rodents	2018-11-28T14-56-26_rodents	00:00:13	83	1536	60	16	0.0	00:02:13	Orphaned jobs
-mixed	rodents	2018-11-28T14-59-05_rodents	00:00:12	80	1536	60	16	0.0	00:03:03	Orphaned jobs
-mixed	rodents	2018-11-28T15-01-46_rodents	00:00:15	82	1536	60	16	0.0	00:02:42	Orphaned jobs
-mixed	rodents	2018-11-28T15-04-28_rodents	00:00:13	78	1536	60	16	0.0	00:02:07	Orphaned jobs
-mixed	18S_insects2	2018-11-28T15-07-15_18S_insects2	00:00:20	101	1536	60	16	0.0	00:05:22	Orphaned jobs
-mixed	18S_insects2	2018-11-28T15-10-08_18S_insects2	00:00:19	99	1536	60	16	0.0	00:03:52	Models don't match
-mixed	18S_insects2	2018-11-28T15-12-55_18S_insects2	00:00:21	92	1536	60	16	0.0	00:05:14	Orphaned jobs
-mixed	18S_insects2	2018-11-28T15-15-43_18S_insects2	00:00:16	108	1536	60	16	0.0	00:03:04	Models don't match
-mixed	18S_insects2	2018-11-28T15-18-28_18S_insects2	00:00:20	93	1536	60	16	0.0	00:05:18	Orphaned jobs
-mixed	example	2018-11-28T15-21-23_example	00:00:29	98	1536	60	16	0.0	00:06:37	Models don't match
-mixed	example	2018-11-28T15-24-20_example	00:00:23	90	1536	60	16	0.0	00:06:01	Models don't match
-mixed	example	2018-11-28T15-27-11_example	00:00:23	91	1536	60	16	0.0	00:06:30	Models don't match
-mixed	example	2018-11-28T15-30-02_example	00:00:25	84	1536	60	16	0.0	00:06:08	Models don't match
-mixed	example	2018-11-28T15-32-55_example	00:00:27	93	1536	60	16	0.0	00:06:09	Models don't match
-mixed	HIVpol.groupM	2018-11-28T15-35-56_HIVpol.groupM	00:00:32	118	1536	60	16	0.0	00:10:54	Orphaned jobs
-mixed	HIVpol.groupM	2018-11-28T15-38-56_HIVpol.groupM	00:00:32	116	1536	60	16	0.0	00:11:26	Models don't match
-mixed	HIVpol.groupM	2018-11-28T15-41-57_HIVpol.groupM	00:00:32	115	1536	60	16	0.0	00:11:44	Models don't match
-mixed	HIVpol.groupM	2018-11-28T15-44-57_HIVpol.groupM	00:00:33	113	1536	60	16	0.0	00:11:50	Orphaned jobs
-mixed	HIVpol.groupM	2018-11-28T15-47-57_HIVpol.groupM	00:00:33	115	1536	60	16	0.0	00:11:09	Models don't match
-mixed	Hex_EF1a	2018-11-28T15-51-04_Hex_EF1a	00:00:51	120	1536	60	16	0.0	00:21:28	Models don't match
-mixed	Hex_EF1a	2018-11-28T15-54-23_Hex_EF1a	00:00:56	120	1536	60	16	0.0	00:22:44	Models don't match
-mixed	Hex_EF1a	2018-11-28T15-57-48_Hex_EF1a	00:01:00	120	1536	60	16	0.0	00:22:02	Models don't match
-mixed	Hex_EF1a	2018-11-28T16-01-16_Hex_EF1a	00:00:57	119	1536	60	16	0.0	00:22:29	Models don't match
-mixed	Hex_EF1a	2018-11-28T16-04-41_Hex_EF1a	00:00:57	118	1536	60	16	0.0	00:22:23	Models don't match
-mixed	primate-mtDNA	2018-11-28T16-08-12_primate-mtDNA	00:01:36	120	1536	60	16	0.0	00:33:27	Models don't match
-mixed	primate-mtDNA	2018-11-28T16-12-16_primate-mtDNA	00:01:32	120	1536	60	16	0.0	00:34:47	
+HIV_vpu.ref2	HIV_vpu.ref2	2018-11-28T13-41-48_HIV_vpu.ref2	00:05:44	125	1536	60	16	0.0	01:44:39	Models don't match	Act: 21 | Exp: 24 | Stage: 4
+HIV_vpu.ref2	HIV_vpu.ref2	2018-11-28T13-55-03_HIV_vpu.ref2	00:04:08	120	1536	60	16	0.0	01:42:41	Orphaned jobs	1
+HIV_vpu.ref2	HIV_vpu.ref2	2018-11-28T14-06-39_HIV_vpu.ref2	00:03:41	120	1536	60	16	0.0	01:39:14	Models don't match	Act: 21 | Exp: 24 | Stage: 4
+HIV_vpu.ref2	HIV_vpu.ref2	2018-11-28T14-17-49_HIV_vpu.ref2	00:05:33	120	1536	60	16	0.0	01:43:40	Models don't match	Act: 20 | Exp: 24 | Stage: 4
+HIV_vpu.ref2	aP6	2018-11-28T14-40-24_aP6	00:00:11	25	1536	60	16	0.0	00:01:17	Models don't match	Act: 0 | Exp: 8 | Stage: 5
+HIV_vpu.ref2	aP6	2018-11-28T14-43-01_aP6	00:00:12	21	1536	60	16	0.0	00:00:48	Models don't match	Act: 0 | Exp: 8 | Stage: 5
+HIV_vpu.ref2	aP6	2018-11-28T14-45-39_aP6	00:00:12	25	1536	60	16	0.0	00:00:20	Models don't match	Act: 0 | Exp: 8 | Stage: 5
+HIV_vpu.ref2	aP6	2018-11-28T14-48-17_aP6	00:00:12	21	1536	60	16	0.0	00:00:16	Models don't match	Act: 0 | Exp: 8 | Stage: 5
+HIV_vpu.ref2	aP6	2018-11-28T14-50-55_aP6	00:00:11	25	1536	60	16	0.0	00:00:39	Models don't match	Act: 0 | Exp: 8 | Stage: 5
+HIV_vpu.ref2	rodents	2018-11-28T14-53-38_rodents	00:00:18	131	1536	60	16	0.0	00:05:01	Models don't match	Act: 25 | Exp: 48 | Stage: 3
+mixed	rodents	2018-11-28T14-56-26_rodents	00:00:13	83	1536	60	16	0.0	00:02:13	Models don't match	Act: 11 | Exp: 48 | Stage: 3
+mixed	rodents	2018-11-28T14-59-05_rodents	00:00:12	80	1536	60	16	0.0	00:03:03	Models don't match	Act: 9 | Exp: 48 | Stage: 3
+mixed	rodents	2018-11-28T15-01-46_rodents	00:00:15	82	1536	60	16	0.0	00:02:42	Models don't match	Act: 11 | Exp: 48 | Stage: 3
+mixed	rodents	2018-11-28T15-04-28_rodents	00:00:13	78	1536	60	16	0.0	00:02:07	Models don't match	Act: 7 | Exp: 48 | Stage: 3
+mixed	18S_insects2	2018-11-28T15-07-15_18S_insects2	00:00:20	101	1536	60	16	0.0	00:05:22	Models don't match	Act: 28 | Exp: 48 | Stage: 3
+mixed	18S_insects2	2018-11-28T15-10-08_18S_insects2	00:00:19	99	1536	60	16	0.0	00:03:52	Models don't match	Act: 16 | Exp: 48 | Stage: 3
+mixed	18S_insects2	2018-11-28T15-12-55_18S_insects2	00:00:21	92	1536	60	16	0.0	00:05:14	Models don't match	Act: 30 | Exp: 48 | Stage: 3
+mixed	18S_insects2	2018-11-28T15-15-43_18S_insects2	00:00:16	108	1536	60	16	0.0	00:03:04	Models don't match	Act: 13 | Exp: 48 | Stage: 3
+mixed	18S_insects2	2018-11-28T15-18-28_18S_insects2	00:00:20	93	1536	60	16	0.0	00:05:18	Models don't match	Act: 31 | Exp: 48 | Stage: 3
+mixed	example	2018-11-28T15-21-23_example	00:00:29	98	1536	60	16	0.0	00:06:37	Models don't match	Act: 3 | Exp: 8 | Stage: 5
+mixed	example	2018-11-28T15-24-20_example	00:00:23	90	1536	60	16	0.0	00:06:01	Models don't match	Act: 4 | Exp: 8 | Stage: 5
+mixed	example	2018-11-28T15-27-11_example	00:00:23	91	1536	60	16	0.0	00:06:30	Models don't match	Act: 5 | Exp: 8 | Stage: 5
+mixed	example	2018-11-28T15-30-02_example	00:00:25	84	1536	60	16	0.0	00:06:08	Models don't match	Act: 3 | Exp: 8 | Stage: 5
+mixed	example	2018-11-28T15-32-55_example	00:00:27	93	1536	60	16	0.0	00:06:09	Models don't match	Act: 3 | Exp: 8 | Stage: 5
+mixed	HIVpol.groupM	2018-11-28T15-35-56_HIVpol.groupM	00:00:32	118	1536	60	16	0.0	00:10:54	Models don't match	Act: 32 | Exp: 48 | Stage: 3
+mixed	HIVpol.groupM	2018-11-28T15-38-56_HIVpol.groupM	00:00:32	116	1536	60	16	0.0	00:11:26	Models don't match	Act: 30 | Exp: 48 | Stage: 3
+mixed	HIVpol.groupM	2018-11-28T15-41-57_HIVpol.groupM	00:00:32	115	1536	60	16	0.0	00:11:44	Models don't match	Act: 31 | Exp: 48 | Stage: 3
+mixed	HIVpol.groupM	2018-11-28T15-44-57_HIVpol.groupM	00:00:33	113	1536	60	16	0.0	00:11:50	Models don't match	Act: 36 | Exp: 48 | Stage: 3
+mixed	HIVpol.groupM	2018-11-28T15-47-57_HIVpol.groupM	00:00:33	115	1536	60	16	0.0	00:11:09	Models don't match	Act: 34 | Exp: 48 | Stage: 3
+mixed	Hex_EF1a	2018-11-28T15-51-04_Hex_EF1a	00:00:51	120	1536	60	16	0.0	00:21:28	Models don't match	Act: 38 | Exp: 48 | Stage: 3
+mixed	Hex_EF1a	2018-11-28T15-54-23_Hex_EF1a	00:00:56	120	1536	60	16	0.0	00:22:44	Models don't match	Act: 40 | Exp: 48 | Stage: 3
+mixed	Hex_EF1a	2018-11-28T15-57-48_Hex_EF1a	00:01:00	120	1536	60	16	0.0	00:22:02	Models don't match	Act: 36 | Exp: 48 | Stage: 3
+mixed	Hex_EF1a	2018-11-28T16-01-16_Hex_EF1a	00:00:57	119	1536	60	16	0.0	00:22:29	Models don't match	Act: 41 | Exp: 48 | Stage: 3
+mixed	Hex_EF1a	2018-11-28T16-04-41_Hex_EF1a	00:00:57	118	1536	60	16	0.0	00:22:23	Models don't match	Act: 38 | Exp: 48 | Stage: 3
+mixed	primate-mtDNA	2018-11-28T16-08-12_primate-mtDNA	00:01:36	120	1536	60	16	0.0	00:33:27	Models don't match	Act: 6 | Exp: 8 | Stage: 5
+mixed	primate-mtDNA	2018-11-28T16-12-16_primate-mtDNA	00:01:32	120	1536	60	16	0.0	00:34:47	Orphaned jobs	2
 mixed	primate-mtDNA	2018-11-28T16-16-17_primate-mtDNA	00:01:39	120	1536	60	16	0.0	00:35:10	
-mixed	primate-mtDNA	2018-11-28T16-20-24_primate-mtDNA	00:01:35	120	1536	60	16	0.0	00:34:25	Models don't match
-mixed	primate-mtDNA	2018-11-28T16-24-27_primate-mtDNA	00:01:33	120	1536	60	16	0.0	00:34:15	Models don't match
+mixed	primate-mtDNA	2018-11-28T16-20-24_primate-mtDNA	00:01:35	120	1536	60	16	0.0	00:34:25	Models don't match	Act: 6 | Exp: 8 | Stage: 5
+mixed	primate-mtDNA	2018-11-28T16-24-27_primate-mtDNA	00:01:33	120	1536	60	16	0.0	00:34:15	Models don't match	Act: 6 | Exp: 8 | Stage: 5
 mixed	stamatakis-59	2018-11-28T16-41-22_stamatakis-59	01:23:55	127	1536	60	36	1.0	1.06:14:22	
-mixed	stamatakis-59	2018-11-28T18-15-50_stamatakis-59	01:20:25	127	1536	60	36	1.0078125	1.06:47:37	More batch than Models
+mixed	stamatakis-59	2018-11-28T18-15-50_stamatakis-59	01:20:25	127	1536	60	36	1.0078125	1.06:47:37	More batch than Models	129/128
 mixed	stamatakis-59	2018-11-28T19-46-49_stamatakis-59	01:19:26	127	1536	60	36	1.0	1.06:21:51	
 mixed	stamatakis-59	2018-11-28T21-16-48_stamatakis-59	01:25:56	127	1536	60	36	1.0	1.05:55:56	
 mixed	stamatakis-59	2018-11-28T22-53-16_stamatakis-59	01:24:26	127	1536	60	36	1.0	1.06:07:21	
@@ -281,14 +281,14 @@ mixed	Birds	2018-11-30T01-45-14_Birds	00:12:47	140	1536	60	36	0.0096153846153846
 mixed	Birds	2018-11-30T02-08-29_Birds	00:12:47	140	1536	60	36	0.019230769230769232	02:05:49	
 mixed	Birds	2018-11-30T02-31-48_Birds	00:16:46	140	1536	60	36	0.019230769230769232	02:05:38	
 mixed	Birds	2018-11-30T02-59-03_Birds	00:17:17	140	1536	60	36	0.02403846153846154	02:11:45	
-mixed	gusanos16S.mafft	2018-11-30T03-26-59_gusanos16S.mafft	00:44:14	183	1536	60	36	0.1875	06:12:40	Models don't match
+mixed	gusanos16S.mafft	2018-11-30T03-26-59_gusanos16S.mafft	00:44:14	183	1536	60	36	0.1875	06:12:40	Models don't match	Act: 7 | Exp: 8 | Stage: 0
 mixed	gusanos16S.mafft	2018-11-30T04-21-46_gusanos16S.mafft	00:46:14	197	1536	60	36	0.2109375	06:12:13	
 mixed	gusanos16S.mafft	2018-11-30T05-18-33_gusanos16S.mafft	00:47:44	202	1536	60	36	0.19921875	06:12:19	
 mixed	gusanos16S.mafft	2018-11-30T06-16-50_gusanos16S.mafft	00:38:13	152	1536	60	36	0.19140625	06:07:36	
 mixed	gusanos16S.mafft	2018-11-30T07-05-35_gusanos16S.mafft	00:36:43	152	1536	60	36	0.19140625	06:12:06	
 mixed	gusanos16S.mafft	2018-11-30T07-52-53_gusanos16S.mafft	00:46:13	198	1536	60	36	0.22265625	06:49:49	
 mixed	gusanos16S.mafft	2018-11-30T08-49-39_gusanos16S.mafft	00:45:14	182	1536	60	36	0.2421875	06:53:08	
-mixed	gusanos16S.mafft	2018-11-30T09-45-24_gusanos16S.mafft	00:36:12	148	1536	60	36	0.1953125	06:02:39	Models don't match
+mixed	gusanos16S.mafft	2018-11-30T09-45-24_gusanos16S.mafft	00:36:12	148	1536	60	36	0.1953125	06:02:39	Models don't match	Act: 7 | Exp: 8 | Stage: 0
 mixed	gusanos16S.mafft	2018-11-30T10-32-08_gusanos16S.mafft	00:35:13	152	1536	60	36	0.234375	06:31:40	
 mixed	gusanos16S.mafft	2018-11-30T11-17-52_gusanos16S.mafft	00:39:14	182	1536	60	36	0.21484375	06:20:56	
 mixed	gusanos16S.mafft	2018-11-30T12-07-39_gusanos16S.mafft	00:36:13	152	1536	60	36	0.1796875	05:49:42	
@@ -297,47 +297,47 @@ mixed	HIV_vpu.ref2	2018-11-30T13-03-37_HIV_vpu.ref2	00:07:06	126	1536	60	36	0.0	
 mixed	HIV_vpu.ref2	2018-11-30T13-13-13_HIV_vpu.ref2	00:06:36	120	1536	60	36	0.0	01:41:45	
 mixed	HIV_vpu.ref2	2018-11-30T13-22-17_HIV_vpu.ref2	00:06:36	126	1536	60	36	0.0	01:43:16	
 mixed	HIV_vpu.ref2	2018-11-30T13-31-21_HIV_vpu.ref2	00:04:35	126	1536	60	36	0.0	01:40:42	
-mixed	primate-mtDNA	2018-11-30T13-38-34_primate-mtDNA	00:01:50	128	1536	60	36	0.0	00:33:33	Models don't match
-mixed	primate-mtDNA	2018-11-30T13-42-53_primate-mtDNA	00:01:41	120	1536	60	36	0.0	00:34:05	
-mixed	primate-mtDNA	2018-11-30T13-47-02_primate-mtDNA	00:01:58	120	1536	60	36	0.0	00:33:08	Models don't match
-mixed	primate-mtDNA	2018-11-30T13-51-28_primate-mtDNA	00:01:43	120	1536	60	36	0.0	00:34:06	
-mixed	primate-mtDNA	2018-11-30T13-55-39_primate-mtDNA	00:01:32	120	1536	60	36	0.0	00:33:40	Models don't match
-mixed	Hex_EF1a	2018-11-30T13-59-47_Hex_EF1a	00:01:02	119	1536	60	36	0.0	00:21:26	Models don't match
-mixed	Hex_EF1a	2018-11-30T14-03-18_Hex_EF1a	00:01:03	120	1536	60	36	0.0	00:23:00	
-mixed	Hex_EF1a	2018-11-30T14-06-49_Hex_EF1a	00:01:02	120	1536	60	36	0.0	00:22:03	Models don't match
-mixed	Hex_EF1a	2018-11-30T14-10-20_Hex_EF1a	00:00:57	120	1536	60	36	0.0	00:23:11	Models don't match
-mixed	Hex_EF1a	2018-11-30T14-13-46_Hex_EF1a	00:00:57	120	1536	60	36	0.0	00:22:40	Models don't match
-mixed	HIVpol.groupM	2018-11-30T14-17-20_HIVpol.groupM	00:00:32	116	1536	60	36	0.0	00:10:59	Models don't match
-mixed	HIVpol.groupM	2018-11-30T14-20-20_HIVpol.groupM	00:00:33	110	1536	60	36	0.0	00:10:39	Orphaned jobs
-mixed	HIVpol.groupM	2018-11-30T14-23-21_HIVpol.groupM	00:00:30	110	1536	60	36	0.0	00:11:05	Orphaned jobs
-mixed	HIVpol.groupM	2018-11-30T14-26-20_HIVpol.groupM	00:00:33	113	1536	60	36	0.0	00:11:10	Models don't match
-mixed	HIVpol.groupM	2018-11-30T14-29-20_HIVpol.groupM	00:00:32	112	1536	60	36	0.0	00:11:04	Models don't match
-mixed	example	2018-11-30T14-32-28_example	00:00:27	93	1536	60	36	0.0	00:06:57	Orphaned jobs
-mixed	example	2018-11-30T14-35-23_example	00:00:27	91	1536	60	36	0.0	00:06:17	Models don't match
-mixed	example	2018-11-30T14-38-17_example	00:00:25	87	1536	60	36	0.0	00:05:54	Models don't match
-mixed	example	2018-11-30T14-41-10_example	00:00:27	95	1536	60	36	0.0	00:06:17	Models don't match
-mixed	example	2018-11-30T14-44-05_example	00:00:27	88	1536	60	36	0.0	00:06:33	Models don't match
-mixed	18S_insects2	2018-11-30T14-47-06_18S_insects2	00:00:20	95	1536	60	36	0.0	00:04:50	Models don't match
-mixed	18S_insects2	2018-11-30T14-49-55_18S_insects2	00:00:20	99	1536	60	36	0.0	00:05:16	Models don't match
-mixed	18S_insects2	2018-11-30T14-52-44_18S_insects2	00:00:21	101	1536	60	36	0.0	00:04:58	Orphaned jobs
-mixed	18S_insects2	2018-11-30T14-55-32_18S_insects2	00:00:18	101	1536	60	36	0.0	00:04:01	Models don't match
-mixed	18S_insects2	2018-11-30T14-58-19_18S_insects2	00:00:21	101	1536	60	36	0.0	00:05:15	Orphaned jobs
-mixed	rodents	2018-11-30T15-01-14_rodents	00:00:14	87	1536	60	36	0.0	00:02:16	Models don't match
-mixed	rodents	2018-11-30T15-03-55_rodents	00:00:15	72	1536	60	36	0.0	00:02:04	Orphaned jobs
-mixed	rodents	2018-11-30T15-06-37_rodents	00:00:14	86	1536	60	36	0.0	00:03:36	Orphaned jobs
-mixed	rodents	2018-11-30T15-09-18_rodents	00:00:12	80	1536	60	36	0.0	00:03:15	Orphaned jobs
-mixed	rodents	2018-11-30T15-11-57_rodents	00:00:14	80	1536	60	36	0.0	00:03:28	Orphaned jobs
-mixed	aP6	2018-11-30T15-14-46_aP6	00:00:11	42	1536	60	36	0.0	00:01:12	Orphaned jobs
-mixed	aP6	2018-11-30T15-17-23_aP6	00:00:11	43	1536	60	36	0.0	00:01:02	Models don't match
-mixed	aP6	2018-11-30T15-20-01_aP6	00:00:11	23	1536	60	36	0.0	00:00:24	Orphaned jobs
-mixed	aP6	2018-11-30T15-22-38_aP6	00:00:11	24	1536	60	36	0.0	00:00:51	Orphaned jobs
-mixed	aP6	2018-11-30T15-25-15_aP6	00:00:11	25	1536	60	36	0.0	00:00:08	Models don't match
+mixed	primate-mtDNA	2018-11-30T13-38-34_primate-mtDNA	00:01:50	128	1536	60	36	0.0	00:33:33	Models don't match	Act: 6 | Exp: 8 | Stage: 5
+mixed	primate-mtDNA	2018-11-30T13-42-53_primate-mtDNA	00:01:41	120	1536	60	36	0.0	00:34:05	Orphaned jobs	1
+mixed	primate-mtDNA	2018-11-30T13-47-02_primate-mtDNA	00:01:58	120	1536	60	36	0.0	00:33:08	Models don't match	Act: 4 | Exp: 8 | Stage: 5
+mixed	primate-mtDNA	2018-11-30T13-51-28_primate-mtDNA	00:01:43	120	1536	60	36	0.0	00:34:06	Orphaned jobs	1
+mixed	primate-mtDNA	2018-11-30T13-55-39_primate-mtDNA	00:01:32	120	1536	60	36	0.0	00:33:40	Models don't match	Act: 5 | Exp: 8 | Stage: 5
+mixed	Hex_EF1a	2018-11-30T13-59-47_Hex_EF1a	00:01:02	119	1536	60	36	0.0	00:21:26	Models don't match	Act: 31 | Exp: 48 | Stage: 3
+mixed	Hex_EF1a	2018-11-30T14-03-18_Hex_EF1a	00:01:03	120	1536	60	36	0.0	00:23:00	Orphaned jobs	7
+mixed	Hex_EF1a	2018-11-30T14-06-49_Hex_EF1a	00:01:02	120	1536	60	36	0.0	00:22:03	Models don't match	Act: 40 | Exp: 48 | Stage: 3
+mixed	Hex_EF1a	2018-11-30T14-10-20_Hex_EF1a	00:00:57	120	1536	60	36	0.0	00:23:11	Models don't match	Act: 40 | Exp: 48 | Stage: 3
+mixed	Hex_EF1a	2018-11-30T14-13-46_Hex_EF1a	00:00:57	120	1536	60	36	0.0	00:22:40	Models don't match	Act: 39 | Exp: 48 | Stage: 3
+mixed	HIVpol.groupM	2018-11-30T14-17-20_HIVpol.groupM	00:00:32	116	1536	60	36	0.0	00:10:59	Models don't match	Act: 29 | Exp: 48 | Stage: 3
+mixed	HIVpol.groupM	2018-11-30T14-20-20_HIVpol.groupM	00:00:33	110	1536	60	36	0.0	00:10:39	Models don't match	Act: 25 | Exp: 48 | Stage: 3
+mixed	HIVpol.groupM	2018-11-30T14-23-21_HIVpol.groupM	00:00:30	110	1536	60	36	0.0	00:11:05	Models don't match	Act: 32 | Exp: 48 | Stage: 3
+mixed	HIVpol.groupM	2018-11-30T14-26-20_HIVpol.groupM	00:00:33	113	1536	60	36	0.0	00:11:10	Models don't match	Act: 34 | Exp: 48 | Stage: 3
+mixed	HIVpol.groupM	2018-11-30T14-29-20_HIVpol.groupM	00:00:32	112	1536	60	36	0.0	00:11:04	Models don't match	Act: 27 | Exp: 48 | Stage: 3
+mixed	example	2018-11-30T14-32-28_example	00:00:27	93	1536	60	36	0.0	00:06:57	Models don't match	Act: 4 | Exp: 8 | Stage: 5
+mixed	example	2018-11-30T14-35-23_example	00:00:27	91	1536	60	36	0.0	00:06:17	Models don't match	Act: 5 | Exp: 8 | Stage: 5
+mixed	example	2018-11-30T14-38-17_example	00:00:25	87	1536	60	36	0.0	00:05:54	Models don't match	Act: 5 | Exp: 8 | Stage: 5
+mixed	example	2018-11-30T14-41-10_example	00:00:27	95	1536	60	36	0.0	00:06:17	Models don't match	Act: 3 | Exp: 8 | Stage: 5
+mixed	example	2018-11-30T14-44-05_example	00:00:27	88	1536	60	36	0.0	00:06:33	Models don't match	Act: 7 | Exp: 8 | Stage: 5
+mixed	18S_insects2	2018-11-30T14-47-06_18S_insects2	00:00:20	95	1536	60	36	0.0	00:04:50	Models don't match	Act: 27 | Exp: 48 | Stage: 3
+mixed	18S_insects2	2018-11-30T14-49-55_18S_insects2	00:00:20	99	1536	60	36	0.0	00:05:16	Models don't match	Act: 30 | Exp: 48 | Stage: 3
+mixed	18S_insects2	2018-11-30T14-52-44_18S_insects2	00:00:21	101	1536	60	36	0.0	00:04:58	Models don't match	Act: 25 | Exp: 48 | Stage: 3
+mixed	18S_insects2	2018-11-30T14-55-32_18S_insects2	00:00:18	101	1536	60	36	0.0	00:04:01	Models don't match	Act: 20 | Exp: 48 | Stage: 3
+mixed	18S_insects2	2018-11-30T14-58-19_18S_insects2	00:00:21	101	1536	60	36	0.0	00:05:15	Models don't match	Act: 28 | Exp: 48 | Stage: 3
+mixed	rodents	2018-11-30T15-01-14_rodents	00:00:14	87	1536	60	36	0.0	00:02:16	Models don't match	Act: 12 | Exp: 48 | Stage: 3
+mixed	rodents	2018-11-30T15-03-55_rodents	00:00:15	72	1536	60	36	0.0	00:02:04	Models don't match	Act: 4 | Exp: 48 | Stage: 3
+mixed	rodents	2018-11-30T15-06-37_rodents	00:00:14	86	1536	60	36	0.0	00:03:36	Models don't match	Act: 14 | Exp: 48 | Stage: 3
+mixed	rodents	2018-11-30T15-09-18_rodents	00:00:12	80	1536	60	36	0.0	00:03:15	Models don't match	Act: 13 | Exp: 48 | Stage: 3
+mixed	rodents	2018-11-30T15-11-57_rodents	00:00:14	80	1536	60	36	0.0	00:03:28	Models don't match	Act: 14 | Exp: 48 | Stage: 3
+mixed	aP6	2018-11-30T15-14-46_aP6	00:00:11	42	1536	60	36	0.0	00:01:12	Models don't match	Act: 0 | Exp: 8 | Stage: 5
+mixed	aP6	2018-11-30T15-17-23_aP6	00:00:11	43	1536	60	36	0.0	00:01:02	Models don't match	Act: 2 | Exp: 8 | Stage: 5
+mixed	aP6	2018-11-30T15-20-01_aP6	00:00:11	23	1536	60	36	0.0	00:00:24	Models don't match	Act: 0 | Exp: 8 | Stage: 5
+mixed	aP6	2018-11-30T15-22-38_aP6	00:00:11	24	1536	60	36	0.0	00:00:51	Models don't match	Act: 1 | Exp: 8 | Stage: 5
+mixed	aP6	2018-11-30T15-25-15_aP6	00:00:11	25	1536	60	36	0.0	00:00:08	Models don't match	Act: 0 | Exp: 8 | Stage: 5
 lambda-30	gusanosCOI.mafft	2018-12-01T03-13-53_gusanosCOI.mafft	00:45:18	140	1536	30	36	0.7928571428571428	10:15:38	
 lambda-30	gusanosCOI.mafft	2018-12-01T04-07-43_gusanosCOI.mafft	00:53:09	144	1536	30	36	0.7642857142857142	10:22:40	
 lambda-30	gusanosCOI.mafft	2018-12-01T05-08-58_gusanosCOI.mafft	00:50:18	148	1536	30	36	0.7714285714285715	10:20:20	
 lambda-30	gusanosCOI.mafft	2018-12-01T06-07-45_gusanosCOI.mafft	00:48:09	148	1536	30	36	0.7857142857142857	10:14:41	
 lambda-30	gusanosCOI.mafft	2018-12-01T07-04-01_gusanosCOI.mafft	00:44:49	140	1536	30	36	0.7642857142857142	10:00:17	
-lambda-30	Birds	2018-12-01T07-57-45_Birds	00:24:36	140	1536	30	36	0.46153846153846156	04:25:38	Models don't match
+lambda-30	Birds	2018-12-01T07-57-45_Birds	00:24:36	140	1536	30	36	0.46153846153846156	04:25:38	Models don't match	Act: 7 | Exp: 8 | Stage: 0
 lambda-30	Birds	2018-12-01T08-30-52_Birds	00:24:06	148	1536	30	36	0.4423076923076923	04:08:47	
 lambda-30	Birds	2018-12-01T09-03-02_Birds	00:21:26	147	1536	30	36	0.4326923076923077	04:08:57	
 lambda-30	Birds	2018-12-01T09-32-56_Birds	00:22:46	148	1536	30	36	0.3942307692307692	03:57:18	
@@ -350,44 +350,44 @@ lambda-30	gusanos16S.mafft	2018-12-01T13-22-07_gusanos16S.mafft	00:35:57	148	153
 lambda-30	HIV_vpu.ref2	2018-12-01T14-08-45_HIV_vpu.ref2	00:33:42	144	1536	30	36	0.125	02:38:40	
 lambda-30	HIV_vpu.ref2	2018-12-01T14-50-54_HIV_vpu.ref2	00:34:10	152	1536	30	36	0.09285714285714286	02:31:17	
 lambda-30	HIV_vpu.ref2	2018-12-01T15-33-04_HIV_vpu.ref2	00:33:12	144	1536	30	36	0.09642857142857143	02:31:33	
-lambda-30	aP6	2018-12-01T15-35-33_aP6	00:01:09	5	1536	30	36	0.0	00:01:17	Models don't match
+lambda-30	aP6	2018-12-01T15-35-33_aP6	00:01:09	5	1536	30	36	0.0	00:01:17	Models don't match	Act: 7 | Exp: 8 | Stage: 5
 lambda-30	HIV_vpu.ref2	2018-12-01T16-14-39_HIV_vpu.ref2	00:34:27	152	1536	30	36	0.09285714285714286	02:32:43	
 lambda-30	HIV_vpu.ref2	2018-12-01T16-57-05_HIV_vpu.ref2	00:34:23	148	1536	30	36	0.10357142857142858	02:45:12	
 lambda-30	primate-mtDNA	2018-12-01T17-40-46_primate-mtDNA	00:01:35	120	1536	30	36	0.0	00:34:41	
-lambda-30	primate-mtDNA	2018-12-01T17-50-18_primate-mtDNA	00:01:20	120	1536	30	36	0.0	00:34:14	Models don't match
-lambda-30	primate-mtDNA	2018-12-01T17-59-35_primate-mtDNA	00:01:35	120	1536	30	36	0.0	00:34:42	Models don't match
-lambda-30	primate-mtDNA	2018-12-01T18-09-07_primate-mtDNA	00:01:35	120	1536	30	36	0.0	00:34:09	Models don't match
-lambda-30	primate-mtDNA	2018-12-01T18-18-55_primate-mtDNA	00:01:35	120	1536	30	36	0.0	00:34:55	Models don't match
-lambda-30	Hex_EF1a	2018-12-01T18-29-44_Hex_EF1a	00:00:56	120	1536	30	36	0.0	00:22:01	Models don't match
-lambda-30	Hex_EF1a	2018-12-01T18-38-42_Hex_EF1a	00:01:01	120	1536	30	36	0.0	00:23:09	Models don't match
-lambda-30	Hex_EF1a	2018-12-01T18-47-40_Hex_EF1a	00:01:01	120	1536	30	36	0.0	00:22:33	Models don't match
-lambda-30	Hex_EF1a	2018-12-01T18-56-56_Hex_EF1a	00:01:01	120	1536	30	36	0.0	00:22:00	Models don't match
-lambda-30	Hex_EF1a	2018-12-01T19-06-02_Hex_EF1a	00:01:01	120	1536	30	36	0.0	00:21:43	Models don't match
-lambda-30	HIVpol.groupM	2018-12-01T19-15-40_HIVpol.groupM	00:00:27	119	1536	30	36	0.0	00:11:53	Models don't match
-lambda-30	HIVpol.groupM	2018-12-01T19-24-06_HIVpol.groupM	00:00:30	120	1536	30	36	0.0	00:11:39	Orphaned jobs
-lambda-30	HIVpol.groupM	2018-12-01T19-32-34_HIVpol.groupM	00:00:27	120	1536	30	36	0.0	00:12:01	Models don't match
-lambda-30	HIVpol.groupM	2018-12-01T19-41-13_HIVpol.groupM	00:00:31	120	1536	30	36	0.0	00:11:41	Models don't match
-lambda-30	HIVpol.groupM	2018-12-01T19-49-42_HIVpol.groupM	00:00:28	120	1536	30	36	0.0	00:11:11	Models don't match
-lambda-30	example	2018-12-01T19-58-45_example	00:00:23	113	1536	30	36	0.0	00:06:47	Models don't match
-lambda-30	example	2018-12-01T20-07-05_example	00:00:23	114	1536	30	36	0.0	00:06:20	Models don't match
-lambda-30	example	2018-12-01T20-15-25_example	00:00:24	100	1536	30	36	0.0	00:06:12	Orphaned jobs
-lambda-30	example	2018-12-01T20-24-13_example	00:00:25	111	1536	30	36	0.0	00:06:33	Models don't match
-lambda-30	example	2018-12-01T20-32-35_example	00:00:28	110	1536	30	36	0.0	00:06:36	Models don't match
-lambda-30	18S_insects2	2018-12-01T20-41-39_18S_insects2	00:00:19	117	1536	30	36	0.0	00:06:03	Models don't match
-lambda-30	18S_insects2	2018-12-01T20-50-12_18S_insects2	00:00:17	113	1536	30	36	0.0	00:04:06	Models don't match
-lambda-30	18S_insects2	2018-12-01T20-58-25_18S_insects2	00:00:16	126	1536	30	36	0.0	00:05:19	Orphaned jobs
-lambda-30	18S_insects2	2018-12-01T21-06-39_18S_insects2	00:00:19	119	1536	30	36	0.0	00:05:02	Orphaned jobs
-lambda-30	18S_insects2	2018-12-01T21-15-11_18S_insects2	00:00:16	118	1536	30	36	0.0	00:04:38	Models don't match
-lambda-30	rodents	2018-12-01T21-23-30_rodents	00:00:13	118	1536	30	36	0.0	00:03:04	Orphaned jobs
-lambda-30	rodents	2018-12-01T21-31-40_rodents	00:00:12	133	1536	30	36	0.0	00:04:13	Orphaned jobs
-lambda-30	rodents	2018-12-01T21-40-10_rodents	00:00:14	114	1536	30	36	0.0	00:02:49	Models don't match
-lambda-30	rodents	2018-12-01T21-48-53_rodents	00:00:12	111	1536	30	36	0.0	00:02:56	Models don't match
-lambda-30	rodents	2018-12-01T21-57-14_rodents	00:00:12	114	1536	30	36	0.0	00:02:45	Models don't match
-lambda-30	aP6	2018-12-01T22-05-28_aP6	00:00:09	76	1536	30	36	0.0	00:02:07	Orphaned jobs
-lambda-30	aP6	2018-12-01T22-13-33_aP6	00:00:10	84	1536	30	36	0.0	00:01:28	Orphaned jobs
-lambda-30	aP6	2018-12-01T22-22-12_aP6	00:00:09	58	1536	30	36	0.0	00:00:29	Models don't match
-lambda-30	aP6	2018-12-01T22-30-17_aP6	00:00:09	82	1536	30	36	0.0	00:01:25	Orphaned jobs
-lambda-30	aP6	2018-12-01T22-38-23_aP6	00:00:19	48	1536	30	36	0.0	00:02:03	Orphaned jobs
+lambda-30	primate-mtDNA	2018-12-01T17-50-18_primate-mtDNA	00:01:20	120	1536	30	36	0.0	00:34:14	Models don't match	Act: 3 | Exp: 8 | Stage: 5
+lambda-30	primate-mtDNA	2018-12-01T17-59-35_primate-mtDNA	00:01:35	120	1536	30	36	0.0	00:34:42	Models don't match	Act: 5 | Exp: 8 | Stage: 5
+lambda-30	primate-mtDNA	2018-12-01T18-09-07_primate-mtDNA	00:01:35	120	1536	30	36	0.0	00:34:09	Models don't match	Act: 7 | Exp: 8 | Stage: 5
+lambda-30	primate-mtDNA	2018-12-01T18-18-55_primate-mtDNA	00:01:35	120	1536	30	36	0.0	00:34:55	Models don't match	Act: 7 | Exp: 8 | Stage: 5
+lambda-30	Hex_EF1a	2018-12-01T18-29-44_Hex_EF1a	00:00:56	120	1536	30	36	0.0	00:22:01	Models don't match	Act: 35 | Exp: 48 | Stage: 3
+lambda-30	Hex_EF1a	2018-12-01T18-38-42_Hex_EF1a	00:01:01	120	1536	30	36	0.0	00:23:09	Models don't match	Act: 39 | Exp: 48 | Stage: 3
+lambda-30	Hex_EF1a	2018-12-01T18-47-40_Hex_EF1a	00:01:01	120	1536	30	36	0.0	00:22:33	Models don't match	Act: 34 | Exp: 48 | Stage: 3
+lambda-30	Hex_EF1a	2018-12-01T18-56-56_Hex_EF1a	00:01:01	120	1536	30	36	0.0	00:22:00	Models don't match	Act: 38 | Exp: 48 | Stage: 3
+lambda-30	Hex_EF1a	2018-12-01T19-06-02_Hex_EF1a	00:01:01	120	1536	30	36	0.0	00:21:43	Models don't match	Act: 34 | Exp: 48 | Stage: 3
+lambda-30	HIVpol.groupM	2018-12-01T19-15-40_HIVpol.groupM	00:00:27	119	1536	30	36	0.0	00:11:53	Models don't match	Act: 28 | Exp: 48 | Stage: 3
+lambda-30	HIVpol.groupM	2018-12-01T19-24-06_HIVpol.groupM	00:00:30	120	1536	30	36	0.0	00:11:39	Models don't match	Act: 33 | Exp: 48 | Stage: 3
+lambda-30	HIVpol.groupM	2018-12-01T19-32-34_HIVpol.groupM	00:00:27	120	1536	30	36	0.0	00:12:01	Models don't match	Act: 39 | Exp: 48 | Stage: 3
+lambda-30	HIVpol.groupM	2018-12-01T19-41-13_HIVpol.groupM	00:00:31	120	1536	30	36	0.0	00:11:41	Models don't match	Act: 36 | Exp: 48 | Stage: 3
+lambda-30	HIVpol.groupM	2018-12-01T19-49-42_HIVpol.groupM	00:00:28	120	1536	30	36	0.0	00:11:11	Models don't match	Act: 32 | Exp: 48 | Stage: 3
+lambda-30	example	2018-12-01T19-58-45_example	00:00:23	113	1536	30	36	0.0	00:06:47	Models don't match	Act: 6 | Exp: 8 | Stage: 5
+lambda-30	example	2018-12-01T20-07-05_example	00:00:23	114	1536	30	36	0.0	00:06:20	Models don't match	Act: 3 | Exp: 8 | Stage: 5
+lambda-30	example	2018-12-01T20-15-25_example	00:00:24	100	1536	30	36	0.0	00:06:12	Models don't match	Act: 5 | Exp: 8 | Stage: 5
+lambda-30	example	2018-12-01T20-24-13_example	00:00:25	111	1536	30	36	0.0	00:06:33	Models don't match	Act: 4 | Exp: 8 | Stage: 5
+lambda-30	example	2018-12-01T20-32-35_example	00:00:28	110	1536	30	36	0.0	00:06:36	Models don't match	Act: 5 | Exp: 8 | Stage: 5
+lambda-30	18S_insects2	2018-12-01T20-41-39_18S_insects2	00:00:19	117	1536	30	36	0.0	00:06:03	Models don't match	Act: 32 | Exp: 48 | Stage: 3
+lambda-30	18S_insects2	2018-12-01T20-50-12_18S_insects2	00:00:17	113	1536	30	36	0.0	00:04:06	Models don't match	Act: 18 | Exp: 48 | Stage: 3
+lambda-30	18S_insects2	2018-12-01T20-58-25_18S_insects2	00:00:16	126	1536	30	36	0.0	00:05:19	Models don't match	Act: 20 | Exp: 48 | Stage: 3
+lambda-30	18S_insects2	2018-12-01T21-06-39_18S_insects2	00:00:19	119	1536	30	36	0.0	00:05:02	Models don't match	Act: 21 | Exp: 48 | Stage: 3
+lambda-30	18S_insects2	2018-12-01T21-15-11_18S_insects2	00:00:16	118	1536	30	36	0.0	00:04:38	Models don't match	Act: 20 | Exp: 48 | Stage: 3
+lambda-30	rodents	2018-12-01T21-23-30_rodents	00:00:13	118	1536	30	36	0.0	00:03:04	Models don't match	Act: 13 | Exp: 48 | Stage: 3
+lambda-30	rodents	2018-12-01T21-31-40_rodents	00:00:12	133	1536	30	36	0.0	00:04:13	Models don't match	Act: 23 | Exp: 48 | Stage: 3
+lambda-30	rodents	2018-12-01T21-40-10_rodents	00:00:14	114	1536	30	36	0.0	00:02:49	Models don't match	Act: 19 | Exp: 48 | Stage: 3
+lambda-30	rodents	2018-12-01T21-48-53_rodents	00:00:12	111	1536	30	36	0.0	00:02:56	Models don't match	Act: 17 | Exp: 48 | Stage: 3
+lambda-30	rodents	2018-12-01T21-57-14_rodents	00:00:12	114	1536	30	36	0.0	00:02:45	Models don't match	Act: 18 | Exp: 48 | Stage: 3
+lambda-30	aP6	2018-12-01T22-05-28_aP6	00:00:09	76	1536	30	36	0.0	00:02:07	Models don't match	Act: 1 | Exp: 8 | Stage: 5
+lambda-30	aP6	2018-12-01T22-13-33_aP6	00:00:10	84	1536	30	36	0.0	00:01:28	Models don't match	Act: 0 | Exp: 8 | Stage: 5
+lambda-30	aP6	2018-12-01T22-22-12_aP6	00:00:09	58	1536	30	36	0.0	00:00:29	Models don't match	Act: 1 | Exp: 8 | Stage: 5
+lambda-30	aP6	2018-12-01T22-30-17_aP6	00:00:09	82	1536	30	36	0.0	00:01:25	Models don't match	Act: 0 | Exp: 8 | Stage: 5
+lambda-30	aP6	2018-12-01T22-38-23_aP6	00:00:19	48	1536	30	36	0.0	00:02:03	Orphaned jobs	193
 lambda-768	gusanosCOI.mafft	2018-12-02T02-43-09_gusanosCOI.mafft	00:57:36	148	768	60	36	0.8071428571428572	16:37:19	
 lambda-768	gusanosCOI.mafft	2018-12-02T03-48-51_gusanosCOI.mafft	00:58:45	148	768	60	36	0.7142857142857143	15:27:15	
 lambda-768	gusanosCOI.mafft	2018-12-02T04-55-40_gusanosCOI.mafft	00:56:25	148	768	60	36	0.7535714285714286	16:12:14	
@@ -408,41 +408,41 @@ lambda-768	HIV_vpu.ref2	2018-12-02T15-51-47_HIV_vpu.ref2	00:41:53	152	768	60	36	
 lambda-768	HIV_vpu.ref2	2018-12-02T16-41-41_HIV_vpu.ref2	00:40:33	152	768	60	36	0.20357142857142857	05:46:16	
 lambda-768	HIV_vpu.ref2	2018-12-02T17-30-14_HIV_vpu.ref2	00:41:39	152	768	60	36	0.15357142857142858	05:06:15	
 lambda-768	HIV_vpu.ref2	2018-12-02T18-19-53_HIV_vpu.ref2	00:43:13	152	768	60	36	0.12857142857142856	04:52:57	
-lambda-768	primate-mtDNA	2018-12-02T19-11-13_primate-mtDNA	00:02:50	120	768	60	36	0.0	01:05:12	Models don't match
-lambda-768	primate-mtDNA	2018-12-02T19-20-00_primate-mtDNA	00:02:40	120	768	60	36	0.0	01:07:20	Models don't match
-lambda-768	primate-mtDNA	2018-12-02T19-28-37_primate-mtDNA	00:02:56	120	768	60	36	0.0	01:06:58	Models don't match
-lambda-768	primate-mtDNA	2018-12-02T19-37-30_primate-mtDNA	00:02:35	120	768	60	36	0.0	01:05:34	Models don't match
-lambda-768	primate-mtDNA	2018-12-02T19-46-02_primate-mtDNA	00:02:45	120	768	60	36	0.0	01:06:39	Models don't match
-lambda-768	Hex_EF1a	2018-12-02T19-54-50_Hex_EF1a	00:01:36	120	768	60	36	0.0	00:44:23	
-lambda-768	Hex_EF1a	2018-12-02T20-02-23_Hex_EF1a	00:01:41	120	768	60	36	0.0	00:42:11	Models don't match
-lambda-768	Hex_EF1a	2018-12-02T20-10-00_Hex_EF1a	00:01:36	120	768	60	36	0.0	00:44:52	
-lambda-768	Hex_EF1a	2018-12-02T20-17-33_Hex_EF1a	00:01:41	120	768	60	36	0.0	00:42:36	Models don't match
-lambda-768	Hex_EF1a	2018-12-02T20-25-15_Hex_EF1a	00:01:46	120	768	60	36	0.0	00:42:20	Models don't match
-lambda-768	HIVpol.groupM	2018-12-02T20-33-04_HIVpol.groupM	00:00:56	120	768	60	36	0.0	00:26:27	
-lambda-768	HIVpol.groupM	2018-12-02T20-40-01_HIVpol.groupM	00:00:51	120	768	60	36	0.0	00:22:41	Models don't match
-lambda-768	HIVpol.groupM	2018-12-02T20-46-49_HIVpol.groupM	00:01:01	120	768	60	36	0.0	00:24:04	Models don't match
-lambda-768	HIVpol.groupM	2018-12-02T20-53-47_HIVpol.groupM	00:00:56	120	768	60	36	0.0	00:23:07	Models don't match
-lambda-768	HIVpol.groupM	2018-12-02T21-00-40_HIVpol.groupM	00:00:45	120	768	60	36	0.0	00:23:41	Models don't match
-lambda-768	example	2018-12-02T21-07-30_example	00:00:39	120	768	60	36	0.0	00:13:32	Models don't match
-lambda-768	example	2018-12-02T21-14-06_example	00:00:45	124	768	60	36	0.0	00:13:34	Models don't match
-lambda-768	example	2018-12-02T21-20-48_example	00:00:39	121	768	60	36	0.0	00:12:49	Models don't match
-lambda-768	example	2018-12-02T21-27-24_example	00:00:47	124	768	60	36	0.0	00:13:34	Orphaned jobs
-lambda-768	example	2018-12-02T21-34-08_example	00:00:47	121	768	60	36	0.0	00:13:31	Models don't match
-lambda-768	18S_insects2	2018-12-02T21-40-57_18S_insects2	00:00:33	120	768	60	36	0.0	00:10:51	Models don't match
-lambda-768	18S_insects2	2018-12-02T21-47-27_18S_insects2	00:00:28	120	768	60	36	0.0	00:11:34	Models don't match
-lambda-768	18S_insects2	2018-12-02T21-53-52_18S_insects2	00:00:28	120	768	60	36	0.0	00:11:41	Orphaned jobs
-lambda-768	18S_insects2	2018-12-02T22-00-17_18S_insects2	00:00:27	120	768	60	36	0.0	00:12:02	Models don't match
-lambda-768	18S_insects2	2018-12-02T22-06-43_18S_insects2	00:00:27	120	768	60	36	0.0	00:11:46	Models don't match
-lambda-768	rodents	2018-12-02T22-13-15_rodents	00:00:22	119	768	60	36	0.0	00:08:27	Orphaned jobs
-lambda-768	rodents	2018-12-02T22-19-35_rodents	00:00:22	126	768	60	36	0.0	00:08:19	Orphaned jobs
-lambda-768	rodents	2018-12-02T22-25-54_rodents	00:00:22	125	768	60	36	0.0	00:07:44	Orphaned jobs
-lambda-768	rodents	2018-12-02T22-32-12_rodents	00:00:22	127	768	60	36	0.0	00:08:06	Orphaned jobs
-lambda-768	rodents	2018-12-02T22-38-31_rodents	00:00:21	127	768	60	36	0.0	00:08:02	Orphaned jobs
-lambda-768	aP6	2018-12-02T22-44-56_aP6	00:00:12	87	768	60	36	0.0	00:02:16	Orphaned jobs
-lambda-768	aP6	2018-12-02T22-51-04_aP6	00:00:12	83	768	60	36	0.0	00:01:15	Orphaned jobs
-lambda-768	aP6	2018-12-02T22-57-12_aP6	00:00:11	96	768	60	36	0.0	00:02:07	Orphaned jobs
-lambda-768	aP6	2018-12-02T23-03-20_aP6	00:00:15	98	768	60	36	0.0	00:01:45	Orphaned jobs
-lambda-768	aP6	2018-12-02T23-09-32_aP6	00:00:12	89	768	60	36	0.0	00:01:23	Orphaned jobs
+lambda-768	primate-mtDNA	2018-12-02T19-11-13_primate-mtDNA	00:02:50	120	768	60	36	0.0	01:05:12	Models don't match	Act: 6 | Exp: 8 | Stage: 5
+lambda-768	primate-mtDNA	2018-12-02T19-20-00_primate-mtDNA	00:02:40	120	768	60	36	0.0	01:07:20	Models don't match	Act: 6 | Exp: 8 | Stage: 5
+lambda-768	primate-mtDNA	2018-12-02T19-28-37_primate-mtDNA	00:02:56	120	768	60	36	0.0	01:06:58	Models don't match	Act: 7 | Exp: 8 | Stage: 5
+lambda-768	primate-mtDNA	2018-12-02T19-37-30_primate-mtDNA	00:02:35	120	768	60	36	0.0	01:05:34	Models don't match	Act: 6 | Exp: 8 | Stage: 5
+lambda-768	primate-mtDNA	2018-12-02T19-46-02_primate-mtDNA	00:02:45	120	768	60	36	0.0	01:06:39	Models don't match	Act: 5 | Exp: 8 | Stage: 5
+lambda-768	Hex_EF1a	2018-12-02T19-54-50_Hex_EF1a	00:01:36	120	768	60	36	0.0	00:44:23	Orphaned jobs	2
+lambda-768	Hex_EF1a	2018-12-02T20-02-23_Hex_EF1a	00:01:41	120	768	60	36	0.0	00:42:11	Models don't match	Act: 39 | Exp: 48 | Stage: 3
+lambda-768	Hex_EF1a	2018-12-02T20-10-00_Hex_EF1a	00:01:36	120	768	60	36	0.0	00:44:52	Orphaned jobs	6
+lambda-768	Hex_EF1a	2018-12-02T20-17-33_Hex_EF1a	00:01:41	120	768	60	36	0.0	00:42:36	Models don't match	Act: 41 | Exp: 48 | Stage: 3
+lambda-768	Hex_EF1a	2018-12-02T20-25-15_Hex_EF1a	00:01:46	120	768	60	36	0.0	00:42:20	Models don't match	Act: 35 | Exp: 48 | Stage: 3
+lambda-768	HIVpol.groupM	2018-12-02T20-33-04_HIVpol.groupM	00:00:56	120	768	60	36	0.0	00:26:27	Orphaned jobs	8
+lambda-768	HIVpol.groupM	2018-12-02T20-40-01_HIVpol.groupM	00:00:51	120	768	60	36	0.0	00:22:41	Models don't match	Act: 36 | Exp: 48 | Stage: 3
+lambda-768	HIVpol.groupM	2018-12-02T20-46-49_HIVpol.groupM	00:01:01	120	768	60	36	0.0	00:24:04	Models don't match	Act: 42 | Exp: 48 | Stage: 3
+lambda-768	HIVpol.groupM	2018-12-02T20-53-47_HIVpol.groupM	00:00:56	120	768	60	36	0.0	00:23:07	Models don't match	Act: 39 | Exp: 48 | Stage: 3
+lambda-768	HIVpol.groupM	2018-12-02T21-00-40_HIVpol.groupM	00:00:45	120	768	60	36	0.0	00:23:41	Models don't match	Act: 40 | Exp: 48 | Stage: 3
+lambda-768	example	2018-12-02T21-07-30_example	00:00:39	120	768	60	36	0.0	00:13:32	Models don't match	Act: 4 | Exp: 8 | Stage: 5
+lambda-768	example	2018-12-02T21-14-06_example	00:00:45	124	768	60	36	0.0	00:13:34	Models don't match	Act: 3 | Exp: 8 | Stage: 5
+lambda-768	example	2018-12-02T21-20-48_example	00:00:39	121	768	60	36	0.0	00:12:49	Models don't match	Act: 3 | Exp: 8 | Stage: 5
+lambda-768	example	2018-12-02T21-27-24_example	00:00:47	124	768	60	36	0.0	00:13:34	Models don't match	Act: 4 | Exp: 8 | Stage: 5
+lambda-768	example	2018-12-02T21-34-08_example	00:00:47	121	768	60	36	0.0	00:13:31	Models don't match	Act: 4 | Exp: 8 | Stage: 5
+lambda-768	18S_insects2	2018-12-02T21-40-57_18S_insects2	00:00:33	120	768	60	36	0.0	00:10:51	Models don't match	Act: 23 | Exp: 48 | Stage: 3
+lambda-768	18S_insects2	2018-12-02T21-47-27_18S_insects2	00:00:28	120	768	60	36	0.0	00:11:34	Models don't match	Act: 28 | Exp: 48 | Stage: 3
+lambda-768	18S_insects2	2018-12-02T21-53-52_18S_insects2	00:00:28	120	768	60	36	0.0	00:11:41	Models don't match	Act: 28 | Exp: 48 | Stage: 3
+lambda-768	18S_insects2	2018-12-02T22-00-17_18S_insects2	00:00:27	120	768	60	36	0.0	00:12:02	Models don't match	Act: 34 | Exp: 48 | Stage: 3
+lambda-768	18S_insects2	2018-12-02T22-06-43_18S_insects2	00:00:27	120	768	60	36	0.0	00:11:46	Models don't match	Act: 27 | Exp: 48 | Stage: 3
+lambda-768	rodents	2018-12-02T22-13-15_rodents	00:00:22	119	768	60	36	0.0	00:08:27	Models don't match	Act: 32 | Exp: 48 | Stage: 3
+lambda-768	rodents	2018-12-02T22-19-35_rodents	00:00:22	126	768	60	36	0.0	00:08:19	Models don't match	Act: 27 | Exp: 48 | Stage: 3
+lambda-768	rodents	2018-12-02T22-25-54_rodents	00:00:22	125	768	60	36	0.0	00:07:44	Models don't match	Act: 28 | Exp: 48 | Stage: 3
+lambda-768	rodents	2018-12-02T22-32-12_rodents	00:00:22	127	768	60	36	0.0	00:08:06	Models don't match	Act: 29 | Exp: 48 | Stage: 3
+lambda-768	rodents	2018-12-02T22-38-31_rodents	00:00:21	127	768	60	36	0.0	00:08:02	Models don't match	Act: 28 | Exp: 48 | Stage: 3
+lambda-768	aP6	2018-12-02T22-44-56_aP6	00:00:12	87	768	60	36	0.0	00:02:16	Models don't match	Act: 3 | Exp: 8 | Stage: 5
+lambda-768	aP6	2018-12-02T22-51-04_aP6	00:00:12	83	768	60	36	0.0	00:01:15	Models don't match	Act: 1 | Exp: 8 | Stage: 5
+lambda-768	aP6	2018-12-02T22-57-12_aP6	00:00:11	96	768	60	36	0.0	00:02:07	Models don't match	Act: 2 | Exp: 8 | Stage: 5
+lambda-768	aP6	2018-12-02T23-03-20_aP6	00:00:15	98	768	60	36	0.0	00:01:45	Models don't match	Act: 1 | Exp: 8 | Stage: 5
+lambda-768	aP6	2018-12-02T23-09-32_aP6	00:00:12	89	768	60	36	0.0	00:01:23	Models don't match	Act: 0 | Exp: 8 | Stage: 5
 lambda-15	gusanosCOI.mafft	2018-12-02T23-52-49_gusanosCOI.mafft	00:47:29	152	1536	15	36	0.9714285714285714	07:50:33	
 lambda-15	gusanosCOI.mafft	2018-12-03T00-48-23_gusanosCOI.mafft	00:43:18	146	1536	15	36	0.975	07:52:07	
 lambda-15	gusanosCOI.mafft	2018-12-03T01-39-48_gusanosCOI.mafft	00:42:23	140	1536	15	36	0.9785714285714285	07:47:02	
@@ -463,62 +463,62 @@ lambda-15	HIV_vpu.ref2	2018-12-03T10-54-15_HIV_vpu.ref2	00:33:17	140	1536	15	36	
 lambda-15	HIV_vpu.ref2	2018-12-03T11-35-33_HIV_vpu.ref2	00:35:42	145	1536	15	36	0.4785714285714286	03:11:21	
 lambda-15	HIV_vpu.ref2	2018-12-03T12-19-17_HIV_vpu.ref2	00:30:42	148	1536	15	36	0.475	03:08:36	
 lambda-15	HIV_vpu.ref2	2018-12-03T12-58-01_HIV_vpu.ref2	00:28:22	146	1536	15	36	0.4607142857142857	03:05:51	
-lambda-15	primate-mtDNA	2018-12-03T13-34-34_primate-mtDNA	00:03:51	120	1536	15	36	0.0	00:33:09	Models don't match
-lambda-15	primate-mtDNA	2018-12-03T13-46-22_primate-mtDNA	00:04:06	128	1536	15	36	0.0	00:32:54	Models don't match
-lambda-15	primate-mtDNA	2018-12-03T13-58-25_primate-mtDNA	00:06:15	120	1536	15	36	0.0	00:34:17	Models don't match
-lambda-15	primate-mtDNA	2018-12-03T14-12-44_primate-mtDNA	00:04:46	120	1536	15	36	0.0	00:32:21	Models don't match
-lambda-15	primate-mtDNA	2018-12-03T14-25-27_primate-mtDNA	00:02:45	120	1536	15	36	0.0	00:32:36	Models don't match
-lambda-15	Hex_EF1a	2018-12-03T14-36-18_Hex_EF1a	00:00:55	120	1536	15	36	0.0	00:20:32	Models don't match
-lambda-15	Hex_EF1a	2018-12-03T14-43-11_Hex_EF1a	00:01:00	120	1536	15	36	0.0	00:21:43	Models don't match
-lambda-15	Hex_EF1a	2018-12-03T14-50-08_Hex_EF1a	00:01:01	120	1536	15	36	0.0	00:21:14	Models don't match
-lambda-15	Hex_EF1a	2018-12-03T14-57-06_Hex_EF1a	00:00:55	120	1536	15	36	0.0	00:20:56	Models don't match
-lambda-15	Hex_EF1a	2018-12-03T15-03-58_Hex_EF1a	00:00:56	120	1536	15	36	0.0	00:20:31	Models don't match
-lambda-15	HIVpol.groupM	2018-12-03T15-10-57_HIVpol.groupM	00:00:28	120	1536	15	36	0.0	00:10:16	Models don't match
-lambda-15	HIVpol.groupM	2018-12-03T15-17-21_HIVpol.groupM	00:00:28	120	1536	15	36	0.0	00:10:40	Models don't match
-lambda-15	HIVpol.groupM	2018-12-03T15-23-46_HIVpol.groupM	00:00:28	120	1536	15	36	0.0	00:10:35	Models don't match
-lambda-15	HIVpol.groupM	2018-12-03T15-30-11_HIVpol.groupM	00:00:30	120	1536	15	36	0.0	00:10:40	Models don't match
-lambda-15	HIVpol.groupM	2018-12-03T15-36-38_HIVpol.groupM	00:00:31	120	1536	15	36	0.0	00:10:25	Models don't match
-lambda-15	example	2018-12-03T15-43-14_example	00:00:25	111	1536	15	36	0.0	00:06:32	Models don't match
-lambda-15	example	2018-12-03T15-49-37_example	00:00:21	113	1536	15	36	0.0	00:05:50	Models don't match
-lambda-15	example	2018-12-03T15-55-55_example	00:00:21	116	1536	15	36	0.0	00:05:41	Models don't match
-lambda-15	example	2018-12-03T16-02-13_example	00:00:23	118	1536	15	36	0.0	00:05:57	Models don't match
-lambda-15	example	2018-12-03T16-08-32_example	00:00:21	110	1536	15	36	0.0	00:05:52	Orphaned jobs
-lambda-15	18S_insects2	2018-12-03T16-14-57_18S_insects2	00:00:17	112	1536	15	36	0.0	00:04:56	Models don't match
-lambda-15	18S_insects2	2018-12-03T16-21-11_18S_insects2	00:00:16	122	1536	15	36	0.0	00:04:39	Orphaned jobs
-lambda-15	18S_insects2	2018-12-03T16-27-23_18S_insects2	00:00:19	116	1536	15	36	0.0	00:05:18	Orphaned jobs
-lambda-15	18S_insects2	2018-12-03T16-33-40_18S_insects2	00:00:17	111	1536	15	36	0.0	00:04:22	Models don't match
-lambda-15	18S_insects2	2018-12-03T16-39-54_18S_insects2	00:00:17	121	1536	15	36	0.0	00:04:54	Models don't match
-lambda-15	rodents	2018-12-03T16-46-16_rodents	00:00:12	115	1536	15	36	0.0	00:03:20	Orphaned jobs
-lambda-15	rodents	2018-12-03T16-52-26_rodents	00:00:12	123	1536	15	36	0.0	00:04:06	Orphaned jobs
-lambda-15	rodents	2018-12-03T16-58-36_rodents	00:00:14	123	1536	15	36	0.0	00:03:49	Orphaned jobs
-lambda-15	rodents	2018-12-03T17-04-47_rodents	00:00:13	115	1536	15	36	0.0	00:03:02	Orphaned jobs
-lambda-15	rodents	2018-12-03T17-10-57_rodents	00:00:12	129	1536	15	36	0.0	00:04:01	Orphaned jobs
-lambda-15	aP6	2018-12-03T17-17-13_aP6	00:00:09	59	1536	15	36	0.0	00:00:59	Orphaned jobs
-lambda-15	aP6	2018-12-03T17-23-17_aP6	00:00:09	90	1536	15	36	0.0	00:01:29	Orphaned jobs
-lambda-15	aP6	2018-12-03T17-29-22_aP6	00:00:09	81	1536	15	36	0.0	00:01:15	Orphaned jobs
-lambda-15	aP6	2018-12-03T17-35-27_aP6	00:00:10	87	1536	15	36	0.0	00:01:29	Orphaned jobs
-lambda-15	aP6	2018-12-03T17-41-33_aP6	00:00:09	73	1536	15	36	0.0	00:01:11	Orphaned jobs
-lambda-only	rodents	2018-12-03T20-26-20_rodents	00:00:12	115	1536	60	36	0.0	00:03:37	Orphaned jobs
-lambda-only	rodents	2018-12-03T20-28-59_rodents	00:00:12	115	1536	60	36	0.0	00:04:41	Orphaned jobs
-lambda-only	rodents	2018-12-03T20-31-38_rodents	00:00:12	111	1536	60	36	0.0	00:04:18	Orphaned jobs
-lambda-only	18S_insects2	2018-12-03T20-34-23_18S_insects2	00:00:19	115	1536	60	36	0.0	00:06:06	Orphaned jobs
-lambda-only	18S_insects2	2018-12-03T20-37-08_18S_insects2	00:00:19	116	1536	60	36	0.0	00:05:10	Orphaned jobs
-lambda-only	18S_insects2	2018-12-03T20-39-53_18S_insects2	00:00:18	118	1536	60	36	0.0	00:06:06	Orphaned jobs
-lambda-only	example	2018-12-03T20-42-44_example	00:00:27	117	1536	60	36	0.0	00:07:07	Orphaned jobs
-lambda-only	example	2018-12-03T20-45-37_example	00:00:27	119	1536	60	36	0.0	00:06:37	Models don't match
-lambda-only	example	2018-12-03T20-48-30_example	00:00:25	115	1536	60	36	0.0	00:06:35	Models don't match
-lambda-only	HIVpol.groupM	2018-12-03T20-51-33_HIVpol.groupM	00:00:30	120	1536	60	36	0.0	00:11:33	Models don't match
-lambda-only	HIVpol.groupM	2018-12-03T20-54-32_HIVpol.groupM	00:00:30	120	1536	60	36	0.0	00:10:49	Models don't match
-lambda-only	HIVpol.groupM	2018-12-03T20-57-28_HIVpol.groupM	00:00:31	120	1536	60	36	0.0	00:12:10	Orphaned jobs
-lambda-only	Hex_EF1a	2018-12-03T21-00-31_Hex_EF1a	00:01:00	120	1536	60	36	0.0	00:21:55	Models don't match
-lambda-only	Hex_EF1a	2018-12-03T21-03-58_Hex_EF1a	00:01:01	120	1536	60	36	0.0	00:22:29	Orphaned jobs
-lambda-only	Hex_EF1a	2018-12-03T21-07-24_Hex_EF1a	00:01:01	120	1536	60	36	0.0	00:22:58	Models don't match
-lambda-only	primate-mtDNA	2018-12-03T21-10-57_primate-mtDNA	00:01:40	120	1536	60	36	0.0	00:34:18	
-lambda-only	primate-mtDNA	2018-12-03T21-15-03_primate-mtDNA	00:01:40	120	1536	60	36	0.0	00:34:24	Models don't match
-lambda-only	primate-mtDNA	2018-12-03T21-19-11_primate-mtDNA	00:01:35	120	1536	60	36	0.0	00:34:18	
+lambda-15	primate-mtDNA	2018-12-03T13-34-34_primate-mtDNA	00:03:51	120	1536	15	36	0.0	00:33:09	Models don't match	Act: 7 | Exp: 8 | Stage: 5
+lambda-15	primate-mtDNA	2018-12-03T13-46-22_primate-mtDNA	00:04:06	128	1536	15	36	0.0	00:32:54	Models don't match	Act: 6 | Exp: 8 | Stage: 5
+lambda-15	primate-mtDNA	2018-12-03T13-58-25_primate-mtDNA	00:06:15	120	1536	15	36	0.0	00:34:17	Models don't match	Act: 7 | Exp: 8 | Stage: 5
+lambda-15	primate-mtDNA	2018-12-03T14-12-44_primate-mtDNA	00:04:46	120	1536	15	36	0.0	00:32:21	Models don't match	Act: 6 | Exp: 8 | Stage: 5
+lambda-15	primate-mtDNA	2018-12-03T14-25-27_primate-mtDNA	00:02:45	120	1536	15	36	0.0	00:32:36	Models don't match	Act: 5 | Exp: 8 | Stage: 5
+lambda-15	Hex_EF1a	2018-12-03T14-36-18_Hex_EF1a	00:00:55	120	1536	15	36	0.0	00:20:32	Models don't match	Act: 42 | Exp: 48 | Stage: 3
+lambda-15	Hex_EF1a	2018-12-03T14-43-11_Hex_EF1a	00:01:00	120	1536	15	36	0.0	00:21:43	Models don't match	Act: 43 | Exp: 48 | Stage: 3
+lambda-15	Hex_EF1a	2018-12-03T14-50-08_Hex_EF1a	00:01:01	120	1536	15	36	0.0	00:21:14	Models don't match	Act: 42 | Exp: 48 | Stage: 3
+lambda-15	Hex_EF1a	2018-12-03T14-57-06_Hex_EF1a	00:00:55	120	1536	15	36	0.0	00:20:56	Models don't match	Act: 38 | Exp: 48 | Stage: 3
+lambda-15	Hex_EF1a	2018-12-03T15-03-58_Hex_EF1a	00:00:56	120	1536	15	36	0.0	00:20:31	Models don't match	Act: 40 | Exp: 48 | Stage: 3
+lambda-15	HIVpol.groupM	2018-12-03T15-10-57_HIVpol.groupM	00:00:28	120	1536	15	36	0.0	00:10:16	Models don't match	Act: 32 | Exp: 48 | Stage: 3
+lambda-15	HIVpol.groupM	2018-12-03T15-17-21_HIVpol.groupM	00:00:28	120	1536	15	36	0.0	00:10:40	Models don't match	Act: 41 | Exp: 48 | Stage: 3
+lambda-15	HIVpol.groupM	2018-12-03T15-23-46_HIVpol.groupM	00:00:28	120	1536	15	36	0.0	00:10:35	Models don't match	Act: 39 | Exp: 48 | Stage: 3
+lambda-15	HIVpol.groupM	2018-12-03T15-30-11_HIVpol.groupM	00:00:30	120	1536	15	36	0.0	00:10:40	Models don't match	Act: 34 | Exp: 48 | Stage: 3
+lambda-15	HIVpol.groupM	2018-12-03T15-36-38_HIVpol.groupM	00:00:31	120	1536	15	36	0.0	00:10:25	Models don't match	Act: 34 | Exp: 48 | Stage: 3
+lambda-15	example	2018-12-03T15-43-14_example	00:00:25	111	1536	15	36	0.0	00:06:32	Models don't match	Act: 20 | Exp: 24 | Stage: 4
+lambda-15	example	2018-12-03T15-49-37_example	00:00:21	113	1536	15	36	0.0	00:05:50	Models don't match	Act: 7 | Exp: 8 | Stage: 5
+lambda-15	example	2018-12-03T15-55-55_example	00:00:21	116	1536	15	36	0.0	00:05:41	Models don't match	Act: 5 | Exp: 8 | Stage: 5
+lambda-15	example	2018-12-03T16-02-13_example	00:00:23	118	1536	15	36	0.0	00:05:57	Models don't match	Act: 5 | Exp: 8 | Stage: 5
+lambda-15	example	2018-12-03T16-08-32_example	00:00:21	110	1536	15	36	0.0	00:05:52	Models don't match	Act: 7 | Exp: 8 | Stage: 5
+lambda-15	18S_insects2	2018-12-03T16-14-57_18S_insects2	00:00:17	112	1536	15	36	0.0	00:04:56	Models don't match	Act: 31 | Exp: 48 | Stage: 3
+lambda-15	18S_insects2	2018-12-03T16-21-11_18S_insects2	00:00:16	122	1536	15	36	0.0	00:04:39	Models don't match	Act: 28 | Exp: 48 | Stage: 3
+lambda-15	18S_insects2	2018-12-03T16-27-23_18S_insects2	00:00:19	116	1536	15	36	0.0	00:05:18	Models don't match	Act: 33 | Exp: 48 | Stage: 3
+lambda-15	18S_insects2	2018-12-03T16-33-40_18S_insects2	00:00:17	111	1536	15	36	0.0	00:04:22	Models don't match	Act: 27 | Exp: 48 | Stage: 3
+lambda-15	18S_insects2	2018-12-03T16-39-54_18S_insects2	00:00:17	121	1536	15	36	0.0	00:04:54	Models don't match	Act: 27 | Exp: 48 | Stage: 3
+lambda-15	rodents	2018-12-03T16-46-16_rodents	00:00:12	115	1536	15	36	0.0	00:03:20	Models don't match	Act: 23 | Exp: 48 | Stage: 3
+lambda-15	rodents	2018-12-03T16-52-26_rodents	00:00:12	123	1536	15	36	0.0	00:04:06	Models don't match	Act: 25 | Exp: 48 | Stage: 3
+lambda-15	rodents	2018-12-03T16-58-36_rodents	00:00:14	123	1536	15	36	0.0	00:03:49	Models don't match	Act: 30 | Exp: 48 | Stage: 3
+lambda-15	rodents	2018-12-03T17-04-47_rodents	00:00:13	115	1536	15	36	0.0	00:03:02	Models don't match	Act: 24 | Exp: 48 | Stage: 3
+lambda-15	rodents	2018-12-03T17-10-57_rodents	00:00:12	129	1536	15	36	0.0	00:04:01	Models don't match	Act: 29 | Exp: 48 | Stage: 3
+lambda-15	aP6	2018-12-03T17-17-13_aP6	00:00:09	59	1536	15	36	0.0	00:00:59	Models don't match	Act: 0 | Exp: 8 | Stage: 5
+lambda-15	aP6	2018-12-03T17-23-17_aP6	00:00:09	90	1536	15	36	0.0	00:01:29	Models don't match	Act: 1 | Exp: 8 | Stage: 5
+lambda-15	aP6	2018-12-03T17-29-22_aP6	00:00:09	81	1536	15	36	0.0	00:01:15	Models don't match	Act: 0 | Exp: 8 | Stage: 5
+lambda-15	aP6	2018-12-03T17-35-27_aP6	00:00:10	87	1536	15	36	0.0	00:01:29	Models don't match	Act: 1 | Exp: 8 | Stage: 5
+lambda-15	aP6	2018-12-03T17-41-33_aP6	00:00:09	73	1536	15	36	0.0	00:01:11	Models don't match	Act: 0 | Exp: 8 | Stage: 5
+lambda-only	rodents	2018-12-03T20-26-20_rodents	00:00:12	115	1536	60	36	0.0	00:03:37	Models don't match	Act: 23 | Exp: 48 | Stage: 3
+lambda-only	rodents	2018-12-03T20-28-59_rodents	00:00:12	115	1536	60	36	0.0	00:04:41	Models don't match	Act: 27 | Exp: 48 | Stage: 3
+lambda-only	rodents	2018-12-03T20-31-38_rodents	00:00:12	111	1536	60	36	0.0	00:04:18	Models don't match	Act: 16 | Exp: 48 | Stage: 3
+lambda-only	18S_insects2	2018-12-03T20-34-23_18S_insects2	00:00:19	115	1536	60	36	0.0	00:06:06	Models don't match	Act: 26 | Exp: 48 | Stage: 3
+lambda-only	18S_insects2	2018-12-03T20-37-08_18S_insects2	00:00:19	116	1536	60	36	0.0	00:05:10	Models don't match	Act: 24 | Exp: 48 | Stage: 3
+lambda-only	18S_insects2	2018-12-03T20-39-53_18S_insects2	00:00:18	118	1536	60	36	0.0	00:06:06	Models don't match	Act: 32 | Exp: 48 | Stage: 3
+lambda-only	example	2018-12-03T20-42-44_example	00:00:27	117	1536	60	36	0.0	00:07:07	Models don't match	Act: 4 | Exp: 8 | Stage: 5
+lambda-only	example	2018-12-03T20-45-37_example	00:00:27	119	1536	60	36	0.0	00:06:37	Models don't match	Act: 3 | Exp: 8 | Stage: 5
+lambda-only	example	2018-12-03T20-48-30_example	00:00:25	115	1536	60	36	0.0	00:06:35	Models don't match	Act: 4 | Exp: 8 | Stage: 5
+lambda-only	HIVpol.groupM	2018-12-03T20-51-33_HIVpol.groupM	00:00:30	120	1536	60	36	0.0	00:11:33	Models don't match	Act: 39 | Exp: 48 | Stage: 3
+lambda-only	HIVpol.groupM	2018-12-03T20-54-32_HIVpol.groupM	00:00:30	120	1536	60	36	0.0	00:10:49	Models don't match	Act: 28 | Exp: 48 | Stage: 3
+lambda-only	HIVpol.groupM	2018-12-03T20-57-28_HIVpol.groupM	00:00:31	120	1536	60	36	0.0	00:12:10	Models don't match	Act: 37 | Exp: 48 | Stage: 3
+lambda-only	Hex_EF1a	2018-12-03T21-00-31_Hex_EF1a	00:01:00	120	1536	60	36	0.0	00:21:55	Models don't match	Act: 34 | Exp: 48 | Stage: 3
+lambda-only	Hex_EF1a	2018-12-03T21-03-58_Hex_EF1a	00:01:01	120	1536	60	36	0.0	00:22:29	Models don't match	Act: 36 | Exp: 48 | Stage: 3
+lambda-only	Hex_EF1a	2018-12-03T21-07-24_Hex_EF1a	00:01:01	120	1536	60	36	0.0	00:22:58	Models don't match	Act: 40 | Exp: 48 | Stage: 3
+lambda-only	primate-mtDNA	2018-12-03T21-10-57_primate-mtDNA	00:01:40	120	1536	60	36	0.0	00:34:18	Orphaned jobs	5
+lambda-only	primate-mtDNA	2018-12-03T21-15-03_primate-mtDNA	00:01:40	120	1536	60	36	0.0	00:34:24	Models don't match	Act: 6 | Exp: 8 | Stage: 5
+lambda-only	primate-mtDNA	2018-12-03T21-19-11_primate-mtDNA	00:01:35	120	1536	60	36	0.0	00:34:18	Orphaned jobs	1
 lambda-only	HIV_vpu.ref2	2018-12-03T21-23-18_HIV_vpu.ref2	00:04:13	120	1536	60	36	0.0	01:41:58	
-lambda-only	HIV_vpu.ref2	2018-12-03T21-29-58_HIV_vpu.ref2	00:04:08	120	1536	60	36	0.0	01:40:14	
-lambda-only	HIV_vpu.ref2	2018-12-03T21-36-32_HIV_vpu.ref2	00:04:03	126	1536	60	36	0.0	01:42:31	
+lambda-only	HIV_vpu.ref2	2018-12-03T21-29-58_HIV_vpu.ref2	00:04:08	120	1536	60	36	0.0	01:40:14	Orphaned jobs	1
+lambda-only	HIV_vpu.ref2	2018-12-03T21-36-32_HIV_vpu.ref2	00:04:03	126	1536	60	36	0.0	01:42:31	Orphaned jobs	1
 batch-only-36	aP6	2018-12-05T02-58-32_aP6	00:08:46	0	1536	1	36	1.0	00:01:28	
 batch-only-36	aP6	2018-12-05T03-17-50_aP6	00:09:33	0	1536	1	36	1.0	00:01:28	
 batch-only-36	aP6	2018-12-05T03-37-57_aP6	00:10:03	0	1536	1	36	1.0	00:01:27	
@@ -652,7 +652,7 @@ batch-only-8	18S_insects2	2018-12-08T18-50-05_18S_insects2	00:20:00	0	1536	1	8	1
 batch-only-8	18S_insects2	2018-12-08T19-20-36_18S_insects2	00:20:28	0	1536	1	8	1.0	00:05:20	
 batch-only-8	18S_insects2	2018-12-08T19-51-34_18S_insects2	00:21:51	0	1536	1	8	1.0	00:05:12	
 batch-only-8	18S_insects2	2018-12-08T20-23-54_18S_insects2	00:20:03	0	1536	1	8	1.0	00:05:18	
-batch-only-8	18S_insects2	2018-12-08T20-54-28_18S_insects2	00:23:47	0	1536	1	8	1.0	00:05:18	
+batch-only-8	18S_insects2	2018-12-08T20-54-28_18S_insects2	00:23:47	0	1536	1	8	1.0	00:05:18	Orphaned jobs	6
 batch-only-8	example	2018-12-08T21-28-54_example	00:22:42	0	1536	1	8	1.0	00:05:23	
 batch-only-8	example	2018-12-08T22-02-09_example	00:33:26	0	1536	1	8	1.0	00:05:23	
 batch-only-8	example	2018-12-08T22-46-11_example	00:21:46	0	1536	1	8	1.0	00:05:27	
@@ -666,7 +666,7 @@ batch-only-8	HIVpol.groupM	2018-12-09T02-32-16_HIVpol.groupM	00:20:39	0	1536	1	8
 batch-only-8	Hex_EF1a	2018-12-09T03-03-35_Hex_EF1a	00:21:34	0	1536	1	8	1.0	00:17:06	
 batch-only-8	Hex_EF1a	2018-12-09T03-35-40_Hex_EF1a	00:23:19	0	1536	1	8	1.0	00:17:07	
 batch-only-8	Hex_EF1a	2018-12-09T04-10-32_Hex_EF1a	00:19:59	0	1536	1	8	1.0	00:17:09	
-batch-only-8	Hex_EF1a	2018-12-09T04-42-08_Hex_EF1a	00:19:50	0	1536	1	8	1.00390625	00:17:18	More batch than Models
+batch-only-8	Hex_EF1a	2018-12-09T04-42-08_Hex_EF1a	00:19:50	0	1536	1	8	1.00390625	00:17:18	More batch than Models	257/256
 batch-only-8	Hex_EF1a	2018-12-09T05-13-30_Hex_EF1a	00:19:47	0	1536	1	8	1.0	00:17:01	
 batch-only-8	primate-mtDNA	2018-12-09T05-45-23_primate-mtDNA	00:22:21	0	1536	1	8	1.0	00:25:36	
 batch-only-8	primate-mtDNA	2018-12-09T06-19-18_primate-mtDNA	00:25:15	0	1536	1	8	1.0	00:25:35	
@@ -698,3 +698,87 @@ batch-only-8	stamatakis-59	2018-12-10T03-22-21_stamatakis-59	03:28:46	0	1536	1	8
 batch-only-8	stamatakis-59	2018-12-10T07-02-35_stamatakis-59	03:25:39	0	1536	1	8	1.0	1.00:51:34	
 batch-only-8	stamatakis-59	2018-12-10T10-39-47_stamatakis-59	03:21:40	0	1536	1	8	1.0	1.00:31:40	
 batch-only-8	stamatakis-59	2018-12-10T14-12-56_stamatakis-59	03:29:22	0	1536	1	8	1.0	1.00:42:41	
+lambda-only	aP6	2018-12-11T03-18-07_aP6	00:00:11	103	1536	60	2	0.0	00:01:40	
+lambda-only	aP6	2018-12-11T03-22-14_aP6	00:00:09	54	1536	60	2	0.0	00:01:29	
+lambda-only	aP6	2018-12-11T03-26-19_aP6	00:00:09	60	1536	60	2	0.0	00:01:33	
+lambda-only	aP6	2018-12-11T03-30-07_aP6	00:00:09	59	1536	60	2	0.0	00:01:31	
+lambda-only	aP6	2018-12-11T03-34-11_aP6	00:00:09	48	1536	60	2	0.0	00:01:29	
+lambda-only	aP6	2018-12-11T03-38-16_aP6	00:00:09	51	1536	60	2	0.0	00:01:25	
+lambda-only	rodents	2018-12-11T03-42-26_rodents	00:00:14	116	1536	60	2	0.0	00:04:59	
+lambda-only	rodents	2018-12-11T03-46-37_rodents	00:00:14	112	1536	60	2	0.0	00:04:56	
+lambda-only	rodents	2018-12-11T03-50-48_rodents	00:00:14	114	1536	60	2	0.0	00:04:54	
+lambda-only	18S_insects2	2018-12-11T03-55-05_18S_insects2	00:00:18	118	1536	60	2	0.0	00:06:59	
+lambda-only	18S_insects2	2018-12-11T03-59-19_18S_insects2	00:00:19	119	1536	60	2	0.0	00:07:04	
+lambda-only	18S_insects2	2018-12-11T04-03-35_18S_insects2	00:00:19	117	1536	60	2	0.0	00:06:42	
+lambda-only	example	2018-12-11T04-07-57_example	00:00:27	118	1536	60	2	0.0	00:06:55	
+lambda-only	example	2018-12-11T04-12-21_example	00:00:27	120	1536	60	2	0.0	00:06:53	
+lambda-only	example	2018-12-11T04-16-45_example	00:00:27	118	1536	60	2	0.0	00:06:58	
+lambda-only	HIVpol.groupM	2018-12-11T04-21-25_HIVpol.groupM	00:00:31	120	1536	60	2	0.0	00:12:06	
+lambda-only	HIVpol.groupM	2018-12-11T04-25-53_HIVpol.groupM	00:00:28	120	1536	60	2	0.0	00:12:26	
+lambda-only	HIVpol.groupM	2018-12-11T04-30-21_HIVpol.groupM	00:00:30	120	1536	60	2	0.0	00:12:33	
+lambda-only	Hex_EF1a	2018-12-11T04-34-58_Hex_EF1a	00:00:56	120	1536	60	2	0.0	00:22:44	
+lambda-only	Hex_EF1a	2018-12-11T04-39-50_Hex_EF1a	00:00:55	120	1536	60	2	0.0	00:22:17	
+lambda-only	Hex_EF1a	2018-12-11T04-44-43_Hex_EF1a	00:01:01	120	1536	60	2	0.0	00:23:00	
+lambda-only	primate-mtDNA	2018-12-11T04-49-46_primate-mtDNA	00:01:40	120	1536	60	2	0.0	00:34:38	
+lambda-only	primate-mtDNA	2018-12-11T04-55-23_primate-mtDNA	00:01:30	120	1536	60	2	0.0	00:34:56	
+lambda-only	primate-mtDNA	2018-12-11T05-00-50_primate-mtDNA	00:01:35	120	1536	60	2	0.0	00:34:03	
+lambda-only	HIV_vpu.ref2	2018-12-11T05-06-32_HIV_vpu.ref2	00:05:48	126	1536	60	2	0.0	01:42:43	
+lambda-only	HIV_vpu.ref2	2018-12-11T05-16-22_HIV_vpu.ref2	00:05:48	120	1536	60	2	0.0	01:42:41	
+lambda-only	HIV_vpu.ref2	2018-12-11T05-26-07_HIV_vpu.ref2	00:04:08	120	1536	60	2	0.0	01:42:08	
+lambda-only	gusanos16S.mafft	2018-12-11T05-34-30_gusanos16S.mafft	-1.00:00:00	11	1536	60	2	0.0	00:11:13	
+lambda-only	Birds	2018-12-11T05-42-03_Birds	-1.00:00:00	120	1536	60	2	0.0	01:18:23	
+lambda-only	Birds	2018-12-11T07-24-52_Birds	-1.00:00:00	120	1536	60	2	0.0	01:24:53	
+lambda-only	Birds	2018-12-11T07-40-36_Birds	-1.00:00:00	140	1536	60	2	0.0	02:03:35	
+lambda-only	Birds	2018-12-11T08-01-54_Birds	-1.00:00:00	120	1536	60	2	0.0	01:26:47	
+lambda-only	Birds	2018-12-11T08-17-33_Birds	-1.00:00:00	120	1536	60	2	0.0	01:25:57	
+lambda-only	gusanosCOI.mafft	2018-12-11T14-54-14_gusanosCOI.mafft	-1.00:00:00	8	1536	60	2	0.0	00:15:01	
+lambda-only	gusanosCOI.mafft	2018-12-11T15-09-21_gusanosCOI.mafft	-1.00:00:00	8	1536	60	2	0.0	00:14:43	
+lambda-only	gusanosCOI.mafft	2018-12-11T15-34-06_gusanosCOI.mafft	-1.00:00:00	8	1536	60	2	0.0	00:14:44	
+lambda-only	gusanosCOI.mafft	2018-12-11T15-58-50_gusanosCOI.mafft	-1.00:00:00	8	1536	60	2	0.0	00:14:22	
+lambda-only	gusanosCOI.mafft	2018-12-11T16-23-34_gusanosCOI.mafft	-1.00:00:00	8	1536	60	2	0.0	00:14:04	
+lambda-only	stamatakis-59	2018-12-11T16-48-23_stamatakis-59	-1.00:00:00	8	1536	60	2	0.0	00:24:01	
+lambda-only	stamatakis-59	2018-12-11T17-12-22_stamatakis-59	-1.00:00:00	8	1536	60	2	0.0	00:24:01	
+lambda-only	stamatakis-59	2018-12-11T17-36-21_stamatakis-59	-1.00:00:00	8	1536	60	2	0.0	00:24:01	
+lambda-only	stamatakis-59	2018-12-11T18-00-20_stamatakis-59	-1.00:00:00	8	1536	60	2	0.0	00:24:01	
+lambda-only	stamatakis-59	2018-12-11T18-24-19_stamatakis-59	-1.00:00:00	8	1536	60	2	0.0	00:24:01	
+lambda-only	stamatakis-59	2018-12-11T18-48-19_stamatakis-59	-1.00:00:00	8	1536	60	2	0.0	00:24:01	
+nullo	gusanos16S.mafft	2018-12-11T19-45-31_gusanos16S.mafft	-1.00:00:00	8	1536	45	16	0.0	00:07:40	
+nullo	gusanos16S.mafft	2018-12-11T22-03-42_gusanos16S.mafft	00:36:10	152	1536	45	16	0.42578125	07:09:48	Orphaned jobs	8
+nullo	gusanos16S.mafft	2018-12-11T22-46-11_gusanos16S.mafft	00:37:45	154	1536	45	16	0.4296875	07:11:51	
+nullo	gusanos16S.mafft	2018-12-12T00-16-55_gusanos16S.mafft	00:34:14	148	1536	45	16	0.42578125	07:07:26	
+nullo	gusanos16S.mafft	2018-12-12T01-00-13_gusanos16S.mafft	00:34:50	184	1536	45	16	0.44140625	07:12:24	
+nullo	18S_insects2	2018-12-12T02-00-55_18S_insects2	00:00:18	119	1536	45	16	0.0	00:07:29	
+nullo	18S_insects2	2018-12-12T02-10-10_18S_insects2	00:00:21	118	1536	45	16	0.0	00:07:10	
+nullo	18S_insects2	2018-12-12T02-19-29_18S_insects2	00:00:16	119	1536	45	16	0.0	00:06:59	
+nullo	18S_insects2	2018-12-12T02-28-43_18S_insects2	00:00:16	117	1536	45	16	0.0	00:07:07	
+nullo	18S_insects2	2018-12-12T02-37-56_18S_insects2	00:00:16	118	1536	45	16	0.0	00:07:14	
+nullo	18S_insects2	2018-12-12T02-47-15_18S_insects2	00:00:18	118	1536	45	16	0.0	00:07:11	
+nullo	18S_insects2	2018-12-12T02-56-31_18S_insects2	00:00:16	119	1536	45	16	0.0	00:07:10	
+nullo	18S_insects2	2018-12-12T03-05-45_18S_insects2	00:00:16	117	1536	45	16	0.0	00:07:00	
+nullo	18S_insects2	2018-12-12T03-14-58_18S_insects2	00:00:16	118	1536	45	16	0.0	00:07:10	
+nullo	18S_insects2	2018-12-12T03-24-12_18S_insects2	00:00:16	118	1536	45	16	0.0	00:07:18	
+nullo	18S_insects2	2018-12-12T03-33-29_18S_insects2	00:00:18	117	1536	45	16	0.0	00:07:22	
+nullo	Birds	2018-12-12T03-42-54_Birds	00:15:00	140	1536	45	16	0.08173076923076923	03:03:17	
+nullo	Birds	2018-12-12T04-06-06_Birds	00:14:44	140	1536	45	16	0.0673076923076923	02:54:09	
+nullo	Birds	2018-12-12T04-28-58_Birds	00:15:40	140	1536	45	16	0.0625	02:37:29	
+nullo	Birds	2018-12-12T04-52-47_Birds	00:15:15	140	1536	45	16	0.04807692307692308	02:24:44	
+nullo	Birds	2018-12-12T05-16-11_Birds	00:16:10	140	1536	45	16	0.0625	02:31:21	
+nullo	Birds	2018-12-12T05-40-31_Birds	00:15:45	140	1536	45	16	0.057692307692307696	02:30:48	
+nullo	Birds	2018-12-12T06-04-24_Birds	00:14:40	140	1536	45	16	0.0625	02:28:57	
+nullo	Birds	2018-12-12T06-28-04_Birds	00:15:10	140	1536	45	16	0.08653846153846154	02:30:00	
+nullo	Birds	2018-12-12T06-51-23_Birds	00:15:15	140	1536	45	16	0.07692307692307693	02:28:58	
+nullo	Birds	2018-12-12T07-14-49_Birds	00:14:38	140	1536	45	16	0.04326923076923077	02:15:38	
+nullo	example	2018-12-12T07-37-44_example	00:00:22	115	1536	45	16	0.0	00:06:35	
+nullo	example	2018-12-12T07-46-14_example	00:00:23	112	1536	45	16	0.0	00:06:19	
+nullo	example	2018-12-12T07-54-44_example	00:00:22	114	1536	45	16	0.0	00:06:25	
+nullo	example	2018-12-12T08-03-15_example	00:00:22	116	1536	45	16	0.0	00:06:24	
+nullo	example	2018-12-12T08-11-45_example	00:00:25	113	1536	45	16	0.0	00:06:23	
+nullo	example	2018-12-12T08-20-17_example	00:00:22	116	1536	45	16	0.0	00:06:14	
+nullo	gusanos16S.mafft	2018-12-12T08-28-55_gusanos16S.mafft	00:34:59	186	1536	45	16	0.43359375	07:02:45	
+nullo	gusanos16S.mafft	2018-12-12T09-12-07_gusanos16S.mafft	00:34:00	154	1536	45	16	0.4296875	07:07:33	
+nullo	gusanos16S.mafft	2018-12-12T09-54-19_gusanos16S.mafft	00:35:40	184	1536	45	16	0.4296875	07:09:08	
+nullo	gusanos16S.mafft	2018-12-12T10-38-11_gusanos16S.mafft	00:33:09	154	1536	45	16	0.42578125	06:58:42	
+nullo	gusanos16S.mafft	2018-12-12T11-19-33_gusanos16S.mafft	00:35:45	184	1536	45	16	0.43359375	07:04:32	
+nullo	gusanos16S.mafft	2018-12-12T12-03-31_gusanos16S.mafft	00:35:30	184	1536	45	16	0.43359375	07:11:29	
+nullo	gusanos16S.mafft	2018-12-12T12-47-14_gusanos16S.mafft	00:34:44	184	1536	45	16	0.43359375	07:07:32	
+nullo	gusanos16S.mafft	2018-12-12T13-30-10_gusanos16S.mafft	00:33:40	154	1536	45	16	0.4296875	07:08:26	

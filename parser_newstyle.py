@@ -211,7 +211,7 @@ def extract_cloud(logfilepath, result):
         exp = result['stages'][stageNum]['models']
         #assert abs(check - exp) <= math.ceil(exp * 0.1) , "Models don't match [Exp: {} | Act: {} | Stage: {}]".format(exp, check, stageNum)
         if abs(check - exp) >= math.ceil(exp * 0.1) and result['runtime'].total_seconds() > 0:
-            result['strange'] = "Models don't match"
+            result['strange'] = "Models don't match\tAct: {} | Exp: {} | Stage: {}".format(check, exp, stageNum)
     
 
     # distinct lambda execution units
@@ -234,10 +234,11 @@ def extract_cloud(logfilepath, result):
     result['total_compute'] = compute.get('raw', 0)
     result['compute'] = compute
 
-    if batch_models > result['total_models']:
-        result['strange'] = 'More batch than Models'
-    if orphaned_jobs > 9:
-        result['strange'] = 'Orphaned jobs'
+    if not 'strange' in result:
+        if orphaned_jobs > 0:
+            result['strange'] = 'Orphaned jobs\t{}'.format(orphaned_jobs)
+        if batch_models > result['total_models']:
+            result['strange'] = 'More batch than Models\t{}/{}'.format(batch_models, result['total_models'])
     
     pass
 
@@ -286,8 +287,8 @@ for subdir in sorted([d for d in os.listdir(dir) if d != 'inputfiles' and os.pat
             str(log_data['b-cpus']),
             str(log_data['total_batch'] / log_data['total_models'] if 'total_batch' in log_data.keys() else 0.0),
             to_str(log_data['total_compute'] if 'total_compute' in log_data.keys() else 0),
-            log_data.get('strange', ''),
-            json.dumps(log_data, default=to_str) # indent=4, sort_keys=True,
+            log_data.get('strange', '')
+            #json.dumps(log_data, default=to_str) # indent=4, sort_keys=True,
         ]
         print('\t'.join(result))
     except AssertionError as ase:
