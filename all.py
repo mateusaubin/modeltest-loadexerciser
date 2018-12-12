@@ -274,21 +274,34 @@ def sendmessages(phy_file):
     pass
 
 
-def reset_logs():
-    shell_discover = "aws logs describe-log-groups --output text | awk '{ print $4 }'"
+def delete_logs():
     delete_pattern = "aws logs delete-log-group --log-group-name {0} && aws logs create-log-group --log-group-name {0}"
 
-    logging.warn('uploading cloudwatch logs')
+    logging.warn('cleaning cloudwatch logs')
 
-    f = os.popen(shell_discover)
-    logs = f.readlines()
-
-    upload_logs(logs)
-
+    logs = discover_logs()
     cmds = list(map(lambda logname: delete_pattern.format(logname.rstrip()), logs))
     cmds_exec = ' && '.join(cmds)
 
     os.system(cmds_exec)
+
+    logging.info("ok!")
+    pass
+
+
+def discover_logs():
+    shell_discover = "aws logs describe-log-groups --output text | awk '{ print $4 }'"
+
+    f = os.popen(shell_discover)
+    logs = f.readlines()
+    return logs
+
+
+def save_logs():
+    logging.warn('uploading cloudwatch logs')
+
+    logs = discover_logs()
+    upload_logs(logs)
 
     logging.info("ok!")
     pass
@@ -321,7 +334,7 @@ def upload_logs(logs):
     pass
 
 
-@backoff.on_predicate(backoff.fibo, max_value=60)
+@backoff.on_predicate(backoff.constant, interval=60)
 def cooldown(dt_first):
 
     if BENCH_EXECUTION_MODE != 1:
@@ -339,14 +352,15 @@ def cooldown(dt_first):
         except:
             pass
 
-    diff = datetime.now() - dt_first
+
+    now = datetime.now()
+    diff = now - dt_first
     if diff < RETRY_MAXWAIT and not BENCH_EXECUTION_MODE == 2:
         logging.info("COOLDOWN: waiting until {}".format(dt_first + RETRY_MAXWAIT))
         
-        diff_s = diff.total_seconds()
+        diff_s = dt_first + RETRY_MAXWAIT - now
+        diff_s = diff_s.total_seconds()
         time.sleep(diff_s)
-        
-        return False
 
     return True
 
@@ -407,7 +421,7 @@ MSG_SUBJECT = "{}_{}".format(
 
 
 STACK_OUTPUTS = get_variables()
-RETRY_MAXWAIT = timedelta(seconds=int(STACK_OUTPUTS['lambdatimeout'])*3)
+RETRY_MAXWAIT = timedelta(seconds=int(STACK_OUTPUTS['lambdatimeout']) * 10)
 
 
 from timeit import default_timer as timer
@@ -415,6 +429,7 @@ from timeit import default_timer as timer
 try:
     dynamo_create()
     phy_file = s3_upload()
+    delete_logs()
 
     start = timer()
 
@@ -430,7 +445,7 @@ finally:
     dt_now = retry_firstattempt or datetime.now()
     cooldown(dt_now)
 
-    reset_logs()
+    save_logs()
     dynamo_clear()
     pass
 
