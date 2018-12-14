@@ -350,6 +350,7 @@ def cooldown(dt_first):
             if desired != minimum:
                 return False
         except:
+            logging.error("Error obtaining Batch CPUs")
             pass
 
 
