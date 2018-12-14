@@ -505,10 +505,17 @@ if __name__ == '__main__':
 
 
     # WRAP UP
-    dt_now = retry_firstattempt or datetime.now()
-    cooldown(dt_now, scaling_monitor)
+    try:
+        dt_now = retry_firstattempt or datetime.now()
 
-    dynamo_clear()
-    save_logs()
+        cooldown(dt_now, scaling_monitor)
+        dynamo_clear()
+
+    except Exception as e_wrap:
+        logging.exception(e_wrap)
+
+    finally:
+        save_logs()
+
 
     logging.error('-- DONE -- ' + MSG_SUBJECT)
