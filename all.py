@@ -8,8 +8,10 @@ import boto3
 import json
 import string
 import logging
+import threading
 import concurrent.futures
 import backoff
+from timeit import default_timer as timer
 from datetime import datetime
 from datetime import timedelta
 
@@ -277,7 +279,7 @@ def sendmessages(phy_file):
 def delete_logs():
     delete_pattern = "aws logs delete-log-group --log-group-name {0} && aws logs create-log-group --log-group-name {0}"
 
-    logging.warn('cleaning cloudwatch logs')
+    logging.warn('removing cloudwatch logs')
 
     logs = discover_logs()
     cmds = list(map(lambda logname: delete_pattern.format(logname.rstrip()), logs))
@@ -335,7 +337,7 @@ def upload_logs(logs):
 
 
 @backoff.on_predicate(backoff.constant, interval=60)
-def cooldown(dt_first):
+def cooldown(dt_first, scm):
 
     if BENCH_EXECUTION_MODE != 1:
         try:
@@ -346,7 +348,7 @@ def cooldown(dt_first):
             minimum = envdata['computeResources']['minvCpus']
             desired = envdata['computeResources']['desiredvCpus']
             
-            logging.info("COOLDOWN: {} vCPUs Running".format(desired))
+            #logging.info("COOLDOWN: {} vCPUs Running".format(desired))
             if desired != minimum:
                 return False
         except:
@@ -354,15 +356,19 @@ def cooldown(dt_first):
             pass
 
 
-    now = datetime.now()
-    diff = now - dt_first
-    if diff < RETRY_MAXWAIT and not BENCH_EXECUTION_MODE == 2:
+    diff_s = dt_first + RETRY_MAXWAIT - datetime.now()
+    diff_s = diff_s.total_seconds()
+
+    # no point in collecting scaling data anymore
+    logging.info("COOLDOWN: Joining SCM thread")
+    scm['Event'].set()
+    scm['Thread'].join(timeout=diff_s)
+
+    if (datetime.now() - dt_first) < RETRY_MAXWAIT and not BENCH_EXECUTION_MODE == 2:
         logging.info("COOLDOWN: waiting until {}".format(dt_first + RETRY_MAXWAIT))
-        
-        diff_s = dt_first + RETRY_MAXWAIT - now
-        diff_s = diff_s.total_seconds()
         time.sleep(diff_s)
 
+    logging.info('ok!')
     return True
 
 
@@ -401,53 +407,108 @@ def get_variables():
     return STACK_OUTPUTS
 
 
+def create_scaling_monitor(compute_env, log_interval=60):
+
+    t_event = threading.Event()
+    backtask = threading.Thread(
+        target=log_scaling_behavior,
+        args=(
+            t_event,
+            compute_env[compute_env.rfind('/')+1:],
+            log_interval
+        ),
+        daemon=True
+    )
+    backtask.start()
+
+    return { 'Thread': backtask, 'Event': t_event}
+
+
+def log_scaling_behavior(t_event, compute_env, log_interval):
+    log = logging.getLogger('SCM')
+    log.warn('start')
+
+    scm_batch_cli = boto3.client('batch')
+    compute_env = scm_batch_cli.describe_compute_environments(
+        computeEnvironments=[compute_env]
+    )
+    tags_to_look_for = compute_env['computeEnvironments'][0]['computeResources']['tags']
+    ec2_filters = {"tag:{}".format(x): tags_to_look_for[x] for x in tags_to_look_for}
+
+    filters = []
+    for t in ec2_filters:
+        obj = {
+            'Name': t,
+            'Values': [
+                ec2_filters[t]
+            ]
+        }
+        filters.append(obj)
+    log.info('ok!')
+
+    scm_ec2_cli = boto3.client('ec2')
+    while not t_event.wait(log_interval):
+        try:
+            instances = scm_ec2_cli.describe_instances(Filters=filters).get('Reservations', [])  
+            cpus = sum([y['CpuOptions']['CoreCount'] * y['CpuOptions']['ThreadsPerCore'] for x in instances for y in x['Instances'] if y['State']['Name'] != 'terminated'])
+            log.info('{} vCPUs Running'.format(cpus))
+        except Exception as ex:
+            log.exception(ex)
+    
+    log.info('stop')
+
+
 # --- VAI COMEÇAR A BAIXARIA --- # 
 
+if __name__ == '__main__':
+    logging.error("BORA FICAR MONSTRO!")
 
-logging.error("BORA FICAR MONSTRO!")
+    TRACE_FILE = argv(1, "aP6")
 
-TRACE_FILE = argv(1, "aP6")
-
-# 0 - MIXED
-# 1 - LAMBDA ONLY
-# 2 - BATCH ONLY
-BENCH_EXECUTION_MODE = int(argv(2, 0))
-
-
-RUNDATE = datetime.now().isoformat()[0:19].replace(' ', '').replace(':', '-')
-MSG_SUBJECT = "{}_{}".format(
-    RUNDATE,
-    TRACE_FILE
-)
+    # 0 - MIXED
+    # 1 - LAMBDA ONLY
+    # 2 - BATCH ONLY
+    BENCH_EXECUTION_MODE = int(argv(2, 0))
 
 
-STACK_OUTPUTS = get_variables()
-RETRY_MAXWAIT = timedelta(seconds=int(STACK_OUTPUTS['lambdatimeout']) * 10)
+    RUNDATE = datetime.now().isoformat()[0:19].replace(' ', '').replace(':', '-')
+    MSG_SUBJECT = "{}_{}".format(
+        RUNDATE,
+        TRACE_FILE
+    )
 
 
-from timeit import default_timer as timer
+    STACK_OUTPUTS = get_variables()
+    RETRY_MAXWAIT = timedelta(seconds=int(STACK_OUTPUTS['lambdatimeout']) * 5)
 
-try:
+
+    # INITIALIZATION
     dynamo_create()
     phy_file = s3_upload()
     delete_logs()
+    scaling_monitor = create_scaling_monitor(STACK_OUTPUTS['batchcomputeenv'])
 
-    start = timer()
 
-    # hotness
-    sendmessages(phy_file)
+    # HOTNESS STARTS HERE
+    try:
+        start = timer()
 
-    duration = (timer() - start)
-    duration = int(duration * 1000)
+        sendmessages(phy_file)
 
-    logging.critical("REPORT Duration: {} ms".format(duration))
+        duration = (timer() - start)
+        duration = int(duration * 1000)
 
-finally:
+        logging.critical("REPORT Duration: {} ms".format(duration))
+
+    except Exception as caught:
+        logging.exception(caught)
+
+
+    # WRAP UP
     dt_now = retry_firstattempt or datetime.now()
-    cooldown(dt_now)
+    cooldown(dt_now, scaling_monitor)
 
-    save_logs()
     dynamo_clear()
-    pass
+    save_logs()
 
-logging.error('-- DONE -- ' + MSG_SUBJECT)
+    logging.error('-- DONE -- ' + MSG_SUBJECT)
