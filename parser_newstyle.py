@@ -39,7 +39,7 @@ def extract_data(logfilepath):
     for line in open(logfilepath):
         logfields = line.rstrip().split('- ')
 
-        if state == 0 and 'INFO' in logfields[2]:
+        if state == 0 and 'INFO' in logfields[2] and 'root' in logfields[1]:
             logstr = json.loads(logfields[3])
             result['scenario'] = logstr.get('runner') or logstr.get('batchrunner') or ' -- default -- '
             result['b-cpus'] = int(logstr['batchclustercpus'])
@@ -47,7 +47,7 @@ def extract_data(logfilepath):
             result['l-timeout'] = int(logstr['lambdatimeout'])
             state = 10
 
-        if state == 10 and 'WARN' in logfields[2]:
+        if state == 10 and 'WARN' in logfields[2] and 'root' in logfields[1]:
             #1 [8]
             found = re.findall(r"#([0-9]+) \[([0-9]+)\]", logfields[3])
             if not found:
@@ -62,8 +62,10 @@ def extract_data(logfilepath):
             result['total_models'] = result['total_models'] + int(found[1])
             state = 11
 
-        if (state == 11 and 'INFO'  in logfields[2] and logfields[3] == 'ok!') or \
-           (state == 11 and 'ERROR' in logfields[2] and 'Tired of waiting for a response' in logfields[3]):
+        if  'root' in logfields[1] and \
+            (state == 11 and 'INFO'  in logfields[2] and logfields[3] == 'ok!') or \
+            (state == 11 and 'ERROR' in logfields[2] and 'Tired of waiting for a response' in logfields[3])\
+        :
             stage['finish'] = dateparse(logfields[0][1:-2])
             stage['duration'] = (stage['finish'] - stage['start'])
             result['stages'].append(stage)
@@ -76,7 +78,7 @@ def extract_data(logfilepath):
 
             stage = None
 
-        if state == 10 and 'CRITICAL' in logfields[2]:
+        if state == 10 and 'CRITICAL' in logfields[2] and 'root' in logfields[1]:
             duration = logfields[3].split(' ')[2]
             runtime = to_timedelta(duration)
             result['runtime'] = runtime
