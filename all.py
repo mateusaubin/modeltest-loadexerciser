@@ -420,7 +420,8 @@ def create_scaling_monitor(compute_env, log_interval=60):
         ),
         daemon=True
     )
-    backtask.start()
+    if BENCH_EXECUTION_MODE != 1:
+        backtask.start()
 
     return { 'Thread': backtask, 'Event': t_event}
 
@@ -455,7 +456,7 @@ def log_scaling_behavior(t_event, compute_env, log_interval):
             log.info('{} vCPUs Running'.format(cpus))
         except Exception as ex:
             log.exception(ex)
-            
+
         if t_event.wait(log_interval):
             break
     
@@ -483,43 +484,47 @@ if __name__ == '__main__':
 
 
     STACK_OUTPUTS = get_variables()
-    RETRY_MAXWAIT = timedelta(seconds=int(STACK_OUTPUTS['lambdatimeout']) * 10)
+    RETRY_MAXWAIT = timedelta(seconds=int(STACK_OUTPUTS['lambdatimeout']) * 7)
 
-
-    # INITIALIZATION
-    phy_file = s3_upload()
-    dynamo_create()
-    scaling_monitor = create_scaling_monitor(STACK_OUTPUTS['batchcomputeenv'])
-    delete_logs()
-
-
-    # HOTNESS STARTS HERE
     try:
-        start = timer()
 
-        sendmessages(phy_file)
-
-        duration = (timer() - start)
-        duration = int(duration * 1000)
-
-        logging.critical("REPORT Duration: {} ms".format(duration))
-
-    except Exception as caught:
-        logging.exception(caught)
+        # INITIALIZATION
+        phy_file = s3_upload()
+        dynamo_create()
+        scaling_monitor = create_scaling_monitor(STACK_OUTPUTS['batchcomputeenv'])
+        delete_logs()
 
 
-    # WRAP UP
-    try:
-        dt_now = retry_firstattempt or datetime.now()
+        # HOTNESS STARTS HERE
+        try:
+            start = timer()
 
-        cooldown(dt_now, scaling_monitor)
-        dynamo_clear()
+            sendmessages(phy_file)
 
-    except Exception as e_wrap:
-        logging.exception(e_wrap)
+            duration = (timer() - start)
+            duration = int(duration * 1000)
+
+            logging.critical("REPORT Duration: {} ms".format(duration))
+
+        except Exception as caught:
+            logging.exception(caught)
+
+
+        # WRAP UP
+        try:
+            dt_now = retry_firstattempt or datetime.now()
+
+            cooldown(dt_now, scaling_monitor)
+            dynamo_clear()
+
+        except Exception as e_wrap:
+            logging.exception(e_wrap)
+
+
+        logging.critical('-- DONE -- ' + MSG_SUBJECT)
+
+    except Exception as e_gen:
+        logging.exception(e_gen)
 
     finally:
         save_logs()
-
-
-    logging.error('-- DONE -- ' + MSG_SUBJECT)
