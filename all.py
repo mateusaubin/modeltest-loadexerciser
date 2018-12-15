@@ -338,6 +338,7 @@ def upload_logs(logs):
 
 @backoff.on_predicate(backoff.constant, interval=60)
 def cooldown(dt_first, scm):
+    logging.info("COOLDOWN: started with {}".format(dt_first))
 
     if BENCH_EXECUTION_MODE != 1:
         try:
@@ -479,7 +480,7 @@ if __name__ == '__main__':
 
 
     STACK_OUTPUTS = get_variables()
-    RETRY_MAXWAIT = timedelta(seconds=int(STACK_OUTPUTS['lambdatimeout']) * 5)
+    RETRY_MAXWAIT = timedelta(seconds=int(STACK_OUTPUTS['lambdatimeout']) * 10)
 
 
     # INITIALIZATION
