@@ -448,13 +448,16 @@ def log_scaling_behavior(t_event, compute_env, log_interval):
     log.info('ok!')
 
     scm_ec2_cli = boto3.client('ec2')
-    while not t_event.wait(log_interval):
+    while True:
         try:
             instances = scm_ec2_cli.describe_instances(Filters=filters).get('Reservations', [])  
             cpus = sum([y['CpuOptions']['CoreCount'] * y['CpuOptions']['ThreadsPerCore'] for x in instances for y in x['Instances'] if y['State']['Name'] != 'terminated'])
             log.info('{} vCPUs Running'.format(cpus))
         except Exception as ex:
             log.exception(ex)
+            
+        if t_event.wait(log_interval):
+            break
     
     log.info('stop')
 
@@ -484,10 +487,10 @@ if __name__ == '__main__':
 
 
     # INITIALIZATION
-    dynamo_create()
     phy_file = s3_upload()
-    delete_logs()
+    dynamo_create()
     scaling_monitor = create_scaling_monitor(STACK_OUTPUTS['batchcomputeenv'])
+    delete_logs()
 
 
     # HOTNESS STARTS HERE
