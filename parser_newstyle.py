@@ -28,6 +28,43 @@ def to_timedelta(ms_interval):
     return t - datetime.timedelta(microseconds=t.microseconds)
 
 
+def extract_batch_cost(logfilepath):
+    batch_cost = dict()
+    logfields = list()
+
+    for line in open(logfilepath):
+        try:
+            logfields = line.rstrip().split('- ')
+
+            if len(logfields) < 4 or not 'SCM' in logfields[1]:
+                continue
+
+            msg = logfields[3].split()
+            if 'INFO' in logfields[2] and msg[0].isnumeric():
+                cpus = int(msg[0])
+                batch_cost[cpus] = batch_cost.setdefault(cpus, 0) + 1
+        
+        except Exception:
+            print(line)
+
+    # custo em unidades CPU / MINUTO
+    k = [x*batch_cost[x] for x in batch_cost.keys()]
+    unit_cost = sum(k)
+
+    # custo monetario
+    EC2_COST_xCPUxMINUTE = 7.08333e-4
+    money_cost = unit_cost * EC2_COST_xCPUxMINUTE
+
+    if unit_cost == 0:
+        return None
+    else:
+        return { 
+            'unit_cost': unit_cost,
+            'money_cost': money_cost,
+            'histogram': batch_cost
+        }
+        
+
 def extract_data(logfilepath):
     state = 0
     stage = None
@@ -39,7 +76,10 @@ def extract_data(logfilepath):
     for line in open(logfilepath):
         logfields = line.rstrip().split('- ')
 
-        if state == 0 and 'INFO' in logfields[2] and 'root' in logfields[1]:
+        if 'root ' != logfields[1]:
+            continue
+        
+        if state == 0 and 'INFO' in logfields[2]:
             logstr = json.loads(logfields[3])
             result['scenario'] = logstr.get('runner') or logstr.get('batchrunner') or ' -- default -- '
             result['b-cpus'] = int(logstr['batchclustercpus'])
@@ -47,7 +87,7 @@ def extract_data(logfilepath):
             result['l-timeout'] = int(logstr['lambdatimeout'])
             state = 10
 
-        if state == 10 and 'WARN' in logfields[2] and 'root' in logfields[1]:
+        if state == 10 and 'WARN' in logfields[2]:
             #1 [8]
             found = re.findall(r"#([0-9]+) \[([0-9]+)\]", logfields[3])
             if not found:
@@ -62,8 +102,7 @@ def extract_data(logfilepath):
             result['total_models'] = result['total_models'] + int(found[1])
             state = 11
 
-        if  'root' in logfields[1] and \
-            (state == 11 and 'INFO'  in logfields[2] and logfields[3] == 'ok!') or \
+        if  (state == 11 and 'INFO'  in logfields[2] and logfields[3] == 'ok!') or \
             (state == 11 and 'ERROR' in logfields[2] and 'Tired of waiting for a response' in logfields[3])\
         :
             stage['finish'] = dateparse(logfields[0][1:-2])
@@ -78,7 +117,7 @@ def extract_data(logfilepath):
 
             stage = None
 
-        if state == 10 and 'CRITICAL' in logfields[2] and 'root' in logfields[1]:
+        if state == 10 and 'CRITICAL' in logfields[2]:
             duration = logfields[3].split(' ')[2]
             runtime = to_timedelta(duration)
             result['runtime'] = runtime
@@ -179,7 +218,7 @@ def extract_cloud(logfilepath, result):
                 groups = matches.groups()
 
                 compute['raw'] = compute.get('raw', 0) + float(groups[0])
-                compute['billed'] = compute.get('billed', 0) + (float(groups[1]) if len(groups) > 1 else 0)
+                compute['l-billed'] = compute.get('l-billed', 0) + (float(groups[1]) if len(groups) > 1 else 0)
                 compute[logfields[0]] = compute.get(logfields[0], 0) + float(groups[0])
 
             jobs_in_stage[stage_index][source] = jobs_in_stage.get(stage_index, { }).get(source, 0) + 1
@@ -233,7 +272,6 @@ def extract_cloud(logfilepath, result):
     result['l-cpus'] = lambda_executors
     result['total_batch'] = batch_models
     result['total_orphans'] = orphaned_jobs 
-    result['total_compute'] = compute.get('raw', 0)
     result['compute'] = compute
 
     if not 'strange' in result:
@@ -278,6 +316,8 @@ for subdir in sorted([d for d in os.listdir(dir) if d != 'inputfiles' and os.pat
 
         extract_cloud(watchfile, log_data)
 
+        batch_cost = extract_batch_cost(logfile)
+
         result = [
             log_data['scenario'],
             input_file,
@@ -288,7 +328,7 @@ for subdir in sorted([d for d in os.listdir(dir) if d != 'inputfiles' and os.pat
             str(log_data['l-timeout']),
             str(log_data['b-cpus']),
             str(log_data['total_batch'] / log_data['total_models'] if 'total_batch' in log_data.keys() else 0.0),
-            to_str(log_data['total_compute'] if 'total_compute' in log_data.keys() else 0),
+            to_str(log_data['compute'].get('raw', 0)),
             log_data.get('strange', '')
             #json.dumps(log_data, default=to_str) # indent=4, sort_keys=True,
         ]
