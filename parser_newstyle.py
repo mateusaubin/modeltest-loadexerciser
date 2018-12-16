@@ -28,6 +28,43 @@ def to_timedelta(ms_interval):
     return t - datetime.timedelta(microseconds=t.microseconds)
 
 
+def extract_lambda_cost(result):
+    LAMBDA_RETRY_COUNT = 3
+    LAMBDA_TIME_COSTUNIT = datetime.timedelta(milliseconds=100)
+    LAMBDA_POWER_COSTUNIT = 64
+    LAMBDA_COST_xTIMExPOWER = 1.04191e-7
+
+    power = result['l-power']
+    power = power / LAMBDA_POWER_COSTUNIT
+
+    failed_in_lambda = sum([x.get('forwarder',0) for x in result['stages']])
+    succeeded_in_lambda = sum([x.get('modeltest',0) for x in result['stages']])
+    total_in_lambda = (failed_in_lambda * LAMBDA_RETRY_COUNT) + succeeded_in_lambda
+
+    if total_in_lambda == 0:
+        return None
+
+    runtime = (result['compute']['l-billed'] / total_in_lambda) * (failed_in_lambda + succeeded_in_lambda)
+    runtime = runtime / LAMBDA_TIME_COSTUNIT
+
+    unit_cost = (runtime) * (power)
+    money_cost = unit_cost * LAMBDA_COST_xTIMExPOWER
+
+    response = { 
+        'unit_cost': round(unit_cost),
+        'money_cost': round(money_cost, 5)
+    }
+
+    runtime = result['compute']['l-billed'] / LAMBDA_TIME_COSTUNIT
+    unit_cost = (runtime) * (power)
+    money_cost = unit_cost * LAMBDA_COST_xTIMExPOWER
+
+    response['unit_cost_withretries'] = unit_cost
+    response['money_cost_withretries'] = money_cost
+
+    return response
+
+
 def extract_batch_cost(logfilepath):
     batch_cost = dict()
     logfields = list()
@@ -47,6 +84,9 @@ def extract_batch_cost(logfilepath):
         except Exception:
             print(line)
 
+    if not batch_cost:
+        return None
+
     # custo em unidades CPU / MINUTO
     k = [x*batch_cost[x] for x in batch_cost.keys()]
     unit_cost = sum(k)
@@ -55,14 +95,12 @@ def extract_batch_cost(logfilepath):
     EC2_COST_xCPUxMINUTE = 7.08333e-4
     money_cost = unit_cost * EC2_COST_xCPUxMINUTE
 
-    if unit_cost == 0:
-        return None
-    else:
-        return { 
-            'unit_cost': unit_cost,
-            'money_cost': money_cost,
-            'histogram': batch_cost
-        }
+    response = { 
+        'unit_cost': round(unit_cost),
+        'money_cost': round(money_cost, 5),
+        'histogram': batch_cost
+    }
+    return response
         
 
 def extract_data(logfilepath):
@@ -304,6 +342,8 @@ def to_str(obj):
 dir = expanduser('~') + '/aws-s3/mestrado-dev-phyml'
 
 for subdir in sorted([d for d in os.listdir(dir) if d != 'inputfiles' and os.path.isdir(os.path.join(dir, d))]):
+    #if not '2018-11-20T23-24_aP' in subdir:
+    #    continue
     try:
         execution_time, input_file = subdir.split('_',1)
         
@@ -317,6 +357,7 @@ for subdir in sorted([d for d in os.listdir(dir) if d != 'inputfiles' and os.pat
         extract_cloud(watchfile, log_data)
 
         batch_cost = extract_batch_cost(logfile)
+        lambda_cost = extract_lambda_cost(log_data)
 
         result = [
             log_data['scenario'],
@@ -328,7 +369,7 @@ for subdir in sorted([d for d in os.listdir(dir) if d != 'inputfiles' and os.pat
             str(log_data['l-timeout']),
             str(log_data['b-cpus']),
             str(log_data['total_batch'] / log_data['total_models'] if 'total_batch' in log_data.keys() else 0.0),
-            to_str(log_data['compute'].get('raw', 0)),
+            to_str(log_data.get('compute', {}).get('raw', 0)),
             log_data.get('strange', '')
             #json.dumps(log_data, default=to_str) # indent=4, sort_keys=True,
         ]
