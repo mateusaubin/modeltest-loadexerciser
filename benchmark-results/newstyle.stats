@@ -2,7 +2,7 @@
 stamatakis-59	stamatakis-59	2018-11-18T19-51_stamatakis-59	02:11:17	352	1536	45	16	1.0	1.13:41:11	Models don't match	Act: 260 | Exp: 120 | Stage: 1
 aP6	aP6	2018-11-18T22-58_aP6	00:00:42	8	1536	45	16	0.0	00:01:11	Models don't match	Act: 2 | Exp: 8 | Stage: 5
 gusanos16S.mafft	gusanos16S.mafft	2018-11-18T23-06_gusanos16S.mafft	00:48:41	208	1536	45	16	0.44140625	07:26:32	
-gusanos16S.mafft	gusanos16S.mafft	2018-11-20T01-39_gusanos16S.mafft	00:48:59	0	1536	45	16	0.0	0	Cloudwatch logs missing
+gusanos16S.mafft	gusanos16S.mafft	2018-11-20T01-39_gusanos16S.mafft	00:48:59	0	1536	45	16	0.0	00:00:00	Cloudwatch logs missing
 gusanos16S.mafft	gusanos16S.mafft	2018-11-20T02-46_gusanos16S.mafft	00:37:02	466	1536	45	16	0.87109375	14:27:45	Orphaned jobs	715
 Birds	Birds	2018-11-20T03-48_Birds	00:23:13	144	1536	45	16	1.1682692307692308	06:49:50	More batch than Models	243/208
 gusanosCOI.mafft	gusanosCOI.mafft	2018-11-20T12-01_gusanosCOI.mafft	00:56:24	148	1536	45	16	0.5678571428571428	11:14:27	
@@ -15,7 +15,7 @@ rodents	rodents	2018-11-20T13-14_rodents	00:00:29	21	1536	45	16	0.0	00:03:30	Mod
 rodents	rodents	2018-11-20T13-16_rodents	00:00:30	18	1536	45	16	0.0	00:03:44	Models don't match	Act: 32 | Exp: 48 | Stage: 3
 18S_insects2	example	2018-11-20T21-48_example	00:00:56	30	1536	45	16	0.0	00:06:18	Models don't match	Act: 7 | Exp: 8 | Stage: 5
 18S_insects2	example	2018-11-20T21-51_example	00:01:02	20	1536	45	16	0.0	00:05:42	Models don't match	Act: 6 | Exp: 8 | Stage: 5
-18S_insects2	aP6	2018-11-20T23-24_aP6	00:00:13	0	1536	45	16	0.0	0	Cloudwatch logs missing
+18S_insects2	aP6	2018-11-20T23-24_aP6	00:00:13	0	1536	45	16	0.0	00:00:00	Cloudwatch logs missing
 18S_insects2	example	2018-11-21T00-21_example	00:00:25	134	1536	45	16	0.0	00:09:58	Models don't match	Act: 3 | Exp: 8 | Stage: 5
 18S_insects2	example	2018-11-21T00-22_example	00:00:29	98	1536	45	16	0.0	00:06:50	Models don't match	Act: 3 | Exp: 8 | Stage: 5
 18S_insects2	example	2018-11-21T00-23_example	00:00:29	98	1536	45	16	0.0	00:06:50	Models don't match	Act: 5 | Exp: 8 | Stage: 5
@@ -1001,3 +1001,55 @@ lambda-only	gusanos16S.mafft	2018-12-15T04-02-21_gusanos16S.mafft	-1.00:00:00	8	
 60-1536-8	primate-mtDNA	2018-12-15T22-10-28_primate-mtDNA	00:01:35	120	1536	60	8	0.0	00:34:39	
 60-1536-8	primate-mtDNA	2018-12-15T22-18-00_primate-mtDNA	00:01:35	120	1536	60	8	0.0	00:34:05	
 60-1536-8	primate-mtDNA	2018-12-15T22-25-33_primate-mtDNA	00:01:35	120	1536	60	8	0.0	00:34:32	
+15-1536-36	stamatakis-59	2018-12-15T23-34-28_stamatakis-59	01:22:20	128	1536	15	36	1.0	1.01:34:27	
+15-1536-36	stamatakis-59	2018-12-16T01-13-09_stamatakis-59	01:18:29	128	1536	15	36	1.0	1.02:02:29	
+batch-only-36	aP6	2018-12-16T03-17-46_aP6	00:10:20	0	256	1	36	1.0	00:01:26	
+batch-only-36	aP6	2018-12-16T03-29-51_aP6	00:09:47	0	256	1	36	1.0	00:01:30	
+batch-only-36	aP6	2018-12-16T03-50-47_aP6	00:09:56	0	256	1	36	1.0	00:01:30	
+batch-only-36	aP6	2018-12-16T04-12-08_aP6	00:09:50	0	256	1	36	1.0	00:01:28	
+batch-only-36	aP6	2018-12-16T04-33-07_aP6	00:09:04	0	256	1	36	1.0	00:01:29	
+batch-only-36	rodents	2018-12-16T04-45-32_rodents	00:08:15	0	256	1	36	1.0	00:03:20	
+batch-only-36	rodents	2018-12-16T04-56-09_rodents	00:09:02	0	256	1	36	1.0	00:03:18	
+batch-only-36	rodents	2018-12-16T05-17-35_rodents	00:08:37	0	256	1	36	1.0	00:03:21	
+batch-only-36	rodents	2018-12-16T05-29-54_rodents	00:08:33	0	256	1	36	1.0	00:03:17	
+batch-only-36	rodents	2018-12-16T05-50-59_rodents	00:09:18	0	256	1	36	1.0	00:03:16	
+batch-only-36	example	2018-12-16T06-03-14_example	00:09:28	0	256	1	36	1.0	00:04:33	
+batch-only-36	example	2018-12-16T06-23-54_example	00:08:32	0	256	1	36	1.0	00:04:33	
+batch-only-36	example	2018-12-16T06-36-27_example	00:10:06	0	256	1	36	1.0	00:04:33	
+batch-only-36	example	2018-12-16T06-56-31_example	00:09:20	0	256	1	36	1.0	00:04:33	
+batch-only-36	example	2018-12-16T07-17-51_example	00:10:02	0	256	1	36	1.0	00:04:30	
+batch-only-36	HIVpol.groupM	2018-12-16T07-30-13_HIVpol.groupM	00:08:10	0	256	1	36	1.0	00:07:31	
+batch-only-36	HIVpol.groupM	2018-12-16T07-40-14_HIVpol.groupM	00:08:02	0	256	1	36	1.0	00:07:34	
+batch-only-36	HIVpol.groupM	2018-12-16T07-51-03_HIVpol.groupM	00:08:53	0	256	1	36	1.0	00:07:29	
+batch-only-36	HIVpol.groupM	2018-12-16T08-11-51_HIVpol.groupM	00:09:16	0	256	1	36	1.0	00:07:28	
+batch-only-36	HIVpol.groupM	2018-12-16T08-24-16_HIVpol.groupM	00:08:48	0	256	1	36	1.0	00:07:27	
+batch-only-36	Hex_EF1a	2018-12-16T08-45-15_Hex_EF1a	00:07:57	0	256	1	36	1.0	00:14:16	
+batch-only-36	Hex_EF1a	2018-12-16T08-57-23_Hex_EF1a	00:06:59	0	256	1	36	1.0	00:14:18	
+batch-only-36	Hex_EF1a	2018-12-16T09-08-03_Hex_EF1a	00:09:21	0	256	1	36	1.0	00:13:39	
+batch-only-36	Hex_EF1a	2018-12-16T09-19-09_Hex_EF1a	00:07:22	0	256	1	36	1.0	00:14:39	
+batch-only-36	Hex_EF1a	2018-12-16T09-29-14_Hex_EF1a	00:09:16	0	256	1	36	1.0	00:13:54	
+batch-only-36	primate-mtDNA	2018-12-16T09-49-50_primate-mtDNA	00:09:13	0	256	1	36	1.0	00:21:29	
+batch-only-36	primate-mtDNA	2018-12-16T10-02-08_primate-mtDNA	00:09:25	0	256	1	36	1.0	00:21:17	
+batch-only-36	primate-mtDNA	2018-12-16T10-23-12_primate-mtDNA	00:11:06	0	256	1	36	1.0	00:20:23	
+batch-only-36	primate-mtDNA	2018-12-16T10-45-16_primate-mtDNA	00:10:04	0	256	1	36	1.0	00:20:36	
+batch-only-36	primate-mtDNA	2018-12-16T10-57-58_primate-mtDNA	00:09:21	0	256	1	36	1.0	00:21:15	
+batch-only-36	HIV_vpu.ref2	2018-12-16T11-19-00_HIV_vpu.ref2	00:10:53	0	256	1	36	1.0	01:04:07	
+batch-only-36	HIV_vpu.ref2	2018-12-16T11-41-09_HIV_vpu.ref2	00:11:20	0	256	1	36	1.0	01:05:37	
+batch-only-36	HIV_vpu.ref2	2018-12-16T12-03-37_HIV_vpu.ref2	00:10:29	0	256	1	36	1.0	01:06:32	
+batch-only-36	HIV_vpu.ref2	2018-12-16T12-25-29_HIV_vpu.ref2	00:11:15	0	256	1	36	1.0	01:04:02	
+batch-only-36	HIV_vpu.ref2	2018-12-16T12-47-01_HIV_vpu.ref2	00:09:44	0	256	1	36	1.0	01:05:13	
+batch-only-36	gusanos16S.mafft	2018-12-16T13-07-36_gusanos16S.mafft	00:13:37	0	256	1	36	1.0	02:24:57	
+batch-only-36	gusanos16S.mafft	2018-12-16T13-28-29_gusanos16S.mafft	00:13:08	0	256	1	36	1.0	02:25:11	
+batch-only-36	gusanos16S.mafft	2018-12-16T13-50-08_gusanos16S.mafft	00:12:48	0	256	1	36	1.0	02:28:58	
+batch-only-36	gusanos16S.mafft	2018-12-16T14-10-34_gusanos16S.mafft	00:13:16	0	256	1	36	1.0	02:26:33	
+batch-only-36	gusanos16S.mafft	2018-12-16T14-31-12_gusanos16S.mafft	00:11:49	0	256	1	36	1.0	02:25:46	
+batch-only-36	Birds	2018-12-16T14-52-09_Birds	00:08:29	0	256	1	36	1.0	01:21:57	
+batch-only-36	Birds	2018-12-16T15-02-34_Birds	00:09:28	0	256	1	36	1.0	01:21:25	
+batch-only-36	Birds	2018-12-16T15-23-42_Birds	00:08:25	0	256	1	36	1.0	01:24:56	
+batch-only-36	Birds	2018-12-16T15-35-14_Birds	00:10:04	0	256	1	36	1.0	01:20:27	
+batch-only-36	Birds	2018-12-16T15-56-02_Birds	00:10:09	0	256	1	36	1.0	01:22:07	
+batch-only-36	gusanosCOI.mafft	2018-12-16T16-17-00_gusanosCOI.mafft	00:17:50	0	256	1	36	1.0	04:23:32	
+batch-only-36	gusanosCOI.mafft	2018-12-16T16-40-16_gusanosCOI.mafft	00:19:57	0	256	1	36	1.0	04:20:12	
+batch-only-36	gusanosCOI.mafft	2018-12-16T17-11-43_gusanosCOI.mafft	00:21:27	0	256	1	36	1.0	04:21:37	
+batch-only-36	gusanosCOI.mafft	2018-12-16T17-43-46_gusanosCOI.mafft	00:18:45	0	256	1	36	1.0	04:14:49	
+batch-only-36	gusanosCOI.mafft	2018-12-16T18-06-55_gusanosCOI.mafft	00:22:51	0	256	1	36	1.0	04:15:47	
