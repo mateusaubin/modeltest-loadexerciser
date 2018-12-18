@@ -342,7 +342,7 @@ def to_str(obj):
 dir = expanduser('~') + '/aws-s3/mestrado-dev-phyml'
 
 for subdir in sorted([d for d in os.listdir(dir) if d != 'inputfiles' and os.path.isdir(os.path.join(dir, d))]):
-    #if not '2018-11-20T23-24_aP' in subdir:
+    #if not '2018-12-' in subdir:
     #    continue
     try:
         execution_time, input_file = subdir.split('_',1)
@@ -369,7 +369,7 @@ for subdir in sorted([d for d in os.listdir(dir) if d != 'inputfiles' and os.pat
             str(log_data['l-timeout']),
             str(log_data['b-cpus']),
             str(log_data['total_batch'] / log_data['total_models'] if 'total_batch' in log_data.keys() else 0.0),
-            to_str(log_data.get('compute', {}).get('raw', 0)),
+            to_str(log_data.get('compute', {}).get('raw', datetime.timedelta())),
             log_data.get('strange', '')
             #json.dumps(log_data, default=to_str) # indent=4, sort_keys=True,
         ]
