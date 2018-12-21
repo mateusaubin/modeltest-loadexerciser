@@ -342,7 +342,6 @@ def upload_logs(logs):
 
 @backoff.on_predicate(backoff.constant, interval=60)
 def cooldown(dt_first, scm):
-    logging.info("COOLDOWN: started with {}".format(dt_first))
 
     if BENCH_EXECUTION_MODE != 1:
         try:
@@ -353,7 +352,7 @@ def cooldown(dt_first, scm):
             minimum = envdata['computeResources']['minvCpus']
             desired = envdata['computeResources']['desiredvCpus']
             
-            #logging.info("COOLDOWN: {} vCPUs Running".format(desired))
+            logging.info("COOLDOWN: {} vCPUs Running".format(desired))
             if desired != minimum:
                 return False
         except:
