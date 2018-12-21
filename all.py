@@ -62,8 +62,8 @@ def dynamo_create():
             },
         ],
         ProvisionedThroughput={
-            'ReadCapacityUnits':  3,
-            'WriteCapacityUnits': 3
+            'ReadCapacityUnits':  10,
+            'WriteCapacityUnits': 10
         }
     )
     dynamo_table.wait_until_exists()
@@ -141,8 +141,8 @@ def dispatch_parallel(index, sns, dynamo):
 
             else:
                 raise Exception
-        except:
-            logging.exception("dispatch_parallel")
+        except Exception as ex:
+            logging.exception(ex)
     
     pass
 
@@ -235,7 +235,11 @@ def handle_stage(stage_num, stage_data):
 
 def sendmessages(phy_file):
 
-    with io.open('traces/{}_cmds.log'.format(TRACE_FILE), mode='r', buffering=1048576, encoding='UTF-8', newline=None) as cmds:
+    FILE_FORMAT = 'traces/{}_cmds.log'
+    
+    tracefile = FILE_FORMAT.format(REFERENCE_CMDS if REFERENCE_CMDS else TRACE_FILE)
+
+    with io.open(tracefile, mode='r', buffering=1048576, encoding='UTF-8', newline=None) as cmds:
         stage_data = { 
             'sns': [], 
             'dynamo': [] 
@@ -474,6 +478,10 @@ if __name__ == '__main__':
     # 1 - LAMBDA ONLY
     # 2 - BATCH ONLY
     BENCH_EXECUTION_MODE = int(argv(2, 0))
+
+
+    # 1624
+    REFERENCE_CMDS = int(argv(3, 0))
 
 
     RUNDATE = datetime.now().isoformat()[0:19].replace(' ', '').replace(':', '-')
