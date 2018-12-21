@@ -521,8 +521,8 @@ if __name__ == '__main__':
         try:
             dt_now = retry_firstattempt or datetime.now()
 
-            cooldown(dt_now, scaling_monitor)
             dynamo_clear()
+            cooldown(dt_now, scaling_monitor)
 
         except Exception as e_wrap:
             logging.exception(e_wrap)

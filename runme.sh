@@ -23,9 +23,10 @@ export AWS_DEFAULT_REGION=$(curl -m5 -sS http://169.254.169.254/latest/meta-data
 
 mkdir log/ | true
 
-sl=${4:-60}
+sl=${4:-10}
 mode=${3:-0}
-iters=${2:-11}
+iters=${2:-1}
+type=""
 
 echo ""
 echo "SLEEP: $sl"
@@ -42,11 +43,11 @@ do
   # 1 - LAMBDA ONLY
   # 2 - BATCH ONLY
 
-  ./all.py $1 $3 || true
+  ./all.py $1 $mode $type || true
 
   echo "---------------------------------------------"
   echo "---------------------------------------------"
-  echo "           sleeping $sl                [$i / $iters]"
+  echo "           sleeping $sl              [$i / $iters]"
   echo "---------------------------------------------"
   echo "---------------------------------------------"
   sleep $sl
