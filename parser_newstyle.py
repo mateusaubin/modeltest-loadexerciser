@@ -9,13 +9,14 @@ from dateutil import tz
 import json
 import sys
 import math
+import traceback
 
 
 def assertCounts(log_data):
     listsizes_ref = [8, 120, 80, 48, 24, 8]
     models_per_stage = [s['models'] for s in log_data['stages']]
 
-    assert models_per_stage == listsizes_ref[:len(models_per_stage)], "Modelcount doesn't match reference"
+    assert log_data['stages'][0]['models'] > 280 or models_per_stage == listsizes_ref[:len(models_per_stage)], "Modelcount doesn't match reference"
 
 def to_timedelta(ms_interval):
     t = datetime.timedelta(
@@ -346,7 +347,7 @@ for subdir in sorted([d for d in os.listdir(dir) if d != 'inputfiles' and os.pat
     #    continue
     try:
         execution_time, input_file = subdir.split('_',1)
-        
+
         logfile = os.path.join(dir,subdir,'log','self.txt')
         watchfile = os.path.join(dir,subdir,'log','cloudwatch.txt')
 
@@ -370,12 +371,18 @@ for subdir in sorted([d for d in os.listdir(dir) if d != 'inputfiles' and os.pat
             str(log_data['b-cpus']),
             str(log_data['total_batch'] / log_data['total_models'] if 'total_batch' in log_data.keys() else 0.0),
             to_str(log_data.get('compute', {}).get('raw', datetime.timedelta())),
+            str('' if not lambda_cost else lambda_cost['unit_cost']),
+            str('' if not lambda_cost else lambda_cost['money_cost']),
+            str('' if not batch_cost else batch_cost['unit_cost']),
+            str('' if not batch_cost else batch_cost['money_cost']),
             log_data.get('strange', '')
             #json.dumps(log_data, default=to_str) # indent=4, sort_keys=True,
         ]
         print('\t'.join(result))
     except AssertionError as ase:
         print('###       {}       ###  assertion: {}'.format(subdir, str(ase)))
+        traceback.print_exc()
     except Exception as ex:
         print('###       {}       ### {}'.format(subdir, str(ex)))
+        traceback.print_exc()
     pass
