@@ -43,7 +43,7 @@ do
   # 1 - LAMBDA ONLY
   # 2 - BATCH ONLY
 
-  ./all.py $1 $mode $type || true
+  ./exec-new.py $1 $mode $type || true
 
   echo "---------------------------------------------"
   echo "---------------------------------------------"
