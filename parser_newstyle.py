@@ -96,10 +96,16 @@ def extract_batch_cost(logfilepath):
     EC2_COST_xCPUxMINUTE = 7.08333e-4
     money_cost = unit_cost * EC2_COST_xCPUxMINUTE
 
+    # average cpu
+    samples_greaterzero = {key:value for (key,value) in batch_cost.items() if key > 0}
+    samples_count = sum(samples_greaterzero.values())
+    averagecpus = unit_cost / sum(samples_greaterzero.values()) if samples_count > 0 else 0
+
     response = { 
         'unit_cost': round(unit_cost),
         'money_cost': round(money_cost, 5),
-        'histogram': batch_cost
+        'histogram': batch_cost,
+        'average_cpus': averagecpus
     }
     return response
         
@@ -375,6 +381,7 @@ for subdir in sorted([d for d in os.listdir(dir) if d != 'inputfiles' and os.pat
             str('' if not lambda_cost else lambda_cost['money_cost']),
             str('' if not batch_cost else batch_cost['unit_cost']),
             str('' if not batch_cost else batch_cost['money_cost']),
+            str('' if not batch_cost else batch_cost['average_cpus']),
             log_data.get('strange', '')
             #json.dumps(log_data, default=to_str) # indent=4, sort_keys=True,
         ]
